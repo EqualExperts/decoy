@@ -14,18 +14,31 @@ def cli():
 def generate():
     con = duckdb.connect("test.duckdb")
     register_en(con)
-    count = 1_000
+    count = 50
     con.execute("DROP TABLE IF EXISTS test;")
     con.execute(
         f"""
 CREATE TABLE test AS SELECT
-decoy_en('name') as name,
-decoy_en('address') as address,
-decoy_en('pyint') as num,
-decoy_choice() AS ch
+decoy_en('name') as name
 FROM range({count})"""
     )
     con.execute("SELECT * from test LIMIT 20")
+    res = con.fetchall()
+    for row in res:
+        print(row)
+
+
+@cli.command()
+def shuffle():
+    con = duckdb.connect("test.duckdb")
+    register_en(con)
+    count = 50
+    con.execute(
+        f"""
+SELECT name,
+shuffle(name) as arrow
+FROM test;"""
+    )
     res = con.fetchall()
     for row in res:
         print(row)

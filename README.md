@@ -19,4 +19,5 @@ pip install -r requirements.txt
 
 ```bash
 ./cli generate
+./cli shuffle
 ```
