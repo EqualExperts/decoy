@@ -1,0 +1,35 @@
+#!/usr/bin/env python3
+import click
+import duckdb
+
+from decoy import register_en
+
+
+@click.group()
+def cli():
+    pass
+
+
+@cli.command()
+def generate():
+    con = duckdb.connect("test.duckdb")
+    register_en(con)
+    count = 1_000
+    con.execute("DROP TABLE IF EXISTS test;")
+    con.execute(
+        f"""
+CREATE TABLE test AS SELECT
+decoy_en('name') as name,
+decoy_en('address') as address,
+decoy_en('pyint') as num,
+decoy_choice() AS ch
+FROM range({count})"""
+    )
+    con.execute("SELECT * from test LIMIT 20")
+    res = con.fetchall()
+    for row in res:
+        print(row)
+
+
+if __name__ == "__main__":
+    cli()
