@@ -25,18 +25,6 @@ decoy_en('name') as name
 FROM range({count})"""
     )
     sample_table_count = 20
-    # con.execute(
-    #     f"""
-    #     CREATE TABLE oversampling_table AS SELECT 
-    #     cast(floor(random() * {count}) as int) as sample_index
-    #     FROM range({sample_table_count})
-        
-    #     """
-    # )
-    # con.execute(f"""
-    #             SELECT * FROM name_table 
-    #             RIGHT OUTER JOIN oversampling_table ON name_table.id = oversampling_table.sample_index
-    #             """)
 
     con.execute(
         f"""
@@ -53,8 +41,18 @@ FROM range({count})"""
     for row in table:
         print(row)
 
+@cli.command()
+def oversample_macro():
+    con = duckdb.connect("test.duckdb")
+    register_en(con)
+    con.execute(
+        f"""
 
-    # FULL OUTER JOIN name_table ON oversampling_table.sample_index = name_table.id
+        
+        """
+    )
+
+
 
 @cli.command()
 def shuffle():
