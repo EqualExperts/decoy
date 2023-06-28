@@ -16,7 +16,6 @@ def generate():
     register_en(con)
     count = 10
     con.execute("DROP TABLE IF EXISTS name_table;")
-    con.execute("DROP TABLE IF EXISTS oversampling_table;")
     con.execute(
         f"""
 CREATE TABLE name_table AS SELECT
@@ -24,34 +23,9 @@ range as id,
 decoy_en('name') as name
 FROM range({count})"""
     )
-    sample_table_count = 20
-
-    con.execute(
-        f"""
-        WITH oversampling_table AS
-        (SELECT 
-        cast(floor(random() * {count}) as int) as sample_index
-        FROM range({sample_table_count}))
-
-        SELECT * FROM name_table
-        RIGHT OUTER JOIN oversampling_table ON name_table.id = oversampling_table.sample_index
-        """
-    )
     table = con.fetchall()
     for row in table:
         print(row)
-
-@cli.command()
-def oversample_macro():
-    con = duckdb.connect("test.duckdb")
-    register_en(con)
-    con.execute(
-        f"""
-
-        
-        """
-    )
-
 
 
 @cli.command()
@@ -75,19 +49,48 @@ FROM test;"""
 def oversample():
     con = duckdb.connect("test.duckdb")
     register_en(con)
-    count = 100
+    value_count = 10
+    sample_count = 20
+    con.execute("DROP TABLE IF EXISTS name_table;")
     con.execute("DROP TABLE IF EXISTS oversample;")
     con.execute(
-        f"""   
-CREATE TABLE oversample AS SELECT
-oversample(select name from test as n) 
-FROM range({count})"""
+        f"""
+CREATE TABLE name_table AS SELECT
+range as id,
+decoy_en('name') as name
+FROM range({value_count})"""
     )
-    con.execute("SELECT * from test LIMIT 20")
-    res = con.fetchall()
-    for row in res:
+    con.execute(
+        f"""
+WITH oversampling_table AS
+(SELECT
+cast(floor(random() * {value_count}) as int) as sample_index
+FROM range({sample_count}))
+
+SELECT * FROM name_table
+RIGHT OUTER JOIN oversampling_table ON name_table.id = oversampling_table.sample_index
+        """
+    )
+    table = con.fetchall()
+    for row in table:
         print(row)
 
+
+@cli.command()
+def oversample_python():
+    con = duckdb.connect("test.duckdb")
+    register_en(con)
+    con.execute(
+        f"""
+DROP TABLE IF EXISTS name_table;
+CREATE TABLE name_table AS SELECT range as id, decoy_en('name') as name FROM range(10);
+
+SELECT oversample('name_table', 'name') from range(1000000);
+        """
+    )
+    table = con.fetchall()
+    for row in table:
+        print(row)
 
 
 if __name__ == "__main__":
