@@ -18,6 +18,5 @@ pip install -r requirements.txt
 ## Running the test
 
 ```bash
-./cli generate
-./cli shuffle
+./cli exec examples/basic.sql
 ```
