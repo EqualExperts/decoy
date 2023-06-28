@@ -30,12 +30,6 @@ def intratable_sample(x):
     shuffled = df.sample(frac=1, replace=True, ignore_index=True)
     return pa.lib.Table.from_pandas(shuffled)
 
-# def arrow_oversample(x):
-#     # df = pd.DataFrame(x.to_pandas())
-#     # shuffled = df.sample(frac=1).reset_index(drop=True)
-#     # return pa.lib.Table.from_pandas(shuffled)
-#     ...
-
 
 def register_en(con: duckdb.DuckDBPyConnection) -> None:
     fkr_en = get_faker_locale("en-GB")
@@ -71,12 +65,3 @@ def register_en(con: duckdb.DuckDBPyConnection) -> None:
         side_effects=True,
         type=duckdb.functional.PythonUDFType.ARROW,
     )
-
-    # con.create_function(
-    #     name="oversample",
-    #     function=arrow_oversample,
-    #     return_type=[ducktypes.VARCHAR],
-    #     parameters=ducktypes.VARCHAR,
-    #     side_effects=True,
-    #     type=duckdb.functional.PythonUDFType.ARROW,
-    # )
