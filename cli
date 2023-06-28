@@ -14,12 +14,75 @@ def cli():
 def generate():
     con = duckdb.connect("test.duckdb")
     register_en(con)
-    count = 50
-    con.execute("DROP TABLE IF EXISTS test;")
+    count = 10
+    con.execute("DROP TABLE IF EXISTS name_table;")
+    con.execute("DROP TABLE IF EXISTS oversampling_table;")
     con.execute(
         f"""
-CREATE TABLE test AS SELECT
+CREATE TABLE name_table AS SELECT
+range as id,
 decoy_en('name') as name
+FROM range({count})"""
+    )
+    sample_table_count = 20
+    # con.execute(
+    #     f"""
+    #     CREATE TABLE oversampling_table AS SELECT 
+    #     cast(floor(random() * {count}) as int) as sample_index
+    #     FROM range({sample_table_count})
+        
+    #     """
+    # )
+    # con.execute(f"""
+    #             SELECT * FROM name_table 
+    #             RIGHT OUTER JOIN oversampling_table ON name_table.id = oversampling_table.sample_index
+    #             """)
+
+    con.execute(
+        f"""
+        WITH oversampling_table AS
+        (SELECT 
+        cast(floor(random() * {count}) as int) as sample_index
+        FROM range({sample_table_count}))
+
+        SELECT * FROM name_table
+        RIGHT OUTER JOIN oversampling_table ON name_table.id = oversampling_table.sample_index
+        """
+    )
+    table = con.fetchall()
+    for row in table:
+        print(row)
+
+
+    # FULL OUTER JOIN name_table ON oversampling_table.sample_index = name_table.id
+
+@cli.command()
+def shuffle():
+    con = duckdb.connect("test.duckdb")
+    register_en(con)
+    count = 10
+    con.execute(
+        f"""
+SELECT name,
+shuffle(name) as arrow,
+intratable_sample(name) as sampled
+FROM test;"""
+    )
+    res = con.fetchall()
+    for row in res:
+        print(row)
+
+
+@cli.command()
+def oversample():
+    con = duckdb.connect("test.duckdb")
+    register_en(con)
+    count = 100
+    con.execute("DROP TABLE IF EXISTS oversample;")
+    con.execute(
+        f"""   
+CREATE TABLE oversample AS SELECT
+oversample(select name from test as n) 
 FROM range({count})"""
     )
     con.execute("SELECT * from test LIMIT 20")
@@ -27,21 +90,6 @@ FROM range({count})"""
     for row in res:
         print(row)
 
-
-@cli.command()
-def shuffle():
-    con = duckdb.connect("test.duckdb")
-    register_en(con)
-    count = 50
-    con.execute(
-        f"""
-SELECT name,
-shuffle(name) as arrow
-FROM test;"""
-    )
-    res = con.fetchall()
-    for row in res:
-        print(row)
 
 
 if __name__ == "__main__":
