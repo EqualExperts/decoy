@@ -1,16 +1,32 @@
 #!/usr/bin/env python3
 import click
 import duckdb
+from io import TextIOWrapper
 
+from cli_io import print_rows
 from decoy import register_en
 
 
 @click.group()
-def cli():
+def rootcmd():
     pass
 
 
-@cli.command()
+@rootcmd.command()
+@click.argument("filename", type=click.File("r"))
+def exec(filename: TextIOWrapper):
+    """Executes the sql in <filename> against duckdb, separate datasets with ---"""
+    con = duckdb.connect("decoy.duckdb")
+    register_en(con)
+
+    input_sql_list = filename.read().split("---")
+    for input_sql in input_sql_list:
+        con.execute(input_sql)
+        res = con.fetchdf()
+        print_rows(res)
+
+
+@rootcmd.command()
 def generate():
     con = duckdb.connect("test.duckdb")
     register_en(con)
@@ -28,7 +44,7 @@ FROM range({count})"""
         print(row)
 
 
-@cli.command()
+@rootcmd.command()
 def shuffle():
     con = duckdb.connect("test.duckdb")
     register_en(con)
@@ -45,7 +61,7 @@ FROM test;"""
         print(row)
 
 
-@cli.command()
+@rootcmd.command()
 def oversample():
     con = duckdb.connect("test.duckdb")
     register_en(con)
@@ -76,7 +92,7 @@ RIGHT OUTER JOIN oversampling_table ON name_table.id = oversampling_table.sample
         print(row)
 
 
-@cli.command()
+@rootcmd.command()
 def oversample_python():
     con = duckdb.connect("test.duckdb")
     register_en(con)
@@ -94,4 +110,4 @@ SELECT oversample('name_table', 'name') from range(1000000);
 
 
 if __name__ == "__main__":
-    cli()
+    rootcmd()
