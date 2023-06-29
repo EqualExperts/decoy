@@ -12,6 +12,7 @@ column_cache = {}
 
 def get_connection():
     con = duckdb.connect(settings["database_file"])
+    register_en(con)
     return con
 
 

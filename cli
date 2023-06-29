@@ -2,9 +2,11 @@
 import click
 import duckdb
 from io import TextIOWrapper
+from prompt_toolkit import print_formatted_text, HTML
+import sys
 
-from cli_io import print_rows
-from decoy import register_en, get_connection
+from cli_io import print_rows, repl
+from decoy import get_connection
 
 
 @click.group()
@@ -17,19 +19,27 @@ def rootcmd():
 def exec(filename: TextIOWrapper):
     """Executes the sql in <filename> against duckdb, separate datasets with ---"""
     con = get_connection()
-    register_en(con)
 
     input_sql_list = filename.read().split("---")
     for input_sql in input_sql_list:
-        con.execute(input_sql)
+        try:
+            con.execute(input_sql)
+        except duckdb.ParserException as pe:
+            print_formatted_text(HTML(f"<ansired>{pe}</ansired>"))
+            sys.exit(1)
         res = con.fetchdf()
         print_rows(res)
+
+
+@rootcmd.command(name="repl")
+def repl_commmand():
+    con = get_connection()
+    repl(con)
 
 
 @rootcmd.command()
 def generate():
     con = get_connection()
-    register_en(con)
     count = 10
     con.execute("DROP TABLE IF EXISTS name_table;")
     con.execute(
@@ -48,7 +58,6 @@ FROM range({count})"""
 @rootcmd.command()
 def shuffle():
     con = get_connection()
-    register_en(con)
     count = 10
     con.execute(
         f"""
@@ -65,7 +74,6 @@ FROM test;"""
 @rootcmd.command()
 def oversample():
     con = get_connection()
-    register_en(con)
     value_count = 10
     sample_count = 20
     con.execute("DROP TABLE IF EXISTS name_table;")
@@ -96,7 +104,6 @@ RIGHT OUTER JOIN oversampling_table ON name_table.id = oversampling_table.sample
 @rootcmd.command()
 def oversample_python():
     con = get_connection()
-    register_en(con)
     con.execute(
         f"""
 DROP TABLE IF EXISTS name_table;
