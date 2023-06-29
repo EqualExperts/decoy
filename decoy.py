@@ -6,20 +6,19 @@ import pandas as pd
 import pyarrow as pa
 import random
 
-# global_con = duckdb.connect("test.duckdb")
+settings = {"database_file": "decoy.duckdb"}
+column_cache = {}
 
-cached_column = []
+
+def get_connection():
+    con = duckdb.connect(settings["database_file"])
+    return con
 
 
-def cache_column(table_name, column_name):
-    global cached_column
-    con = duckdb.connect("test.duckdb")
+def cache_column(table_name: str, column_name: str):
+    con = get_connection()
     con.execute(f"SELECT {column_name} FROM {table_name}")
-    cached_column = [val[0] for val in con.fetchall()]
-
-
-def get_from_cache():
-    return random.choice(cached_column)
+    column_cache[f"{table_name}.{column_name}"] = [val[0] for val in con.fetchall()]
 
 
 def get_faker_locale(locale: str) -> Callable[[str], Any]:
@@ -48,15 +47,10 @@ def intratable_sample(x):
 
 
 def oversample(table_name, column_name):
-    # global_con.execute(
-    #     f"SELECT {column_name} FROM {table_name} ORDER BY RANDOM() LIMIT 1"
-    # )
-    # return global_con.fetchone()[0]
+    cache_column(table_name, column_name)
 
-    if not len(cached_column):
-        cache_column(table_name, column_name)
-
-    return get_from_cache()
+    col_ref = f"{table_name}.{column_name}"
+    return random.choice(column_cache[col_ref])
 
 
 def register_en(con: duckdb.DuckDBPyConnection) -> None:
