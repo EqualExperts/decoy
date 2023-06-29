@@ -10,13 +10,13 @@ settings = {"database_file": "decoy.duckdb"}
 column_cache = {}
 
 
-def get_connection():
+def get_connection() -> duckdb.DuckDBPyConnection:
     con = duckdb.connect(settings["database_file"])
     register_en(con)
     return con
 
 
-def cache_column(table_name: str, column_name: str):
+def cache_column(table_name: str, column_name: str) -> None:
     con = get_connection()
     con.execute(f"SELECT {column_name} FROM {table_name}")
     column_cache[f"{table_name}.{column_name}"] = [val[0] for val in con.fetchall()]
@@ -35,19 +35,19 @@ def custom_choice_generator() -> ducktypes.VARCHAR:
     return random.choice(["Fake 1", "Fake 2", "Fake 3"])
 
 
-def random_shuffle(x):
+def random_shuffle(x: list[list[Any]]) -> pa.Table:
     df = pd.DataFrame(x.to_pandas())
     shuffled = df.sample(frac=1, ignore_index=True)
     return pa.lib.Table.from_pandas(shuffled)
 
 
-def intratable_sample(x):
+def intratable_sample(x: list[list[Any]]) -> pa.Table:
     df = pd.DataFrame(x.to_pandas())
     shuffled = df.sample(frac=1, replace=True, ignore_index=True)
     return pa.lib.Table.from_pandas(shuffled)
 
 
-def oversample(table_name, column_name):
+def oversample(table_name: str, column_name: str) -> str:
     cache_column(table_name, column_name)
 
     col_ref = f"{table_name}.{column_name}"

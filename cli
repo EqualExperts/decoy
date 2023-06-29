@@ -17,7 +17,8 @@ def rootcmd():
 @rootcmd.command()
 @click.argument("filename", type=click.File("r"))
 def exec(filename: TextIOWrapper):
-    """Executes the sql in <filename> against duckdb, separate datasets with ---"""
+    """Executes the sql in <filename> against duckdb.
+    Operations can be separated with ---"""
     con = get_connection()
 
     input_sql_list = filename.read().split("---")
@@ -33,6 +34,7 @@ def exec(filename: TextIOWrapper):
 
 @rootcmd.command(name="repl")
 def repl_commmand():
+    """Starts a REPL to execute SQL with faker and custom generation functions registered."""
     con = get_connection()
     repl(con)
 
