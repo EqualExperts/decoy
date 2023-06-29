@@ -19,6 +19,9 @@ def repl(con: duckdb.DuckDBPyConnection) -> None:
         except duckdb.ParserException as pe:
             print_formatted_text(HTML(f"<ansired>{pe}</ansired>"))
             continue
+        except duckdb.CatalogException as ce:
+            print_formatted_text(HTML(f"<ansired>{ce}</ansired>"))
+            continue
 
         res = con.fetch_df()
         print_rows(res)

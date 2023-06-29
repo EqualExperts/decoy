@@ -163,3 +163,4 @@ cython_debug/
 
 .vscode/
 .repl_history
+decoy.duckdb.wal
