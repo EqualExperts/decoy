@@ -10,22 +10,25 @@ settings = {"database_file": "decoy.duckdb"}
 column_cache = {}
 
 
-def get_connection() -> duckdb.DuckDBPyConnection:
+def get_connection(register_funcs=True) -> duckdb.DuckDBPyConnection:
     con = duckdb.connect(settings["database_file"])
-    register_en(con)
+    if register_funcs:
+        register_en(con)
     return con
 
 
 def cache_column(table_name: str, column_name: str) -> None:
-    con = get_connection()
+    con = get_connection(False)
     con.execute(f"SELECT {column_name} FROM {table_name}")
-    column_cache[f"{table_name}.{column_name}"] = [val[0] for val in con.fetchall()]
+    column_cache[f"{table_name}.{column_name}"] = [val[0]
+                                                   for val in con.fetchall()]
 
 
 def get_faker_locale(locale: str) -> Callable[[str], Any]:
     fkr = Faker(locale)
 
     def dispatch(fname: str):
+        '''xoxoxo'''
         return getattr(fkr, fname)()
 
     return dispatch
@@ -55,14 +58,17 @@ def oversample(table_name: str, column_name: str) -> str:
 
 
 def register_en(con: duckdb.DuckDBPyConnection) -> None:
+
     fkr_en = get_faker_locale("en-GB")
+
     con.create_function(
-        name="decoy_en",
+        name="decoy_faker_init_en",
         function=fkr_en,
         return_type=[ducktypes.VARCHAR],
         parameters=ducktypes.VARCHAR,
         side_effects=True,
     )
+
     con.create_function(
         name="decoy_choice",
         function=custom_choice_generator,
@@ -72,7 +78,7 @@ def register_en(con: duckdb.DuckDBPyConnection) -> None:
     )
 
     con.create_function(
-        name="shuffle",
+        name="decoy_shuffle",
         function=random_shuffle,
         return_type=[ducktypes.VARCHAR],
         parameters=ducktypes.VARCHAR,
@@ -81,7 +87,7 @@ def register_en(con: duckdb.DuckDBPyConnection) -> None:
     )
 
     con.create_function(
-        name="intratable_sample",
+        name="decoy_intratable_sample",
         function=intratable_sample,
         return_type=[ducktypes.VARCHAR],
         parameters=ducktypes.VARCHAR,
@@ -90,7 +96,7 @@ def register_en(con: duckdb.DuckDBPyConnection) -> None:
     )
 
     con.create_function(
-        name="oversample",
+        name="decoy_oversample",
         function=oversample,
         return_type=[ducktypes.VARCHAR, ducktypes.VARCHAR],
         parameters=ducktypes.VARCHAR,

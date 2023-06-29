@@ -16,6 +16,7 @@ def repl(con: duckdb.DuckDBPyConnection) -> None:
 
         try:
             con.execute(text)
+        # TODO: Binder Error
         except duckdb.ParserException as pe:
             print_formatted_text(HTML(f"<ansired>{pe}</ansired>"))
             continue

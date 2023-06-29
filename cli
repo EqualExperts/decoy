@@ -5,8 +5,8 @@ from io import TextIOWrapper
 from prompt_toolkit import print_formatted_text, HTML
 import sys
 
-from cli_io import print_rows, repl
-from decoy import get_connection
+from decoy.cli_io import print_rows, repl
+from decoy.database import get_connection
 
 
 @click.group()
