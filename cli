@@ -7,6 +7,7 @@ import sys
 
 from decoy.cli_io import print_rows, repl
 from decoy.database import get_connection
+from decoy.settings import settings
 
 
 @click.group()
@@ -16,9 +17,13 @@ def rootcmd():
 
 @rootcmd.command()
 @click.argument("filename", type=click.File("r"))
-def exec(filename: TextIOWrapper):
+@click.option("-d", "--database", "database")
+def exec(filename: TextIOWrapper, database=None):
     """Executes the sql in <filename> against duckdb.
     Operations can be separated with ---"""
+    if database:
+        settings.database_file = database
+
     con = get_connection()
 
     input_sql_list = filename.read().split("---")
@@ -33,8 +38,12 @@ def exec(filename: TextIOWrapper):
 
 
 @rootcmd.command(name="repl")
-def repl_commmand():
+@click.option("-d", "--database", "database")
+def repl_commmand(database):
     """Starts a REPL to execute SQL with faker and custom generation functions registered."""
+    if database:
+        settings.database_file = database
+
     con = get_connection()
     repl(con)
 

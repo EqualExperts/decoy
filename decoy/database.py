@@ -6,12 +6,13 @@ import pandas as pd
 import pyarrow as pa
 import random
 
-settings = {"database_file": "decoy.duckdb"}
+from decoy.settings import settings
+
 column_cache = {}
 
 
 def get_connection(register_funcs=True) -> duckdb.DuckDBPyConnection:
-    con = duckdb.connect(settings["database_file"])
+    con = duckdb.connect(settings.database_file)
     if register_funcs:
         register_en(con)
     return con
