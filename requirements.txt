@@ -3,3 +3,4 @@ click
 faker
 pandas
 pyarrow
+pytest

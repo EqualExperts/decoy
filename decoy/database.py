@@ -20,8 +20,7 @@ def get_connection(register_funcs=True) -> duckdb.DuckDBPyConnection:
 def cache_column(table_name: str, column_name: str) -> None:
     con = get_connection(False)
     con.execute(f"SELECT {column_name} FROM {table_name}")
-    column_cache[f"{table_name}.{column_name}"] = [val[0]
-                                                   for val in con.fetchall()]
+    column_cache[f"{table_name}.{column_name}"] = [val[0] for val in con.fetchall()]
 
 
 def get_faker_locale(locale: str) -> Callable[[str], Any]:
@@ -57,11 +56,10 @@ def oversample(table_name: str, column_name: str) -> str:
 
 
 def register_en(con: duckdb.DuckDBPyConnection) -> None:
-
     fkr_en = get_faker_locale("en-GB")
 
     con.create_function(
-        name="faker_init_en",
+        name="faker_en",
         function=fkr_en,
         return_type=[ducktypes.VARCHAR],
         parameters=ducktypes.VARCHAR,
@@ -69,7 +67,7 @@ def register_en(con: duckdb.DuckDBPyConnection) -> None:
     )
 
     con.create_function(
-        name="choice",
+        name="custom_choice",
         function=custom_choice_generator,
         return_type=[],
         parameters=ducktypes.VARCHAR,
