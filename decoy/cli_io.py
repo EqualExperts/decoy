@@ -2,6 +2,8 @@ import duckdb
 import pandas as pd
 from prompt_toolkit import PromptSession, print_formatted_text, HTML
 from prompt_toolkit.history import FileHistory
+from prompt_toolkit.lexers import PygmentsLexer
+from pygments.lexers.sql import PlPgsqlLexer
 
 exception_list = (
     duckdb.ParserException,
@@ -17,7 +19,16 @@ def print_rows(rows: pd.DataFrame) -> None:
 
 def repl(con: duckdb.DuckDBPyConnection) -> None:
     fh = FileHistory(".repl_history")
-    s = PromptSession(message="sql: ", enable_history_search=True, history=fh)
+    s = PromptSession(
+        message="> ",
+        enable_history_search=True,
+        history=fh,
+        lexer=PygmentsLexer(PlPgsqlLexer),
+        multiline=True,
+    )
+    print(
+        "Enter SQL commands to execute against the DB. <esc><enter> or <alt/opt><enter> to submit."
+    )
     while True:
         text = s.prompt()
 
@@ -32,5 +43,9 @@ def repl(con: duckdb.DuckDBPyConnection) -> None:
             print_formatted_text(HTML(f"<ansired>{e}</ansired>"))
             continue
 
-        res = con.fetch_df()
+        try:
+            res = con.fetch_df()
+        except duckdb.InvalidInputException as e:
+            print("No results")
+            continue
         print_rows(res)

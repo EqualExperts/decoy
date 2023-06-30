@@ -43,7 +43,7 @@ The python Faker library is exposed for the en-GB locale, the registration funct
 select faker_en('name') from range(20);
 ```
 
-Custom functions are available for intra-table sampling, column shuffling, oversampling from other tables.
+Functions are also available for intra-table sampling, column shuffling, oversampling from other tables.
 
 ```sql
 -- Create a names table
