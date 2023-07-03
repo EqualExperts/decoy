@@ -2,6 +2,8 @@
 import click
 import duckdb
 from io import TextIOWrapper
+import jupyter_client
+import os
 from prompt_toolkit import print_formatted_text, HTML
 import sys
 
@@ -20,7 +22,18 @@ def kernel_install():
     from ipykernel.kernelspec import install
     from jupyter_client.kernelspec import install_kernel_spec
 
-    install_path = install_kernel_spec("decoy", "decoy", True, True)
+    spec = jupyter_client.kernelspec.KernelSpec(
+        argv=[sys.executable, "-m", "decoy.kernel", "-f", "{connection_file}"],
+        env={"VIRTUAL_ENV": os.getenv("VIRTUAL_ENV")},
+        language="sql",
+        display_name="Decoy",
+    )
+    with open("decoy/kernel.json", "w") as f:
+        f.write(spec.to_json())
+
+    install_path = jupyter_client.kernelspec.install_kernel_spec(
+        "decoy", kernel_name="decoy", user=True, replace=True
+    )
     print(f"Decoy kernel installed at {install_path}")
 
 
