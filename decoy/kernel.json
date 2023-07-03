@@ -1,0 +1,10 @@
+{
+  "argv": [
+    "python",
+    "-m",
+    "decoy.kernel",
+    "-f",
+    "{connection_file}"
+  ],
+  "display_name": "Decoy"
+}

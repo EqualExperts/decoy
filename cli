@@ -16,6 +16,15 @@ def rootcmd():
 
 
 @rootcmd.command()
+def kernel_install():
+    from ipykernel.kernelspec import install
+    from jupyter_client.kernelspec import install_kernel_spec
+
+    install_path = install_kernel_spec("decoy", "decoy", True, True)
+    print(f"Decoy kernel installed at {install_path}")
+
+
+@rootcmd.command()
 @click.argument("filename", type=click.File("r"))
 @click.option("-d", "--database", "database")
 def exec(filename: TextIOWrapper, database=None):
