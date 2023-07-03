@@ -35,6 +35,15 @@ Use the SQL REPL
 ./cli repl
 ```
 
+Register as a jupyter kernel
+
+```bash
+./cli kernel-install
+jupyter lab
+```
+
+** At the moment the kernel only works if the notebook is in the root of this project. Something needs fixing with the kernel path.
+
 ## Data generation functions
 
 The python Faker library is exposed for the en-GB locale, the registration function can easily be modified to include more locales.
