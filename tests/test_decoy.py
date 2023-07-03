@@ -1,7 +1,7 @@
 import pytest
 import pyarrow as pa
 
-from decoy.database import column_cache, get_connection, cache_column
+from decoy.database import column_cache, get_connection, cache_column, custom_choice_generator, random_shuffle, intratable_sample, oversample
 from decoy.settings import settings
 
 settings.database_file = "test.duckdb"
@@ -26,7 +26,7 @@ def connection(request):
 def test_cache_column(connection):
     connection.execute(
         """
-    CREATE TABLE IF NOT EXISTS test_cache_column AS SELECT range from range(10)
+    CREATE TABLE IF NOT EXISTS test_cached_column AS SELECT range from range(10)
     """
     )
     cache_column("test_cache_column", "range")
@@ -56,4 +56,4 @@ def test_intratable_sample(connection):
 
 
 def test_oversample(connection):
-    
+    assert oversample("test_cached_column", "range") in range(10)
