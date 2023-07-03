@@ -4,3 +4,4 @@ faker
 pandas
 pyarrow
 pytest
+pygments

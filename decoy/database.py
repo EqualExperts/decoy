@@ -20,7 +20,8 @@ def get_connection(register_funcs=True) -> duckdb.DuckDBPyConnection:
 def cache_column(table_name: str, column_name: str) -> None:
     con = get_connection(False)
     con.execute(f"SELECT {column_name} FROM {table_name}")
-    column_cache[f"{table_name}.{column_name}"] = [val[0] for val in con.fetchall()]
+    column_cache[f"{table_name}.{column_name}"] = [val[0]
+                                                   for val in con.fetchall()]
 
 
 def get_faker_locale(locale: str) -> Callable[[str], Any]:
@@ -49,6 +50,9 @@ def intratable_sample(x: list[list[Any]]) -> pa.Table:
 
 
 def oversample(table_name: str, column_name: str) -> str:
+    '''
+    #TODO: explain why we need to cache the column again!
+    '''
     cache_column(table_name, column_name)
 
     col_ref = f"{table_name}.{column_name}"
