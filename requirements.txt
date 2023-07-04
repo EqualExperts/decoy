@@ -8,3 +8,4 @@ pygments
 pydantic==1.10.10
 ipykernel
 jupyterlab
+mimesis

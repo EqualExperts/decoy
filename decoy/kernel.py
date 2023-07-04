@@ -43,7 +43,7 @@ class DecoyKernel(Kernel):
         try:
             con.execute(code)
         except exception_list as e:
-            errdata = self.display_error(e)
+            errdata = self.get_display_error(e)
             self.send_response(self.iopub_socket, "error", content=errdata)
             errdata["execution_count"] = self.execution_count
             errdata["status"] = "error"
@@ -52,7 +52,7 @@ class DecoyKernel(Kernel):
         try:
             res = con.fetch_df()
         except duckdb.InvalidInputException as e:
-            errdata = self.display_error(e)
+            errdata = self.get_display_error(e)
             self.send_response(self.iopub_socket, "error", content=errdata)
             errdata["execution_count"] = self.execution_count
             errdata["status"] = "error"

@@ -52,6 +52,12 @@ The python Faker library is exposed for the en-GB locale, the registration funct
 select faker_en('name') from range(20);
 ```
 
+The python Mimesis library is exposed for the en-GB locale, the registration function can easily be modified to include more locales.
+
+```sql
+select mimesis_en('person.full_name') from range(20);
+```
+
 Functions are also available for intra-table sampling, column shuffling, oversampling from other tables.
 
 ```sql
