@@ -14,7 +14,7 @@ exception_list = (
 
 def print_rows(rows: pd.DataFrame) -> None:
     print("----------")
-    print(rows.head(10))
+    print(rows.head(50))
 
 
 def repl(con: duckdb.DuckDBPyConnection) -> None:
