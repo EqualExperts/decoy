@@ -29,10 +29,17 @@ def get_mimesis_locale(locale: str) -> Callable[[str], Any]:
 
     return dispatch
 
+
 def np_rand():
-    def dispatch(fname:str):
+    def dispatch(fname: str):
         return getattr(npr, fname)()
-    
+
+    return dispatch
+
+
+def pyrandom():
+    def dispatch(fname: str):
+        return getattr(random, fname)()
     return dispatch
 
 
