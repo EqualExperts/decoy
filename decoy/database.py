@@ -1,15 +1,14 @@
 import duckdb
 from duckdb import typing as ducktypes
-from faker import Faker
-from mimesis import Generic, Locale
-import pandas as pd
-import pyarrow as pa
-import random
-from typing import Callable, Any
 
 from decoy.settings import settings
-
-column_cache = {}
+from decoy.udf_scalar import (
+    get_faker_locale,
+    get_mimesis_locale,
+    custom_choice_generator,
+)
+from decoy.udf_arrow import random_shuffle, intratable_sample, oversample
+from decoy.xeger import xeger_cached
 
 
 def get_connection(register_funcs=True) -> duckdb.DuckDBPyConnection:
@@ -51,12 +50,7 @@ def get_mimesis_locale(locale: str) -> Callable[[str], Any]:
 
 
 def custom_choice_generator() -> ducktypes.VARCHAR:
-    # return random.choice(x)
     return random.choice(["Fake 1", "Fake 2", "Fake 3"])
-
-# def custom_choice_generator(x: list[list[Any]]) -> pa.Table:
-#     return random.choice(x)
-#     # return random.choice(["Fake 1", "Fake 2", "Fake 3"])
 
 
 def random_shuffle(x: list[list[Any]]) -> pa.Table:
@@ -96,6 +90,14 @@ def register_udfs(con: duckdb.DuckDBPyConnection) -> None:
     con.create_function(
         name="mimesis_en",
         function=mim_en,
+        return_type=[ducktypes.VARCHAR],
+        parameters=ducktypes.VARCHAR,
+        side_effects=True,
+    )
+
+    con.create_function(
+        name="xeger",
+        function=xeger_cached,
         return_type=[ducktypes.VARCHAR],
         parameters=ducktypes.VARCHAR,
         side_effects=True,

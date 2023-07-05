@@ -58,6 +58,12 @@ The python Mimesis library is exposed for the en-GB locale, the registration fun
 select mimesis_en('person.full_name') from range(20);
 ```
 
+There is a reverse regex function for generating text patterns.
+
+```sql
+SELECT xeger('\(\+0[0-9]{2}\) 07[0-9]{3} [0-9]{6}') as tel FROM range(20);
+```
+
 Functions are also available for intra-table sampling, column shuffling, oversampling from other tables.
 
 ```sql

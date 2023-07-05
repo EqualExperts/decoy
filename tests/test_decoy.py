@@ -1,7 +1,14 @@
 import pytest
 import pyarrow as pa
 
-from decoy.database import column_cache, get_connection, cache_column, custom_choice_generator, random_shuffle, intratable_sample, oversample
+from decoy.database import (
+    get_connection,
+    custom_choice_generator,
+    random_shuffle,
+    intratable_sample,
+    oversample,
+)
+from decoy.udf_arrow import column_cache, cache_column
 from decoy.settings import settings
 
 settings.database_file = "test.duckdb"
@@ -39,18 +46,18 @@ def test_custom_choice_generator(connection):
 
 
 def test_random_shuffle(connection):
-    '''
+    """
     I didn't feel like testing the pandas shuffle function was needed.
     Instead the purpose is making sure the input shape matches the output shape.
     This is to ensure compatibility with the PyArrow functionality of DuckDB
-    '''
-    test_input = pa.array(['A', 'B', 'C', 'D', 'E'])
+    """
+    test_input = pa.array(["A", "B", "C", "D", "E"])
     test_output = random_shuffle(test_input)
     assert len(test_input) == len(test_output)
 
 
 def test_intratable_sample(connection):
-    test_input = pa.array(['A', 'B', 'C', 'D', 'E'])
+    test_input = pa.array(["A", "B", "C", "D", "E"])
     test_output = intratable_sample(test_input)
     assert len(test_input) == len(test_output)
 
