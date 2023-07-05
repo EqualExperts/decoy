@@ -22,7 +22,8 @@ def get_connection(register_funcs=True) -> duckdb.DuckDBPyConnection:
 def cache_column(table_name: str, column_name: str) -> None:
     con = get_connection(False)
     con.execute(f"SELECT {column_name} FROM {table_name}")
-    column_cache[f"{table_name}.{column_name}"] = [val[0] for val in con.fetchall()]
+    column_cache[f"{table_name}.{column_name}"] = [val[0]
+                                                   for val in con.fetchall()]
 
 
 def get_faker_locale(locale: str) -> Callable[[str], Any]:
@@ -50,7 +51,12 @@ def get_mimesis_locale(locale: str) -> Callable[[str], Any]:
 
 
 def custom_choice_generator() -> ducktypes.VARCHAR:
+    # return random.choice(x)
     return random.choice(["Fake 1", "Fake 2", "Fake 3"])
+
+# def custom_choice_generator(x: list[list[Any]]) -> pa.Table:
+#     return random.choice(x)
+#     # return random.choice(["Fake 1", "Fake 2", "Fake 3"])
 
 
 def random_shuffle(x: list[list[Any]]) -> pa.Table:
