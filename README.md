@@ -42,6 +42,13 @@ Register as a jupyter kernel
 jupyter lab
 ```
 
+Parse A SQL Schema Definition
+```bash
+./cli sqlparse './examples/test_schema.sql' './examples/schema_parse_output.sql' 5
+
+./cli exec ./examples/schema_parse_output.sql
+```
+
 ** At the moment the kernel only works if the notebook is in the root of this project. Something needs fixing with the kernel path.
 
 ## Data generation functions
