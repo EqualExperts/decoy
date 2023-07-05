@@ -8,6 +8,7 @@ from decoy.udf_scalar import (
     custom_choice_generator,
 )
 from decoy.udf_arrow import random_shuffle, intratable_sample, oversample
+from decoy.xeger import xeger_cached
 
 
 def get_connection(register_funcs=True) -> duckdb.DuckDBPyConnection:
@@ -32,6 +33,14 @@ def register_udfs(con: duckdb.DuckDBPyConnection) -> None:
     con.create_function(
         name="mimesis_en",
         function=mim_en,
+        return_type=[ducktypes.VARCHAR],
+        parameters=ducktypes.VARCHAR,
+        side_effects=True,
+    )
+
+    con.create_function(
+        name="xeger",
+        function=xeger_cached,
         return_type=[ducktypes.VARCHAR],
         parameters=ducktypes.VARCHAR,
         side_effects=True,
