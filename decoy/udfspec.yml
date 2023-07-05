@@ -1,0 +1,1142 @@
+faker_en:
+  _meta:
+    arg_type: annotated
+  aba:
+    arguments: []
+    return_type: VARCHAR
+  address:
+    arguments: []
+    return_type: VARCHAR
+  administrative_unit:
+    arguments: []
+    return_type: VARCHAR
+  am_pm:
+    arguments: []
+    return_type: VARCHAR
+  android_platform_token:
+    arguments: []
+    return_type: VARCHAR
+  ascii_company_email:
+    arguments: []
+    return_type: VARCHAR
+  ascii_email:
+    arguments: []
+    return_type: VARCHAR
+  ascii_free_email:
+    arguments: []
+    return_type: VARCHAR
+  ascii_safe_email:
+    arguments: []
+    return_type: VARCHAR
+  bank_country:
+    arguments: []
+    return_type: VARCHAR
+  bban:
+    arguments: []
+    return_type: VARCHAR
+  bothify:
+    arguments:
+      - default: "## ??"
+        kind: POSITIONAL_OR_KEYWORD
+        name: text
+        type: VARCHAR
+      - default: abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ
+        kind: POSITIONAL_OR_KEYWORD
+        name: letters
+        type: VARCHAR
+    return_type: VARCHAR
+  bs:
+    arguments: []
+    return_type: VARCHAR
+  building_number:
+    arguments: []
+    return_type: VARCHAR
+  catch_phrase:
+    arguments: []
+    return_type: VARCHAR
+  cellphone_number:
+    arguments: []
+    return_type: VARCHAR
+  century:
+    arguments: []
+    return_type: VARCHAR
+  chrome:
+    arguments:
+      - default: "13"
+        kind: POSITIONAL_OR_KEYWORD
+        name: version_from
+        type: INTEGER
+      - default: "63"
+        kind: POSITIONAL_OR_KEYWORD
+        name: version_to
+        type: INTEGER
+      - default: "800"
+        kind: POSITIONAL_OR_KEYWORD
+        name: build_from
+        type: INTEGER
+      - default: "899"
+        kind: POSITIONAL_OR_KEYWORD
+        name: build_to
+        type: INTEGER
+    return_type: VARCHAR
+  city:
+    arguments: []
+    return_type: VARCHAR
+  city_prefix:
+    arguments: []
+    return_type: VARCHAR
+  city_suffix:
+    arguments: []
+    return_type: VARCHAR
+  color_name:
+    arguments: []
+    return_type: VARCHAR
+  company:
+    arguments: []
+    return_type: VARCHAR
+  company_email:
+    arguments: []
+    return_type: VARCHAR
+  company_suffix:
+    arguments: []
+    return_type: VARCHAR
+  country:
+    arguments: []
+    return_type: VARCHAR
+  country_calling_code:
+    arguments: []
+    return_type: VARCHAR
+  country_code:
+    arguments:
+      - default: alpha-2
+        kind: POSITIONAL_OR_KEYWORD
+        name: representation
+        type: VARCHAR
+    return_type: VARCHAR
+  county:
+    arguments: []
+    return_type: VARCHAR
+  cryptocurrency_code:
+    arguments: []
+    return_type: VARCHAR
+  cryptocurrency_name:
+    arguments: []
+    return_type: VARCHAR
+  currency_code:
+    arguments: []
+    return_type: VARCHAR
+  currency_name:
+    arguments: []
+    return_type: VARCHAR
+  current_country:
+    arguments: []
+    return_type: VARCHAR
+  current_country_code:
+    arguments: []
+    return_type: VARCHAR
+  day_of_month:
+    arguments: []
+    return_type: VARCHAR
+  day_of_week:
+    arguments: []
+    return_type: VARCHAR
+  domain_name:
+    arguments:
+      - default: "1"
+        kind: POSITIONAL_OR_KEYWORD
+        name: levels
+        type: INTEGER
+    return_type: VARCHAR
+  domain_word:
+    arguments: []
+    return_type: VARCHAR
+  emoji:
+    arguments: []
+    return_type: VARCHAR
+  firefox:
+    arguments: []
+    return_type: VARCHAR
+  first_name:
+    arguments: []
+    return_type: VARCHAR
+  first_name_female:
+    arguments: []
+    return_type: VARCHAR
+  first_name_male:
+    arguments: []
+    return_type: VARCHAR
+  first_name_nonbinary:
+    arguments: []
+    return_type: VARCHAR
+  free_email:
+    arguments: []
+    return_type: VARCHAR
+  free_email_domain:
+    arguments: []
+    return_type: VARCHAR
+  hex_color:
+    arguments: []
+    return_type: VARCHAR
+  hostname:
+    arguments:
+      - default: "1"
+        kind: POSITIONAL_OR_KEYWORD
+        name: levels
+        type: INTEGER
+    return_type: VARCHAR
+  http_method:
+    arguments: []
+    return_type: VARCHAR
+  iana_id:
+    arguments: []
+    return_type: VARCHAR
+  iban:
+    arguments: []
+    return_type: VARCHAR
+  internet_explorer:
+    arguments: []
+    return_type: VARCHAR
+  ios_platform_token:
+    arguments: []
+    return_type: VARCHAR
+  ipv4_network_class:
+    arguments: []
+    return_type: VARCHAR
+  isbn10:
+    arguments:
+      - default: "-"
+        kind: POSITIONAL_OR_KEYWORD
+        name: separator
+        type: VARCHAR
+    return_type: VARCHAR
+  isbn13:
+    arguments:
+      - default: "-"
+        kind: POSITIONAL_OR_KEYWORD
+        name: separator
+        type: VARCHAR
+    return_type: VARCHAR
+  job:
+    arguments: []
+    return_type: VARCHAR
+  language_code:
+    arguments: []
+    return_type: VARCHAR
+  language_name:
+    arguments: []
+    return_type: VARCHAR
+  last_name:
+    arguments: []
+    return_type: VARCHAR
+  last_name_female:
+    arguments: []
+    return_type: VARCHAR
+  last_name_male:
+    arguments: []
+    return_type: VARCHAR
+  last_name_nonbinary:
+    arguments: []
+    return_type: VARCHAR
+  lexify:
+    arguments:
+      - default: ????
+        kind: POSITIONAL_OR_KEYWORD
+        name: text
+        type: VARCHAR
+      - default: abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ
+        kind: POSITIONAL_OR_KEYWORD
+        name: letters
+        type: VARCHAR
+    return_type: VARCHAR
+  license_plate:
+    arguments: []
+    return_type: VARCHAR
+  linux_platform_token:
+    arguments: []
+    return_type: VARCHAR
+  linux_processor:
+    arguments: []
+    return_type: VARCHAR
+  locale:
+    arguments: []
+    return_type: VARCHAR
+  localized_ean:
+    arguments:
+      - default: "13"
+        kind: POSITIONAL_OR_KEYWORD
+        name: length
+        type: INTEGER
+    return_type: VARCHAR
+  localized_ean13:
+    arguments: []
+    return_type: VARCHAR
+  localized_ean8:
+    arguments: []
+    return_type: VARCHAR
+  mac_address:
+    arguments: []
+    return_type: VARCHAR
+  mac_platform_token:
+    arguments: []
+    return_type: VARCHAR
+  mac_processor:
+    arguments: []
+    return_type: VARCHAR
+  month:
+    arguments: []
+    return_type: VARCHAR
+  month_name:
+    arguments: []
+    return_type: VARCHAR
+  msisdn:
+    arguments: []
+    return_type: VARCHAR
+  name:
+    arguments: []
+    return_type: VARCHAR
+  name_female:
+    arguments: []
+    return_type: VARCHAR
+  name_male:
+    arguments: []
+    return_type: VARCHAR
+  name_nonbinary:
+    arguments: []
+    return_type: VARCHAR
+  nic_handle:
+    arguments:
+      - default: FAKE
+        kind: POSITIONAL_OR_KEYWORD
+        name: suffix
+        type: VARCHAR
+    return_type: VARCHAR
+  numerify:
+    arguments:
+      - default: "###"
+        kind: POSITIONAL_OR_KEYWORD
+        name: text
+        type: VARCHAR
+    return_type: VARCHAR
+  opera:
+    arguments: []
+    return_type: VARCHAR
+  parse:
+    arguments:
+      - default: <class 'inspect._empty'>
+        kind: POSITIONAL_OR_KEYWORD
+        name: text
+        type: VARCHAR
+    return_type: VARCHAR
+  passport_dob:
+    arguments: []
+    return_type: DATE
+  passport_full:
+    arguments: []
+    return_type: VARCHAR
+  passport_gender:
+    arguments:
+      - default: "0"
+        kind: POSITIONAL_OR_KEYWORD
+        name: seed
+        type: INTEGER
+    return_type: VARCHAR
+  passport_number:
+    arguments: []
+    return_type: VARCHAR
+  phone_number:
+    arguments: []
+    return_type: VARCHAR
+  postcode:
+    arguments: []
+    return_type: VARCHAR
+  prefix:
+    arguments: []
+    return_type: VARCHAR
+  prefix_female:
+    arguments: []
+    return_type: VARCHAR
+  prefix_male:
+    arguments: []
+    return_type: VARCHAR
+  prefix_nonbinary:
+    arguments: []
+    return_type: VARCHAR
+  pricetag:
+    arguments: []
+    return_type: VARCHAR
+  pyint:
+    arguments:
+      - default: "0"
+        kind: POSITIONAL_OR_KEYWORD
+        name: min_value
+        type: INTEGER
+      - default: "9999"
+        kind: POSITIONAL_OR_KEYWORD
+        name: max_value
+        type: INTEGER
+      - default: "1"
+        kind: POSITIONAL_OR_KEYWORD
+        name: step
+        type: INTEGER
+    return_type: INTEGER
+  pystr_format:
+    arguments:
+      - default: ?#-###{{random_int}}{{random_letter}}
+        kind: POSITIONAL_OR_KEYWORD
+        name: string_format
+        type: VARCHAR
+      - default: abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ
+        kind: POSITIONAL_OR_KEYWORD
+        name: letters
+        type: VARCHAR
+    return_type: VARCHAR
+  random_digit:
+    arguments: []
+    return_type: INTEGER
+  random_digit_above_two:
+    arguments: []
+    return_type: INTEGER
+  random_digit_not_null:
+    arguments: []
+    return_type: INTEGER
+  random_int:
+    arguments:
+      - default: "0"
+        kind: POSITIONAL_OR_KEYWORD
+        name: min
+        type: INTEGER
+      - default: "9999"
+        kind: POSITIONAL_OR_KEYWORD
+        name: max
+        type: INTEGER
+      - default: "1"
+        kind: POSITIONAL_OR_KEYWORD
+        name: step
+        type: INTEGER
+    return_type: INTEGER
+  random_letter:
+    arguments: []
+    return_type: VARCHAR
+  random_lowercase_letter:
+    arguments: []
+    return_type: VARCHAR
+  random_uppercase_letter:
+    arguments: []
+    return_type: VARCHAR
+  rgb_color:
+    arguments: []
+    return_type: VARCHAR
+  rgb_css_color:
+    arguments: []
+    return_type: VARCHAR
+  ripe_id:
+    arguments: []
+    return_type: VARCHAR
+  safari:
+    arguments: []
+    return_type: VARCHAR
+  safe_color_name:
+    arguments: []
+    return_type: VARCHAR
+  safe_domain_name:
+    arguments: []
+    return_type: VARCHAR
+  safe_email:
+    arguments: []
+    return_type: VARCHAR
+  safe_hex_color:
+    arguments: []
+    return_type: VARCHAR
+  sbn9:
+    arguments:
+      - default: "-"
+        kind: POSITIONAL_OR_KEYWORD
+        name: separator
+        type: VARCHAR
+    return_type: VARCHAR
+  secondary_address:
+    arguments: []
+    return_type: VARCHAR
+  ssn:
+    arguments: []
+    return_type: VARCHAR
+  street_address:
+    arguments: []
+    return_type: VARCHAR
+  street_name:
+    arguments: []
+    return_type: VARCHAR
+  street_suffix:
+    arguments: []
+    return_type: VARCHAR
+  suffix:
+    arguments: []
+    return_type: VARCHAR
+  suffix_female:
+    arguments: []
+    return_type: VARCHAR
+  suffix_male:
+    arguments: []
+    return_type: VARCHAR
+  suffix_nonbinary:
+    arguments: []
+    return_type: VARCHAR
+  timezone:
+    arguments: []
+    return_type: VARCHAR
+  tld:
+    arguments: []
+    return_type: VARCHAR
+  unique.clear:
+    arguments: []
+    return_type: null
+  uri:
+    arguments: []
+    return_type: VARCHAR
+  uri_extension:
+    arguments: []
+    return_type: VARCHAR
+  uri_page:
+    arguments: []
+    return_type: VARCHAR
+  user_agent:
+    arguments: []
+    return_type: VARCHAR
+  user_name:
+    arguments: []
+    return_type: VARCHAR
+  vat_id:
+    arguments: []
+    return_type: VARCHAR
+  windows_platform_token:
+    arguments: []
+    return_type: VARCHAR
+  year:
+    arguments: []
+    return_type: VARCHAR
+mimesis_en:
+  _meta:
+    arg_type: annotated
+  address.address:
+    arguments: []
+    return_type: VARCHAR
+  address.calling_code:
+    arguments: []
+    return_type: VARCHAR
+  address.city:
+    arguments: []
+    return_type: VARCHAR
+  address.country:
+    arguments: []
+    return_type: VARCHAR
+  address.default_country:
+    arguments: []
+    return_type: VARCHAR
+  address.get_current_locale:
+    arguments: []
+    return_type: VARCHAR
+  address.postal_code:
+    arguments: []
+    return_type: VARCHAR
+  address.street_name:
+    arguments: []
+    return_type: VARCHAR
+  address.street_number:
+    arguments:
+      - default: "1400"
+        kind: POSITIONAL_OR_KEYWORD
+        name: maximum
+        type: INTEGER
+    return_type: VARCHAR
+  address.street_suffix:
+    arguments: []
+    return_type: VARCHAR
+  address.zip_code:
+    arguments: []
+    return_type: VARCHAR
+  code.imei:
+    arguments: []
+    return_type: VARCHAR
+  code.issn:
+    arguments:
+      - default: "####-####"
+        kind: POSITIONAL_OR_KEYWORD
+        name: mask
+        type: VARCHAR
+    return_type: VARCHAR
+  code.locale_code:
+    arguments: []
+    return_type: VARCHAR
+  code.pin:
+    arguments:
+      - default: "####"
+        kind: POSITIONAL_OR_KEYWORD
+        name: mask
+        type: VARCHAR
+    return_type: VARCHAR
+  cryptographic.mnemonic_phrase:
+    arguments: []
+    return_type: VARCHAR
+  cryptographic.token_hex:
+    arguments:
+      - default: "32"
+        kind: POSITIONAL_OR_KEYWORD
+        name: entropy
+        type: INTEGER
+    return_type: VARCHAR
+  cryptographic.token_urlsafe:
+    arguments:
+      - default: "32"
+        kind: POSITIONAL_OR_KEYWORD
+        name: entropy
+        type: INTEGER
+    return_type: VARCHAR
+  cryptographic.uuid:
+    arguments: []
+    return_type: VARCHAR
+  datetime.century:
+    arguments: []
+    return_type: VARCHAR
+  datetime.date:
+    arguments:
+      - default: "2000"
+        kind: POSITIONAL_OR_KEYWORD
+        name: start
+        type: INTEGER
+      - default: "2023"
+        kind: POSITIONAL_OR_KEYWORD
+        name: end
+        type: INTEGER
+    return_type: DATE
+  datetime.day_of_month:
+    arguments: []
+    return_type: INTEGER
+  datetime.formatted_time:
+    arguments:
+      - default: ""
+        kind: POSITIONAL_OR_KEYWORD
+        name: fmt
+        type: VARCHAR
+    return_type: VARCHAR
+  datetime.get_current_locale:
+    arguments: []
+    return_type: VARCHAR
+  datetime.gmt_offset:
+    arguments: []
+    return_type: VARCHAR
+  datetime.periodicity:
+    arguments: []
+    return_type: VARCHAR
+  datetime.time:
+    arguments: []
+    return_type: TIME
+  datetime.week_date:
+    arguments:
+      - default: "2017"
+        kind: POSITIONAL_OR_KEYWORD
+        name: start
+        type: INTEGER
+      - default: "2023"
+        kind: POSITIONAL_OR_KEYWORD
+        name: end
+        type: INTEGER
+    return_type: VARCHAR
+  datetime.year:
+    arguments:
+      - default: "1990"
+        kind: POSITIONAL_OR_KEYWORD
+        name: minimum
+        type: INTEGER
+      - default: "2023"
+        kind: POSITIONAL_OR_KEYWORD
+        name: maximum
+        type: INTEGER
+    return_type: INTEGER
+  development.os:
+    arguments: []
+    return_type: VARCHAR
+  development.programming_language:
+    arguments: []
+    return_type: VARCHAR
+  development.software_license:
+    arguments: []
+    return_type: VARCHAR
+  file.size:
+    arguments:
+      - default: "1"
+        kind: POSITIONAL_OR_KEYWORD
+        name: minimum
+        type: INTEGER
+      - default: "100"
+        kind: POSITIONAL_OR_KEYWORD
+        name: maximum
+        type: INTEGER
+    return_type: VARCHAR
+  finance.bank:
+    arguments: []
+    return_type: VARCHAR
+  finance.company:
+    arguments: []
+    return_type: VARCHAR
+  finance.cryptocurrency_iso_code:
+    arguments: []
+    return_type: VARCHAR
+  finance.cryptocurrency_symbol:
+    arguments: []
+    return_type: VARCHAR
+  finance.currency_symbol:
+    arguments: []
+    return_type: VARCHAR
+  finance.get_current_locale:
+    arguments: []
+    return_type: VARCHAR
+  finance.stock_exchange:
+    arguments: []
+    return_type: VARCHAR
+  finance.stock_name:
+    arguments: []
+    return_type: VARCHAR
+  finance.stock_ticker:
+    arguments: []
+    return_type: VARCHAR
+  food.dish:
+    arguments: []
+    return_type: VARCHAR
+  food.drink:
+    arguments: []
+    return_type: VARCHAR
+  food.fruit:
+    arguments: []
+    return_type: VARCHAR
+  food.get_current_locale:
+    arguments: []
+    return_type: VARCHAR
+  food.spices:
+    arguments: []
+    return_type: VARCHAR
+  food.vegetable:
+    arguments: []
+    return_type: VARCHAR
+  hardware.cpu:
+    arguments: []
+    return_type: VARCHAR
+  hardware.cpu_codename:
+    arguments: []
+    return_type: VARCHAR
+  hardware.cpu_frequency:
+    arguments: []
+    return_type: VARCHAR
+  hardware.generation:
+    arguments: []
+    return_type: VARCHAR
+  hardware.graphics:
+    arguments: []
+    return_type: VARCHAR
+  hardware.manufacturer:
+    arguments: []
+    return_type: VARCHAR
+  hardware.phone_model:
+    arguments: []
+    return_type: VARCHAR
+  hardware.ram_size:
+    arguments: []
+    return_type: VARCHAR
+  hardware.ram_type:
+    arguments: []
+    return_type: VARCHAR
+  hardware.resolution:
+    arguments: []
+    return_type: VARCHAR
+  hardware.screen_size:
+    arguments: []
+    return_type: VARCHAR
+  hardware.ssd_or_hdd:
+    arguments: []
+    return_type: VARCHAR
+  internet.emoji:
+    arguments: []
+    return_type: VARCHAR
+  internet.http_method:
+    arguments: []
+    return_type: VARCHAR
+  internet.http_status_code:
+    arguments: []
+    return_type: INTEGER
+  internet.http_status_message:
+    arguments: []
+    return_type: VARCHAR
+  internet.ip_v4:
+    arguments: []
+    return_type: VARCHAR
+  internet.ip_v6:
+    arguments: []
+    return_type: VARCHAR
+  internet.mac_address:
+    arguments: []
+    return_type: VARCHAR
+  internet.public_dns:
+    arguments: []
+    return_type: VARCHAR
+  internet.user_agent:
+    arguments: []
+    return_type: VARCHAR
+  numeric.integer_number:
+    arguments:
+      - default: "-1000"
+        kind: POSITIONAL_OR_KEYWORD
+        name: start
+        type: INTEGER
+      - default: "1000"
+        kind: POSITIONAL_OR_KEYWORD
+        name: end
+        type: INTEGER
+    return_type: INTEGER
+  path.dev_dir:
+    arguments: []
+    return_type: VARCHAR
+  path.home:
+    arguments: []
+    return_type: VARCHAR
+  path.project_dir:
+    arguments: []
+    return_type: VARCHAR
+  path.root:
+    arguments: []
+    return_type: VARCHAR
+  path.user:
+    arguments: []
+    return_type: VARCHAR
+  path.users_folder:
+    arguments: []
+    return_type: VARCHAR
+  payment.bitcoin_address:
+    arguments: []
+    return_type: VARCHAR
+  payment.cid:
+    arguments: []
+    return_type: VARCHAR
+  payment.credit_card_expiration_date:
+    arguments:
+      - default: "16"
+        kind: POSITIONAL_OR_KEYWORD
+        name: minimum
+        type: INTEGER
+      - default: "25"
+        kind: POSITIONAL_OR_KEYWORD
+        name: maximum
+        type: INTEGER
+    return_type: VARCHAR
+  payment.credit_card_network:
+    arguments: []
+    return_type: VARCHAR
+  payment.cvv:
+    arguments: []
+    return_type: VARCHAR
+  payment.ethereum_address:
+    arguments: []
+    return_type: VARCHAR
+  payment.paypal:
+    arguments: []
+    return_type: VARCHAR
+  person.academic_degree:
+    arguments: []
+    return_type: VARCHAR
+  person.age:
+    arguments:
+      - default: "16"
+        kind: POSITIONAL_OR_KEYWORD
+        name: minimum
+        type: INTEGER
+      - default: "66"
+        kind: POSITIONAL_OR_KEYWORD
+        name: maximum
+        type: INTEGER
+    return_type: INTEGER
+  person.blood_type:
+    arguments: []
+    return_type: VARCHAR
+  person.get_current_locale:
+    arguments: []
+    return_type: VARCHAR
+  person.identifier:
+    arguments:
+      - default: "##-##/##"
+        kind: POSITIONAL_OR_KEYWORD
+        name: mask
+        type: VARCHAR
+    return_type: VARCHAR
+  person.language:
+    arguments: []
+    return_type: VARCHAR
+  person.occupation:
+    arguments: []
+    return_type: VARCHAR
+  person.phone_number:
+    arguments:
+      - default: ""
+        kind: POSITIONAL_OR_KEYWORD
+        name: mask
+        type: VARCHAR
+      - default: "#"
+        kind: POSITIONAL_OR_KEYWORD
+        name: placeholder
+        type: VARCHAR
+    return_type: VARCHAR
+  person.political_views:
+    arguments: []
+    return_type: VARCHAR
+  person.university:
+    arguments: []
+    return_type: VARCHAR
+  person.views_on:
+    arguments: []
+    return_type: VARCHAR
+  person.weight:
+    arguments:
+      - default: "38"
+        kind: POSITIONAL_OR_KEYWORD
+        name: minimum
+        type: INTEGER
+      - default: "90"
+        kind: POSITIONAL_OR_KEYWORD
+        name: maximum
+        type: INTEGER
+    return_type: INTEGER
+  person.work_experience:
+    arguments:
+      - default: "22"
+        kind: POSITIONAL_OR_KEYWORD
+        name: working_start_age
+        type: INTEGER
+    return_type: INTEGER
+  person.worldview:
+    arguments: []
+    return_type: VARCHAR
+  science.dna_sequence:
+    arguments:
+      - default: "10"
+        kind: POSITIONAL_OR_KEYWORD
+        name: length
+        type: INTEGER
+    return_type: VARCHAR
+  science.rna_sequence:
+    arguments:
+      - default: "10"
+        kind: POSITIONAL_OR_KEYWORD
+        name: length
+        type: INTEGER
+    return_type: VARCHAR
+  text.answer:
+    arguments: []
+    return_type: VARCHAR
+  text.color:
+    arguments: []
+    return_type: VARCHAR
+  text.get_current_locale:
+    arguments: []
+    return_type: VARCHAR
+  text.level:
+    arguments: []
+    return_type: VARCHAR
+  text.quote:
+    arguments: []
+    return_type: VARCHAR
+  text.sentence:
+    arguments: []
+    return_type: VARCHAR
+  text.text:
+    arguments:
+      - default: "5"
+        kind: POSITIONAL_OR_KEYWORD
+        name: quantity
+        type: INTEGER
+    return_type: VARCHAR
+  text.title:
+    arguments: []
+    return_type: VARCHAR
+  text.word:
+    arguments: []
+    return_type: VARCHAR
+  transport.airplane:
+    arguments: []
+    return_type: VARCHAR
+  transport.car:
+    arguments: []
+    return_type: VARCHAR
+  transport.manufacturer:
+    arguments: []
+    return_type: VARCHAR
+numpy:
+  _meta:
+    arg_type: basic
+random:
+  _meta:
+    arg_type: basic
+  betavariate:
+    arguments:
+      - default: ""
+        kind: POSITIONAL_OR_KEYWORD
+        name: alpha
+      - default: ""
+        kind: POSITIONAL_OR_KEYWORD
+        name: beta
+    return_type: VARCHAR
+  choice:
+    arguments:
+      - default: ""
+        kind: POSITIONAL_OR_KEYWORD
+        name: seq
+    return_type: VARCHAR
+  choices:
+    arguments:
+      - default: ""
+        kind: POSITIONAL_OR_KEYWORD
+        name: population
+      - default: ""
+        kind: POSITIONAL_OR_KEYWORD
+        name: weights
+      - default: ""
+        kind: KEYWORD_ONLY
+        name: cum_weights
+      - default: ""
+        kind: KEYWORD_ONLY
+        name: k
+    return_type: VARCHAR
+  expovariate:
+    arguments:
+      - default: ""
+        kind: POSITIONAL_OR_KEYWORD
+        name: lambd
+    return_type: VARCHAR
+  gammavariate:
+    arguments:
+      - default: ""
+        kind: POSITIONAL_OR_KEYWORD
+        name: alpha
+      - default: ""
+        kind: POSITIONAL_OR_KEYWORD
+        name: beta
+    return_type: VARCHAR
+  gauss:
+    arguments:
+      - default: ""
+        kind: POSITIONAL_OR_KEYWORD
+        name: mu
+      - default: ""
+        kind: POSITIONAL_OR_KEYWORD
+        name: sigma
+    return_type: VARCHAR
+  lognormvariate:
+    arguments:
+      - default: ""
+        kind: POSITIONAL_OR_KEYWORD
+        name: mu
+      - default: ""
+        kind: POSITIONAL_OR_KEYWORD
+        name: sigma
+    return_type: VARCHAR
+  normalvariate:
+    arguments:
+      - default: ""
+        kind: POSITIONAL_OR_KEYWORD
+        name: mu
+      - default: ""
+        kind: POSITIONAL_OR_KEYWORD
+        name: sigma
+    return_type: VARCHAR
+  paretovariate:
+    arguments:
+      - default: ""
+        kind: POSITIONAL_OR_KEYWORD
+        name: alpha
+    return_type: VARCHAR
+  randbytes:
+    arguments:
+      - default: ""
+        kind: POSITIONAL_OR_KEYWORD
+        name: n
+    return_type: VARCHAR
+  randint:
+    arguments:
+      - default: ""
+        kind: POSITIONAL_OR_KEYWORD
+        name: a
+      - default: ""
+        kind: POSITIONAL_OR_KEYWORD
+        name: b
+    return_type: VARCHAR
+  randrange:
+    arguments:
+      - default: ""
+        kind: POSITIONAL_OR_KEYWORD
+        name: start
+      - default: ""
+        kind: POSITIONAL_OR_KEYWORD
+        name: stop
+      - default: ""
+        kind: POSITIONAL_OR_KEYWORD
+        name: step
+    return_type: VARCHAR
+  sample:
+    arguments:
+      - default: ""
+        kind: POSITIONAL_OR_KEYWORD
+        name: population
+      - default: ""
+        kind: POSITIONAL_OR_KEYWORD
+        name: k
+      - default: ""
+        kind: KEYWORD_ONLY
+        name: counts
+    return_type: VARCHAR
+  setstate:
+    arguments:
+      - default: ""
+        kind: POSITIONAL_OR_KEYWORD
+        name: state
+    return_type: VARCHAR
+  shuffle:
+    arguments:
+      - default: ""
+        kind: POSITIONAL_OR_KEYWORD
+        name: x
+    return_type: VARCHAR
+  triangular:
+    arguments:
+      - default: ""
+        kind: POSITIONAL_OR_KEYWORD
+        name: low
+      - default: ""
+        kind: POSITIONAL_OR_KEYWORD
+        name: high
+      - default: ""
+        kind: POSITIONAL_OR_KEYWORD
+        name: mode
+    return_type: VARCHAR
+  uniform:
+    arguments:
+      - default: ""
+        kind: POSITIONAL_OR_KEYWORD
+        name: a
+      - default: ""
+        kind: POSITIONAL_OR_KEYWORD
+        name: b
+    return_type: VARCHAR
+  vonmisesvariate:
+    arguments:
+      - default: ""
+        kind: POSITIONAL_OR_KEYWORD
+        name: mu
+      - default: ""
+        kind: POSITIONAL_OR_KEYWORD
+        name: kappa
+    return_type: VARCHAR
+  weibullvariate:
+    arguments:
+      - default: ""
+        kind: POSITIONAL_OR_KEYWORD
+        name: alpha
+      - default: ""
+        kind: POSITIONAL_OR_KEYWORD
+        name: beta
+    return_type: VARCHAR
