@@ -10,6 +10,7 @@ import sys
 from decoy.cli_io import print_rows, repl
 from decoy.database import get_connection
 from decoy.settings import settings
+from decoy.schema_parse import parse_full_sql_schema
 
 
 @click.group()
@@ -68,6 +69,16 @@ def repl_commmand(database):
 
     con = get_connection()
     repl(con)
+
+
+@rootcmd.command(name="sqlparse")
+@click.argument("inputfilename", type=str)
+@click.argument("outputfilename", type=str)
+@click.argument("nrows", type=int)
+def parse_sql_schema(inputfilename, outputfilename, nrows):
+
+    con = get_connection()
+    parse_full_sql_schema(inputfilename, outputfilename, nrows)
 
 
 @rootcmd.command()
