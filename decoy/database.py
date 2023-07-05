@@ -6,6 +6,7 @@ from decoy.udf_scalar import (
     get_faker_locale,
     get_mimesis_locale,
     custom_choice_generator,
+    np_rand,
 )
 from decoy.udf_arrow import random_shuffle, intratable_sample, oversample
 from decoy.xeger import xeger_cached
@@ -21,6 +22,7 @@ def get_connection(register_funcs=True) -> duckdb.DuckDBPyConnection:
 def register_udfs(con: duckdb.DuckDBPyConnection) -> None:
     fkr_en = get_faker_locale("en-GB")
     mim_en = get_mimesis_locale("EN")
+    npr = np_rand()
 
     con.create_function(
         name="faker_en",
@@ -41,6 +43,14 @@ def register_udfs(con: duckdb.DuckDBPyConnection) -> None:
     con.create_function(
         name="xeger",
         function=xeger_cached,
+        return_type=[ducktypes.VARCHAR],
+        parameters=ducktypes.VARCHAR,
+        side_effects=True,
+    )
+
+    con.create_function(
+        name="np_rand",
+        function=npr,
         return_type=[ducktypes.VARCHAR],
         parameters=ducktypes.VARCHAR,
         side_effects=True,

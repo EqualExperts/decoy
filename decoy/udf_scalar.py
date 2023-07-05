@@ -3,6 +3,7 @@ from faker import Faker
 from mimesis import Generic, Locale
 import random
 from typing import Callable, Any
+from numpy import random as npr
 
 
 def get_faker_locale(locale: str) -> Callable[[str], Any]:
@@ -26,6 +27,12 @@ def get_mimesis_locale(locale: str) -> Callable[[str], Any]:
 
         return generator()
 
+    return dispatch
+
+def np_rand():
+    def dispatch(fname:str):
+        return getattr(npr, fname)()
+    
     return dispatch
 
 

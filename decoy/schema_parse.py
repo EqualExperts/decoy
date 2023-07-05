@@ -44,8 +44,8 @@ FROM range({nrows}));
 
 
 def parse_full_sql_schema(input_filename, output_filename, nrows, default_generators=default_generators,):
-    with open(input_filename, 'r') as f:
-        with open(output_filename, 'w+') as filehandle:
-            for line in f.readlines():
-                filehandle.write(construct_sql_generator(
+    with open(input_filename, 'r') as input_f:
+        with open(output_filename, 'w+') as output_f:
+            for line in input_f.readlines():
+                output_f.write(construct_sql_generator(
                     default_generators, line, nrows))
