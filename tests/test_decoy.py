@@ -5,10 +5,10 @@ from decoy.database import (
     get_connection,
     custom_choice_generator,
     random_shuffle,
-    intratable_sample,
-    oversample,
-)
-from decoy.udf_arrow import column_cache, cache_column
+    intratable_sample)
+
+from decoy.udf_scalar import column_cache, cache_column, oversample
+# from decoy.udf_arrow import
 from decoy.settings import settings
 
 settings.database_file = "test.duckdb"
