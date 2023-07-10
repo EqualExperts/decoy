@@ -7,18 +7,17 @@ import random
 import yaml
 
 allowed_return_types = [str, int, time, date, datetime, float, None]
-allowed_arg_types = [str, int, time, datetime, None]
 
 type_mapping = {
     str: "VARCHAR",
     int: "INTEGER",
-    float: "FLOAT8",
+    float: "FLOAT",
     date: "DATE",
     datetime: "TIMESTAMP",
     time: "TIME",
-    None: None,
+    None: "SQLNULL",
 }
-deny_list = ["seed"]
+deny_list = ["seed", "parse", "lexify", "pystr_format", "setstate"]
 
 
 def get_lib_spec(lib):
@@ -38,12 +37,15 @@ def get_lib_spec(lib):
                     args.append(
                         {
                             "name": pname,
-                            "default": str(pann.default if not inspect._empty else ""),
+                            "default": str(pann.default)
+                            if not inspect._empty
+                            else None,
                             "kind": str(pann.kind),
                         }
                     )
 
                     collected[fname] = {
+                        "dispatch": "native",
                         "arguments": args,
                         "return_type": type_mapping[ra],
                     }
@@ -51,7 +53,7 @@ def get_lib_spec(lib):
     return collected
 
 
-def get_lib_spec_annotated(lib, prefix=None):
+def get_lib_spec_annotated(lib, prefix=None, include_args=True):
     collected = {"_meta": {"arg_type": "annotated"}}
     for fname in dir(lib):
         if (
@@ -66,36 +68,40 @@ def get_lib_spec_annotated(lib, prefix=None):
                 ra = sig.return_annotation
                 if ra in allowed_return_types:
                     args = []
-                    disallowed = False
-                    for pname, pann in sig.parameters.items():
-                        if pann.annotation not in allowed_arg_types:
-                            disallowed = True
-                            break
+                    dispatch = "native" if include_args else "no_arg"
 
-                        args.append(
-                            {
-                                "name": pname,
-                                "type": type_mapping[pann.annotation],
-                                "default": str(pann.default),
-                                "kind": str(pann.kind),
-                            }
-                        )
-                    if disallowed:
-                        continue
+                    if include_args:
+                        for pname, pann in sig.parameters.items():
+                            if pann.default is inspect._empty:
+                                deflt = None
+                            else:
+                                deflt = str(pann.annotation)
+                            args.append(
+                                {
+                                    "name": pname,
+                                    "type": type_mapping.get(
+                                        pann.annotation, str(pann.annotation)
+                                    ),
+                                    "default": deflt,
+                                    "kind": str(pann.kind),
+                                }
+                            )
 
                     if prefix:
                         collected[f"{prefix}.{fname}"] = {
+                            "dispatch": dispatch,
                             "arguments": args,
-                            "return_type": type_mapping[ra],
+                            "return_type": type_mapping.get(ra, str(ra)),
                         }
                     else:
                         collected[fname] = {
+                            "dispatch": dispatch,
                             "arguments": args,
-                            "return_type": type_mapping[ra],
+                            "return_type": type_mapping.get(ra, str(ra)),
                         }
             else:
                 if prefix is None:
-                    submodule = get_lib_spec_annotated(f, fname)
+                    submodule = get_lib_spec_annotated(f, fname, include_args)
                     collected.update(submodule)
                     continue
 
@@ -103,17 +109,35 @@ def get_lib_spec_annotated(lib, prefix=None):
 
 
 if __name__ == "__main__":
-    faker_spec = get_lib_spec_annotated(faker.Faker("en-GB"))
-    mimesis_spec = get_lib_spec_annotated(mimesis.Generic(mimesis.Locale.EN))
+    faker_spec_args = get_lib_spec_annotated(faker.Faker("en-GB"), None, True)
+    mimesis_spec_args = get_lib_spec_annotated(
+        mimesis.Generic(mimesis.Locale.EN), None, True
+    )
+    faker_spec_noargs = get_lib_spec_annotated(faker.Faker("en-GB"), None, False)
+    mimesis_spec_noargs = get_lib_spec_annotated(
+        mimesis.Generic(mimesis.Locale.EN), None, False
+    )
     random_spec = get_lib_spec(random)
-    numpy_spec = get_lib_spec(numpy.random)
+    numpy_spec = get_lib_spec(
+        numpy
+    )  # numpy can't be introspected due to it being all compiled as builtin
 
-    libs = {
-        "faker_en": faker_spec,
-        "mimesis_en": mimesis_spec,
+    libs_args = {
+        "faker_en": faker_spec_args,
+        "mimesis_en": mimesis_spec_args,
         "random": random_spec,
         "numpy": numpy_spec,
     }
 
-    with open("udfspec.yml", "w") as f:
-        f.write(yaml.safe_dump(libs))
+    with open("ref_udfspec_full_args.yml", "w") as f:
+        f.write(yaml.safe_dump(libs_args))
+
+    libs_noargs = {
+        "faker_en": faker_spec_noargs,
+        "mimesis_en": mimesis_spec_noargs,
+        "random": random_spec,
+        "numpy": numpy_spec,
+    }
+
+    with open("ref_udfspec_no_args.yml", "w") as f:
+        f.write(yaml.safe_dump(libs_noargs))

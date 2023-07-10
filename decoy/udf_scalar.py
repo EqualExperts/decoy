@@ -40,6 +40,7 @@ def np_rand():
 def pyrandom():
     def dispatch(fname: str):
         return getattr(random, fname)()
+
     return dispatch
 
 

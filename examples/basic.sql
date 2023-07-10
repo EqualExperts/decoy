@@ -1,4 +1,4 @@
 SELECT
-  faker_en('name') as name,
-  faker_en('address') as address
+  faker_name() as name,
+  faker_address() as address
 FROM range(1000);

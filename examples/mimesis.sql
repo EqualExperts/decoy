@@ -1,6 +1,6 @@
 SELECT
   range as id,
-  mimesis_en('person.username') as username,
-  mimesis_en('person.full_name') as name,
-  mimesis_en('person.email') as email
+  mimesis_person_username() as username,
+  mimesis_person_full_name() as name,
+  mimesis_person_email() as email
 FROM range(100);

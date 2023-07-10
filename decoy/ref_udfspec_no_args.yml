@@ -3,7 +3,7 @@ faker_en:
     arg_type: annotated
   aba:
     arguments: []
-    dispatch: no_arg
+
     return_type: VARCHAR
   add_provider:
     arguments: []
@@ -1595,214 +1595,1046 @@ mimesis_en:
 numpy:
   _meta:
     arg_type: basic
+  add_newdoc:
+    arguments:
+      - default: null
+        kind: POSITIONAL_OR_KEYWORD
+        name: place
+      - default: null
+        kind: POSITIONAL_OR_KEYWORD
+        name: obj
+      - default: null
+        kind: POSITIONAL_OR_KEYWORD
+        name: doc
+      - default: null
+        kind: POSITIONAL_OR_KEYWORD
+        name: warn_on_python
+    dispatch: native
+    return_type: VARCHAR
+  asarray_chkfinite:
+    arguments:
+      - default: null
+        kind: POSITIONAL_OR_KEYWORD
+        name: a
+      - default: null
+        kind: POSITIONAL_OR_KEYWORD
+        name: dtype
+      - default: null
+        kind: POSITIONAL_OR_KEYWORD
+        name: order
+    dispatch: native
+    return_type: VARCHAR
+  asmatrix:
+    arguments:
+      - default: null
+        kind: POSITIONAL_OR_KEYWORD
+        name: data
+      - default: null
+        kind: POSITIONAL_OR_KEYWORD
+        name: dtype
+    dispatch: native
+    return_type: VARCHAR
+  bartlett:
+    arguments:
+      - default: null
+        kind: POSITIONAL_OR_KEYWORD
+        name: M
+    dispatch: native
+    return_type: VARCHAR
+  base_repr:
+    arguments:
+      - default: null
+        kind: POSITIONAL_OR_KEYWORD
+        name: number
+      - default: null
+        kind: POSITIONAL_OR_KEYWORD
+        name: base
+      - default: null
+        kind: POSITIONAL_OR_KEYWORD
+        name: padding
+    dispatch: native
+    return_type: VARCHAR
+  binary_repr:
+    arguments:
+      - default: null
+        kind: POSITIONAL_OR_KEYWORD
+        name: num
+      - default: null
+        kind: POSITIONAL_OR_KEYWORD
+        name: width
+    dispatch: native
+    return_type: VARCHAR
+  blackman:
+    arguments:
+      - default: null
+        kind: POSITIONAL_OR_KEYWORD
+        name: M
+    dispatch: native
+    return_type: VARCHAR
+  bmat:
+    arguments:
+      - default: null
+        kind: POSITIONAL_OR_KEYWORD
+        name: obj
+      - default: null
+        kind: POSITIONAL_OR_KEYWORD
+        name: ldict
+      - default: null
+        kind: POSITIONAL_OR_KEYWORD
+        name: gdict
+    dispatch: native
+    return_type: VARCHAR
+  broadcast_shapes:
+    arguments:
+      - default: null
+        kind: VAR_POSITIONAL
+        name: args
+    dispatch: native
+    return_type: VARCHAR
+  byte_bounds:
+    arguments:
+      - default: null
+        kind: POSITIONAL_OR_KEYWORD
+        name: a
+    dispatch: native
+    return_type: VARCHAR
+  deprecate:
+    arguments:
+      - default: null
+        kind: VAR_POSITIONAL
+        name: args
+      - default: null
+        kind: VAR_KEYWORD
+        name: kwargs
+    dispatch: native
+    return_type: VARCHAR
+  deprecate_with_doc:
+    arguments:
+      - default: null
+        kind: POSITIONAL_OR_KEYWORD
+        name: msg
+    dispatch: native
+    return_type: VARCHAR
+  diag_indices:
+    arguments:
+      - default: null
+        kind: POSITIONAL_OR_KEYWORD
+        name: n
+      - default: null
+        kind: POSITIONAL_OR_KEYWORD
+        name: ndim
+    dispatch: native
+    return_type: VARCHAR
+  disp:
+    arguments:
+      - default: null
+        kind: POSITIONAL_OR_KEYWORD
+        name: mesg
+      - default: null
+        kind: POSITIONAL_OR_KEYWORD
+        name: device
+      - default: null
+        kind: POSITIONAL_OR_KEYWORD
+        name: linefeed
+    dispatch: native
+    return_type: VARCHAR
+  eye:
+    arguments:
+      - default: null
+        kind: POSITIONAL_OR_KEYWORD
+        name: N
+      - default: null
+        kind: POSITIONAL_OR_KEYWORD
+        name: M
+      - default: null
+        kind: POSITIONAL_OR_KEYWORD
+        name: k
+      - default: null
+        kind: POSITIONAL_OR_KEYWORD
+        name: dtype
+      - default: null
+        kind: POSITIONAL_OR_KEYWORD
+        name: order
+      - default: null
+        kind: KEYWORD_ONLY
+        name: like
+    dispatch: native
+    return_type: VARCHAR
+  find_common_type:
+    arguments:
+      - default: null
+        kind: POSITIONAL_OR_KEYWORD
+        name: array_types
+      - default: null
+        kind: POSITIONAL_OR_KEYWORD
+        name: scalar_types
+    dispatch: native
+    return_type: VARCHAR
+  format_float_positional:
+    arguments:
+      - default: null
+        kind: POSITIONAL_OR_KEYWORD
+        name: x
+      - default: null
+        kind: POSITIONAL_OR_KEYWORD
+        name: precision
+      - default: null
+        kind: POSITIONAL_OR_KEYWORD
+        name: unique
+      - default: null
+        kind: POSITIONAL_OR_KEYWORD
+        name: fractional
+      - default: null
+        kind: POSITIONAL_OR_KEYWORD
+        name: trim
+      - default: null
+        kind: POSITIONAL_OR_KEYWORD
+        name: sign
+      - default: null
+        kind: POSITIONAL_OR_KEYWORD
+        name: pad_left
+      - default: null
+        kind: POSITIONAL_OR_KEYWORD
+        name: pad_right
+      - default: null
+        kind: POSITIONAL_OR_KEYWORD
+        name: min_digits
+    dispatch: native
+    return_type: VARCHAR
+  format_float_scientific:
+    arguments:
+      - default: null
+        kind: POSITIONAL_OR_KEYWORD
+        name: x
+      - default: null
+        kind: POSITIONAL_OR_KEYWORD
+        name: precision
+      - default: null
+        kind: POSITIONAL_OR_KEYWORD
+        name: unique
+      - default: null
+        kind: POSITIONAL_OR_KEYWORD
+        name: trim
+      - default: null
+        kind: POSITIONAL_OR_KEYWORD
+        name: sign
+      - default: null
+        kind: POSITIONAL_OR_KEYWORD
+        name: pad_left
+      - default: null
+        kind: POSITIONAL_OR_KEYWORD
+        name: exp_digits
+      - default: null
+        kind: POSITIONAL_OR_KEYWORD
+        name: min_digits
+    dispatch: native
+    return_type: VARCHAR
+  fromfunction:
+    arguments:
+      - default: null
+        kind: POSITIONAL_OR_KEYWORD
+        name: function
+      - default: null
+        kind: POSITIONAL_OR_KEYWORD
+        name: shape
+      - default: null
+        kind: KEYWORD_ONLY
+        name: dtype
+      - default: null
+        kind: KEYWORD_ONLY
+        name: like
+      - default: null
+        kind: VAR_KEYWORD
+        name: kwargs
+    dispatch: native
+    return_type: VARCHAR
+  fromregex:
+    arguments:
+      - default: null
+        kind: POSITIONAL_OR_KEYWORD
+        name: file
+      - default: null
+        kind: POSITIONAL_OR_KEYWORD
+        name: regexp
+      - default: null
+        kind: POSITIONAL_OR_KEYWORD
+        name: dtype
+      - default: null
+        kind: POSITIONAL_OR_KEYWORD
+        name: encoding
+    dispatch: native
+    return_type: VARCHAR
+  full:
+    arguments:
+      - default: null
+        kind: POSITIONAL_OR_KEYWORD
+        name: shape
+      - default: null
+        kind: POSITIONAL_OR_KEYWORD
+        name: fill_value
+      - default: null
+        kind: POSITIONAL_OR_KEYWORD
+        name: dtype
+      - default: null
+        kind: POSITIONAL_OR_KEYWORD
+        name: order
+      - default: null
+        kind: KEYWORD_ONLY
+        name: like
+    dispatch: native
+    return_type: VARCHAR
+  genfromtxt:
+    arguments:
+      - default: null
+        kind: POSITIONAL_OR_KEYWORD
+        name: fname
+      - default: null
+        kind: POSITIONAL_OR_KEYWORD
+        name: dtype
+      - default: null
+        kind: POSITIONAL_OR_KEYWORD
+        name: comments
+      - default: null
+        kind: POSITIONAL_OR_KEYWORD
+        name: delimiter
+      - default: null
+        kind: POSITIONAL_OR_KEYWORD
+        name: skip_header
+      - default: null
+        kind: POSITIONAL_OR_KEYWORD
+        name: skip_footer
+      - default: null
+        kind: POSITIONAL_OR_KEYWORD
+        name: converters
+      - default: null
+        kind: POSITIONAL_OR_KEYWORD
+        name: missing_values
+      - default: null
+        kind: POSITIONAL_OR_KEYWORD
+        name: filling_values
+      - default: null
+        kind: POSITIONAL_OR_KEYWORD
+        name: usecols
+      - default: null
+        kind: POSITIONAL_OR_KEYWORD
+        name: names
+      - default: null
+        kind: POSITIONAL_OR_KEYWORD
+        name: excludelist
+      - default: null
+        kind: POSITIONAL_OR_KEYWORD
+        name: deletechars
+      - default: null
+        kind: POSITIONAL_OR_KEYWORD
+        name: replace_space
+      - default: null
+        kind: POSITIONAL_OR_KEYWORD
+        name: autostrip
+      - default: null
+        kind: POSITIONAL_OR_KEYWORD
+        name: case_sensitive
+      - default: null
+        kind: POSITIONAL_OR_KEYWORD
+        name: defaultfmt
+      - default: null
+        kind: POSITIONAL_OR_KEYWORD
+        name: unpack
+      - default: null
+        kind: POSITIONAL_OR_KEYWORD
+        name: usemask
+      - default: null
+        kind: POSITIONAL_OR_KEYWORD
+        name: loose
+      - default: null
+        kind: POSITIONAL_OR_KEYWORD
+        name: invalid_raise
+      - default: null
+        kind: POSITIONAL_OR_KEYWORD
+        name: max_rows
+      - default: null
+        kind: POSITIONAL_OR_KEYWORD
+        name: encoding
+      - default: null
+        kind: KEYWORD_ONLY
+        name: ndmin
+      - default: null
+        kind: KEYWORD_ONLY
+        name: like
+    dispatch: native
+    return_type: VARCHAR
+  get_array_wrap:
+    arguments:
+      - default: null
+        kind: VAR_POSITIONAL
+        name: args
+    dispatch: native
+    return_type: VARCHAR
+  hamming:
+    arguments:
+      - default: null
+        kind: POSITIONAL_OR_KEYWORD
+        name: M
+    dispatch: native
+    return_type: VARCHAR
+  hanning:
+    arguments:
+      - default: null
+        kind: POSITIONAL_OR_KEYWORD
+        name: M
+    dispatch: native
+    return_type: VARCHAR
+  identity:
+    arguments:
+      - default: null
+        kind: POSITIONAL_OR_KEYWORD
+        name: n
+      - default: null
+        kind: POSITIONAL_OR_KEYWORD
+        name: dtype
+      - default: null
+        kind: KEYWORD_ONLY
+        name: like
+    dispatch: native
+    return_type: VARCHAR
+  indices:
+    arguments:
+      - default: null
+        kind: POSITIONAL_OR_KEYWORD
+        name: dimensions
+      - default: null
+        kind: POSITIONAL_OR_KEYWORD
+        name: dtype
+      - default: null
+        kind: POSITIONAL_OR_KEYWORD
+        name: sparse
+    dispatch: native
+    return_type: VARCHAR
+  info:
+    arguments:
+      - default: null
+        kind: POSITIONAL_OR_KEYWORD
+        name: object
+      - default: null
+        kind: POSITIONAL_OR_KEYWORD
+        name: maxwidth
+      - default: null
+        kind: POSITIONAL_OR_KEYWORD
+        name: output
+      - default: null
+        kind: POSITIONAL_OR_KEYWORD
+        name: toplevel
+    dispatch: native
+    return_type: VARCHAR
+  isfortran:
+    arguments:
+      - default: null
+        kind: POSITIONAL_OR_KEYWORD
+        name: a
+    dispatch: native
+    return_type: VARCHAR
+  isscalar:
+    arguments:
+      - default: null
+        kind: POSITIONAL_OR_KEYWORD
+        name: element
+    dispatch: native
+    return_type: VARCHAR
+  issctype:
+    arguments:
+      - default: null
+        kind: POSITIONAL_OR_KEYWORD
+        name: rep
+    dispatch: native
+    return_type: VARCHAR
+  issubclass_:
+    arguments:
+      - default: null
+        kind: POSITIONAL_OR_KEYWORD
+        name: arg1
+      - default: null
+        kind: POSITIONAL_OR_KEYWORD
+        name: arg2
+    dispatch: native
+    return_type: VARCHAR
+  issubdtype:
+    arguments:
+      - default: null
+        kind: POSITIONAL_OR_KEYWORD
+        name: arg1
+      - default: null
+        kind: POSITIONAL_OR_KEYWORD
+        name: arg2
+    dispatch: native
+    return_type: VARCHAR
+  issubsctype:
+    arguments:
+      - default: null
+        kind: POSITIONAL_OR_KEYWORD
+        name: arg1
+      - default: null
+        kind: POSITIONAL_OR_KEYWORD
+        name: arg2
+    dispatch: native
+    return_type: VARCHAR
+  iterable:
+    arguments:
+      - default: null
+        kind: POSITIONAL_OR_KEYWORD
+        name: y
+    dispatch: native
+    return_type: VARCHAR
+  kaiser:
+    arguments:
+      - default: null
+        kind: POSITIONAL_OR_KEYWORD
+        name: M
+      - default: null
+        kind: POSITIONAL_OR_KEYWORD
+        name: beta
+    dispatch: native
+    return_type: VARCHAR
+  load:
+    arguments:
+      - default: null
+        kind: POSITIONAL_OR_KEYWORD
+        name: file
+      - default: null
+        kind: POSITIONAL_OR_KEYWORD
+        name: mmap_mode
+      - default: null
+        kind: POSITIONAL_OR_KEYWORD
+        name: allow_pickle
+      - default: null
+        kind: POSITIONAL_OR_KEYWORD
+        name: fix_imports
+      - default: null
+        kind: POSITIONAL_OR_KEYWORD
+        name: encoding
+      - default: null
+        kind: KEYWORD_ONLY
+        name: max_header_size
+    dispatch: native
+    return_type: VARCHAR
+  loadtxt:
+    arguments:
+      - default: null
+        kind: POSITIONAL_OR_KEYWORD
+        name: fname
+      - default: null
+        kind: POSITIONAL_OR_KEYWORD
+        name: dtype
+      - default: null
+        kind: POSITIONAL_OR_KEYWORD
+        name: comments
+      - default: null
+        kind: POSITIONAL_OR_KEYWORD
+        name: delimiter
+      - default: null
+        kind: POSITIONAL_OR_KEYWORD
+        name: converters
+      - default: null
+        kind: POSITIONAL_OR_KEYWORD
+        name: skiprows
+      - default: null
+        kind: POSITIONAL_OR_KEYWORD
+        name: usecols
+      - default: null
+        kind: POSITIONAL_OR_KEYWORD
+        name: unpack
+      - default: null
+        kind: POSITIONAL_OR_KEYWORD
+        name: ndmin
+      - default: null
+        kind: POSITIONAL_OR_KEYWORD
+        name: encoding
+      - default: null
+        kind: POSITIONAL_OR_KEYWORD
+        name: max_rows
+      - default: null
+        kind: KEYWORD_ONLY
+        name: quotechar
+      - default: null
+        kind: KEYWORD_ONLY
+        name: like
+    dispatch: native
+    return_type: VARCHAR
+  lookfor:
+    arguments:
+      - default: null
+        kind: POSITIONAL_OR_KEYWORD
+        name: what
+      - default: null
+        kind: POSITIONAL_OR_KEYWORD
+        name: module
+      - default: null
+        kind: POSITIONAL_OR_KEYWORD
+        name: import_modules
+      - default: null
+        kind: POSITIONAL_OR_KEYWORD
+        name: regenerate
+      - default: null
+        kind: POSITIONAL_OR_KEYWORD
+        name: output
+    dispatch: native
+    return_type: VARCHAR
+  mask_indices:
+    arguments:
+      - default: null
+        kind: POSITIONAL_OR_KEYWORD
+        name: n
+      - default: null
+        kind: POSITIONAL_OR_KEYWORD
+        name: mask_func
+      - default: null
+        kind: POSITIONAL_OR_KEYWORD
+        name: k
+    dispatch: native
+    return_type: VARCHAR
+  mat:
+    arguments:
+      - default: null
+        kind: POSITIONAL_OR_KEYWORD
+        name: data
+      - default: null
+        kind: POSITIONAL_OR_KEYWORD
+        name: dtype
+    dispatch: native
+    return_type: VARCHAR
+  maximum_sctype:
+    arguments:
+      - default: null
+        kind: POSITIONAL_OR_KEYWORD
+        name: t
+    dispatch: native
+    return_type: VARCHAR
+  mintypecode:
+    arguments:
+      - default: null
+        kind: POSITIONAL_OR_KEYWORD
+        name: typechars
+      - default: null
+        kind: POSITIONAL_OR_KEYWORD
+        name: typeset
+      - default: null
+        kind: POSITIONAL_OR_KEYWORD
+        name: default
+    dispatch: native
+    return_type: VARCHAR
+  obj2sctype:
+    arguments:
+      - default: null
+        kind: POSITIONAL_OR_KEYWORD
+        name: rep
+      - default: null
+        kind: POSITIONAL_OR_KEYWORD
+        name: default
+    dispatch: native
+    return_type: VARCHAR
+  ones:
+    arguments:
+      - default: null
+        kind: POSITIONAL_OR_KEYWORD
+        name: shape
+      - default: null
+        kind: POSITIONAL_OR_KEYWORD
+        name: dtype
+      - default: null
+        kind: POSITIONAL_OR_KEYWORD
+        name: order
+      - default: null
+        kind: KEYWORD_ONLY
+        name: like
+    dispatch: native
+    return_type: VARCHAR
+  printoptions:
+    arguments:
+      - default: null
+        kind: VAR_POSITIONAL
+        name: args
+      - default: null
+        kind: VAR_KEYWORD
+        name: kwargs
+    dispatch: native
+    return_type: VARCHAR
+  recfromcsv:
+    arguments:
+      - default: null
+        kind: POSITIONAL_OR_KEYWORD
+        name: fname
+      - default: null
+        kind: VAR_KEYWORD
+        name: kwargs
+    dispatch: native
+    return_type: VARCHAR
+  recfromtxt:
+    arguments:
+      - default: null
+        kind: POSITIONAL_OR_KEYWORD
+        name: fname
+      - default: null
+        kind: VAR_KEYWORD
+        name: kwargs
+    dispatch: native
+    return_type: VARCHAR
+  require:
+    arguments:
+      - default: null
+        kind: POSITIONAL_OR_KEYWORD
+        name: a
+      - default: null
+        kind: POSITIONAL_OR_KEYWORD
+        name: dtype
+      - default: null
+        kind: POSITIONAL_OR_KEYWORD
+        name: requirements
+      - default: null
+        kind: KEYWORD_ONLY
+        name: like
+    dispatch: native
+    return_type: VARCHAR
+  safe_eval:
+    arguments:
+      - default: null
+        kind: POSITIONAL_OR_KEYWORD
+        name: source
+    dispatch: native
+    return_type: VARCHAR
+  sctype2char:
+    arguments:
+      - default: null
+        kind: POSITIONAL_OR_KEYWORD
+        name: sctype
+    dispatch: native
+    return_type: VARCHAR
+  set_printoptions:
+    arguments:
+      - default: null
+        kind: POSITIONAL_OR_KEYWORD
+        name: precision
+      - default: null
+        kind: POSITIONAL_OR_KEYWORD
+        name: threshold
+      - default: null
+        kind: POSITIONAL_OR_KEYWORD
+        name: edgeitems
+      - default: null
+        kind: POSITIONAL_OR_KEYWORD
+        name: linewidth
+      - default: null
+        kind: POSITIONAL_OR_KEYWORD
+        name: suppress
+      - default: null
+        kind: POSITIONAL_OR_KEYWORD
+        name: nanstr
+      - default: null
+        kind: POSITIONAL_OR_KEYWORD
+        name: infstr
+      - default: null
+        kind: POSITIONAL_OR_KEYWORD
+        name: formatter
+      - default: null
+        kind: POSITIONAL_OR_KEYWORD
+        name: sign
+      - default: null
+        kind: POSITIONAL_OR_KEYWORD
+        name: floatmode
+      - default: null
+        kind: KEYWORD_ONLY
+        name: legacy
+    dispatch: native
+    return_type: VARCHAR
+  set_string_function:
+    arguments:
+      - default: null
+        kind: POSITIONAL_OR_KEYWORD
+        name: f
+      - default: null
+        kind: POSITIONAL_OR_KEYWORD
+        name: repr
+    dispatch: native
+    return_type: VARCHAR
+  setbufsize:
+    arguments:
+      - default: null
+        kind: POSITIONAL_OR_KEYWORD
+        name: size
+    dispatch: native
+    return_type: VARCHAR
+  seterr:
+    arguments:
+      - default: null
+        kind: POSITIONAL_OR_KEYWORD
+        name: all
+      - default: null
+        kind: POSITIONAL_OR_KEYWORD
+        name: divide
+      - default: null
+        kind: POSITIONAL_OR_KEYWORD
+        name: over
+      - default: null
+        kind: POSITIONAL_OR_KEYWORD
+        name: under
+      - default: null
+        kind: POSITIONAL_OR_KEYWORD
+        name: invalid
+    dispatch: native
+    return_type: VARCHAR
+  seterrcall:
+    arguments:
+      - default: null
+        kind: POSITIONAL_OR_KEYWORD
+        name: func
+    dispatch: native
+    return_type: VARCHAR
+  source:
+    arguments:
+      - default: null
+        kind: POSITIONAL_OR_KEYWORD
+        name: object
+      - default: null
+        kind: POSITIONAL_OR_KEYWORD
+        name: output
+    dispatch: native
+    return_type: VARCHAR
+  tri:
+    arguments:
+      - default: null
+        kind: POSITIONAL_OR_KEYWORD
+        name: N
+      - default: null
+        kind: POSITIONAL_OR_KEYWORD
+        name: M
+      - default: null
+        kind: POSITIONAL_OR_KEYWORD
+        name: k
+      - default: null
+        kind: POSITIONAL_OR_KEYWORD
+        name: dtype
+      - default: null
+        kind: KEYWORD_ONLY
+        name: like
+    dispatch: native
+    return_type: VARCHAR
+  tril_indices:
+    arguments:
+      - default: null
+        kind: POSITIONAL_OR_KEYWORD
+        name: n
+      - default: null
+        kind: POSITIONAL_OR_KEYWORD
+        name: k
+      - default: null
+        kind: POSITIONAL_OR_KEYWORD
+        name: m
+    dispatch: native
+    return_type: VARCHAR
+  triu_indices:
+    arguments:
+      - default: null
+        kind: POSITIONAL_OR_KEYWORD
+        name: n
+      - default: null
+        kind: POSITIONAL_OR_KEYWORD
+        name: k
+      - default: null
+        kind: POSITIONAL_OR_KEYWORD
+        name: m
+    dispatch: native
+    return_type: VARCHAR
+  typename:
+    arguments:
+      - default: null
+        kind: POSITIONAL_OR_KEYWORD
+        name: char
+    dispatch: native
+    return_type: VARCHAR
+  who:
+    arguments:
+      - default: null
+        kind: POSITIONAL_OR_KEYWORD
+        name: vardict
+    dispatch: native
+    return_type: VARCHAR
 random:
   _meta:
     arg_type: basic
   betavariate:
     arguments:
-      - default: ""
+      - default: null
         kind: POSITIONAL_OR_KEYWORD
         name: alpha
-        type: FLOAT
-      - default: ""
+      - default: null
         kind: POSITIONAL_OR_KEYWORD
         name: beta
-        type: FLOAT
-    dispatch: native
-    return_type: FLOAT
-  choice:
-    arguments:
-      - default: ""
-        kind: POSITIONAL_OR_KEYWORD
-        name: seq
-        type: BLOB
     dispatch: native
     return_type: VARCHAR
-  # choices:
-  #   arguments:
-  #     - default: ""
-  #       kind: POSITIONAL_OR_KEYWORD
-  #       name: population
-  #     - default: ""
-  #       kind: POSITIONAL_OR_KEYWORD
-  #       name: weights
-  #     - default: ""
-  #       kind: KEYWORD_ONLY
-  #       name: cum_weights
-  #     - default: ""
-  #       kind: KEYWORD_ONLY
-  #       name: k
-  #   dispatch: native
-  #   return_type: VARCHAR
+  choice:
+    arguments:
+      - default: null
+        kind: POSITIONAL_OR_KEYWORD
+        name: seq
+    dispatch: native
+    return_type: VARCHAR
+  choices:
+    arguments:
+      - default: null
+        kind: POSITIONAL_OR_KEYWORD
+        name: population
+      - default: null
+        kind: POSITIONAL_OR_KEYWORD
+        name: weights
+      - default: null
+        kind: KEYWORD_ONLY
+        name: cum_weights
+      - default: null
+        kind: KEYWORD_ONLY
+        name: k
+    dispatch: native
+    return_type: VARCHAR
   expovariate:
     arguments:
-      - default: ""
+      - default: null
         kind: POSITIONAL_OR_KEYWORD
         name: lambd
-        type: FLOAT
     dispatch: native
-    return_type: FLOAT
+    return_type: VARCHAR
   gammavariate:
     arguments:
-      - default: ""
+      - default: null
         kind: POSITIONAL_OR_KEYWORD
         name: alpha
-        type: FLOAT
-      - default: ""
+      - default: null
         kind: POSITIONAL_OR_KEYWORD
         name: beta
-        type: FLOAT
     dispatch: native
-    return_type: FLOAT
+    return_type: VARCHAR
   gauss:
     arguments:
-      - default: ""
+      - default: null
         kind: POSITIONAL_OR_KEYWORD
         name: mu
-        type: FLOAT
-      - default: ""
+      - default: null
         kind: POSITIONAL_OR_KEYWORD
         name: sigma
-        type: FLOAT
     dispatch: native
-    return_type: FLOAT
+    return_type: VARCHAR
   lognormvariate:
     arguments:
-      - default: ""
+      - default: null
         kind: POSITIONAL_OR_KEYWORD
         name: mu
-        type: FLOAT
-      - default: ""
+      - default: null
         kind: POSITIONAL_OR_KEYWORD
         name: sigma
-        type: FLOAT
     dispatch: native
-    return_type: FLOAT
+    return_type: VARCHAR
   normalvariate:
     arguments:
-      - default: ""
+      - default: null
         kind: POSITIONAL_OR_KEYWORD
         name: mu
-        type: FLOAT
-      - default: ""
+      - default: null
         kind: POSITIONAL_OR_KEYWORD
         name: sigma
-        type: FLOAT
     dispatch: native
-    return_type: FLOAT
+    return_type: VARCHAR
   paretovariate:
     arguments:
-      - default: ""
+      - default: null
         kind: POSITIONAL_OR_KEYWORD
         name: alpha
-        type: FLOAT
     dispatch: native
-    return_type: FLOAT
+    return_type: VARCHAR
   randbytes:
     arguments:
-      - default: ""
+      - default: null
         kind: POSITIONAL_OR_KEYWORD
         name: n
-        type: INTEGER
     dispatch: native
-    return_type: BLOB
+    return_type: VARCHAR
   randint:
     arguments:
-      - default: ""
+      - default: null
         kind: POSITIONAL_OR_KEYWORD
         name: a
-        type: INTEGER
-      - default: ""
+      - default: null
         kind: POSITIONAL_OR_KEYWORD
         name: b
-        type: INTEGER
     dispatch: native
-    return_type: INTEGER
+    return_type: VARCHAR
   randrange:
     arguments:
-      - default: ""
+      - default: null
         kind: POSITIONAL_OR_KEYWORD
         name: start
-        type: INTEGER
-      - default: ""
+      - default: null
         kind: POSITIONAL_OR_KEYWORD
         name: stop
-        type: INTEGER
-      - default: ""
+      - default: null
         kind: POSITIONAL_OR_KEYWORD
         name: step
-        type: INTEGER
     dispatch: native
-    return_type: INTEGER
-  # sample:
-  #   arguments:
-  #     - default: ""
-  #       kind: POSITIONAL_OR_KEYWORD
-  #       name: population
-  #     - default: ""
-  #       kind: POSITIONAL_OR_KEYWORD
-  #       name: k
-  #     - default: ""
-  #       kind: KEYWORD_ONLY
-  #       name: counts
-  #   dispatch: native
-  #   return_type: VARCHAR
-  # shuffle:
-  #   arguments:
-  #     - default: ""
-  #       kind: POSITIONAL_OR_KEYWORD
-  #       name: x
-  #   dispatch: native
-  #   return_type: VARCHAR
+    return_type: VARCHAR
+  sample:
+    arguments:
+      - default: null
+        kind: POSITIONAL_OR_KEYWORD
+        name: population
+      - default: null
+        kind: POSITIONAL_OR_KEYWORD
+        name: k
+      - default: null
+        kind: KEYWORD_ONLY
+        name: counts
+    dispatch: native
+    return_type: VARCHAR
+  shuffle:
+    arguments:
+      - default: null
+        kind: POSITIONAL_OR_KEYWORD
+        name: x
+    dispatch: native
+    return_type: VARCHAR
   triangular:
     arguments:
-      - default: ""
+      - default: null
         kind: POSITIONAL_OR_KEYWORD
         name: low
-        type: FLOAT
-      - default: ""
+      - default: null
         kind: POSITIONAL_OR_KEYWORD
         name: high
-        type: FLOAT
-      - default: ""
+      - default: null
         kind: POSITIONAL_OR_KEYWORD
         name: mode
-        type: FLOAT
     dispatch: native
-    return_type: FLOAT
+    return_type: VARCHAR
   uniform:
     arguments:
-      - default: ""
+      - default: null
         kind: POSITIONAL_OR_KEYWORD
         name: a
-        type: FLOAT
-      - default: ""
+      - default: null
         kind: POSITIONAL_OR_KEYWORD
         name: b
-        type: FLOAT
     dispatch: native
-    return_type: FLOAT
+    return_type: VARCHAR
   vonmisesvariate:
     arguments:
-      - default: ""
+      - default: null
         kind: POSITIONAL_OR_KEYWORD
         name: mu
-        type: FLOAT
-      - default: ""
+      - default: null
         kind: POSITIONAL_OR_KEYWORD
         name: kappa
-        type: FLOAT
     dispatch: native
-    return_type: FLOAT
+    return_type: VARCHAR
   weibullvariate:
     arguments:
-      - default: ""
+      - default: null
         kind: POSITIONAL_OR_KEYWORD
         name: alpha
-        type: FLOAT
-      - default: ""
+      - default: null
         kind: POSITIONAL_OR_KEYWORD
         name: beta
-        type: FLOAT
     dispatch: native
-    return_type: FLOAT
+    return_type: VARCHAR

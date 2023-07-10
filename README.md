@@ -43,6 +43,7 @@ jupyter lab
 ```
 
 Parse A SQL Schema Definition
+
 ```bash
 ./cli sqlparse './examples/test_schema.sql' './examples/schema_parse_output.sql' 5
 
@@ -56,13 +57,13 @@ Parse A SQL Schema Definition
 The python Faker library is exposed for the en-GB locale, the registration function can easily be modified to include more locales.
 
 ```sql
-select faker_en('name') from range(20);
+select faker_name() from range(20);
 ```
 
 The python Mimesis library is exposed for the en-GB locale, the registration function can easily be modified to include more locales.
 
 ```sql
-select mimesis_en('person.full_name') from range(20);
+select mimesis_person_full_name() from range(20);
 ```
 
 There is a reverse regex function for generating text patterns.
@@ -75,7 +76,7 @@ Functions are also available for intra-table sampling, column shuffling, oversam
 
 ```sql
 -- Create a names table
-CREATE TABLE name_table AS SELECT range as id, faker_en('name') as name FROM range(1000);
+CREATE TABLE name_table AS SELECT range as id, faker_name() as name FROM range(1000);
 
 -- Select 10k names randomly from the name table.
 SELECT oversample('name_table', 'name') from range(10000);

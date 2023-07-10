@@ -1,0 +1,4096 @@
+faker_en:
+  _meta:
+    arg_type: annotated
+  aba:
+    arguments: []
+    dispatch: native
+    return_type: VARCHAR
+  add_provider:
+    arguments:
+    - default: null
+      kind: POSITIONAL_OR_KEYWORD
+      name: provider
+      type: typing.Union[ForwardRef('BaseProvider'), typing.Type[ForwardRef('BaseProvider')]]
+    dispatch: native
+    return_type: SQLNULL
+  address:
+    arguments: []
+    dispatch: native
+    return_type: VARCHAR
+  administrative_unit:
+    arguments: []
+    dispatch: native
+    return_type: VARCHAR
+  am_pm:
+    arguments: []
+    dispatch: native
+    return_type: VARCHAR
+  android_platform_token:
+    arguments: []
+    dispatch: native
+    return_type: VARCHAR
+  ascii_company_email:
+    arguments: []
+    dispatch: native
+    return_type: VARCHAR
+  ascii_email:
+    arguments: []
+    dispatch: native
+    return_type: VARCHAR
+  ascii_free_email:
+    arguments: []
+    dispatch: native
+    return_type: VARCHAR
+  ascii_safe_email:
+    arguments: []
+    dispatch: native
+    return_type: VARCHAR
+  bank_country:
+    arguments: []
+    dispatch: native
+    return_type: VARCHAR
+  bban:
+    arguments: []
+    dispatch: native
+    return_type: VARCHAR
+  bothify:
+    arguments:
+    - default: <class 'str'>
+      kind: POSITIONAL_OR_KEYWORD
+      name: text
+      type: VARCHAR
+    - default: <class 'str'>
+      kind: POSITIONAL_OR_KEYWORD
+      name: letters
+      type: VARCHAR
+    dispatch: native
+    return_type: VARCHAR
+  bs:
+    arguments: []
+    dispatch: native
+    return_type: VARCHAR
+  building_number:
+    arguments: []
+    dispatch: native
+    return_type: VARCHAR
+  catch_phrase:
+    arguments: []
+    dispatch: native
+    return_type: VARCHAR
+  cellphone_number:
+    arguments: []
+    dispatch: native
+    return_type: VARCHAR
+  century:
+    arguments: []
+    dispatch: native
+    return_type: VARCHAR
+  chrome:
+    arguments:
+    - default: <class 'int'>
+      kind: POSITIONAL_OR_KEYWORD
+      name: version_from
+      type: INTEGER
+    - default: <class 'int'>
+      kind: POSITIONAL_OR_KEYWORD
+      name: version_to
+      type: INTEGER
+    - default: <class 'int'>
+      kind: POSITIONAL_OR_KEYWORD
+      name: build_from
+      type: INTEGER
+    - default: <class 'int'>
+      kind: POSITIONAL_OR_KEYWORD
+      name: build_to
+      type: INTEGER
+    dispatch: native
+    return_type: VARCHAR
+  city:
+    arguments: []
+    dispatch: native
+    return_type: VARCHAR
+  city_prefix:
+    arguments: []
+    dispatch: native
+    return_type: VARCHAR
+  city_suffix:
+    arguments: []
+    dispatch: native
+    return_type: VARCHAR
+  color:
+    arguments:
+    - default: typing.Optional[~HueType]
+      kind: POSITIONAL_OR_KEYWORD
+      name: hue
+      type: typing.Optional[~HueType]
+    - default: typing.Optional[str]
+      kind: POSITIONAL_OR_KEYWORD
+      name: luminosity
+      type: typing.Optional[str]
+    - default: <class 'str'>
+      kind: POSITIONAL_OR_KEYWORD
+      name: color_format
+      type: VARCHAR
+    dispatch: native
+    return_type: VARCHAR
+  color_name:
+    arguments: []
+    dispatch: native
+    return_type: VARCHAR
+  company:
+    arguments: []
+    dispatch: native
+    return_type: VARCHAR
+  company_email:
+    arguments: []
+    dispatch: native
+    return_type: VARCHAR
+  company_suffix:
+    arguments: []
+    dispatch: native
+    return_type: VARCHAR
+  country:
+    arguments: []
+    dispatch: native
+    return_type: VARCHAR
+  country_calling_code:
+    arguments: []
+    dispatch: native
+    return_type: VARCHAR
+  country_code:
+    arguments:
+    - default: <class 'str'>
+      kind: POSITIONAL_OR_KEYWORD
+      name: representation
+      type: VARCHAR
+    dispatch: native
+    return_type: VARCHAR
+  county:
+    arguments: []
+    dispatch: native
+    return_type: VARCHAR
+  credit_card_expire:
+    arguments:
+    - default: typing.Union[datetime.date, datetime.datetime, datetime.timedelta,
+        str, int]
+      kind: POSITIONAL_OR_KEYWORD
+      name: start
+      type: typing.Union[datetime.date, datetime.datetime, datetime.timedelta, str,
+        int]
+    - default: typing.Union[datetime.date, datetime.datetime, datetime.timedelta,
+        str, int]
+      kind: POSITIONAL_OR_KEYWORD
+      name: end
+      type: typing.Union[datetime.date, datetime.datetime, datetime.timedelta, str,
+        int]
+    - default: <class 'str'>
+      kind: POSITIONAL_OR_KEYWORD
+      name: date_format
+      type: VARCHAR
+    dispatch: native
+    return_type: VARCHAR
+  credit_card_full:
+    arguments:
+    - default: typing.Optional[~CardType]
+      kind: POSITIONAL_OR_KEYWORD
+      name: card_type
+      type: typing.Optional[~CardType]
+    dispatch: native
+    return_type: VARCHAR
+  credit_card_number:
+    arguments:
+    - default: typing.Optional[~CardType]
+      kind: POSITIONAL_OR_KEYWORD
+      name: card_type
+      type: typing.Optional[~CardType]
+    dispatch: native
+    return_type: VARCHAR
+  credit_card_provider:
+    arguments:
+    - default: typing.Optional[~CardType]
+      kind: POSITIONAL_OR_KEYWORD
+      name: card_type
+      type: typing.Optional[~CardType]
+    dispatch: native
+    return_type: VARCHAR
+  credit_card_security_code:
+    arguments:
+    - default: typing.Optional[~CardType]
+      kind: POSITIONAL_OR_KEYWORD
+      name: card_type
+      type: typing.Optional[~CardType]
+    dispatch: native
+    return_type: VARCHAR
+  cryptocurrency_code:
+    arguments: []
+    dispatch: native
+    return_type: VARCHAR
+  cryptocurrency_name:
+    arguments: []
+    dispatch: native
+    return_type: VARCHAR
+  csv:
+    arguments:
+    - default: typing.Optional[typing.Sequence[str]]
+      kind: POSITIONAL_OR_KEYWORD
+      name: header
+      type: typing.Optional[typing.Sequence[str]]
+    - default: typing.Tuple[str, str]
+      kind: POSITIONAL_OR_KEYWORD
+      name: data_columns
+      type: typing.Tuple[str, str]
+    - default: <class 'int'>
+      kind: POSITIONAL_OR_KEYWORD
+      name: num_rows
+      type: INTEGER
+    - default: <class 'bool'>
+      kind: POSITIONAL_OR_KEYWORD
+      name: include_row_ids
+      type: <class 'bool'>
+    dispatch: native
+    return_type: VARCHAR
+  currency_code:
+    arguments: []
+    dispatch: native
+    return_type: VARCHAR
+  currency_name:
+    arguments: []
+    dispatch: native
+    return_type: VARCHAR
+  currency_symbol:
+    arguments:
+    - default: typing.Optional[str]
+      kind: POSITIONAL_OR_KEYWORD
+      name: code
+      type: typing.Optional[str]
+    dispatch: native
+    return_type: VARCHAR
+  current_country:
+    arguments: []
+    dispatch: native
+    return_type: VARCHAR
+  current_country_code:
+    arguments: []
+    dispatch: native
+    return_type: VARCHAR
+  date:
+    arguments:
+    - default: <class 'str'>
+      kind: POSITIONAL_OR_KEYWORD
+      name: pattern
+      type: VARCHAR
+    - default: typing.Union[datetime.date, datetime.datetime, datetime.timedelta,
+        str, int, NoneType]
+      kind: POSITIONAL_OR_KEYWORD
+      name: end_datetime
+      type: typing.Union[datetime.date, datetime.datetime, datetime.timedelta, str,
+        int, NoneType]
+    dispatch: native
+    return_type: VARCHAR
+  date_between:
+    arguments:
+    - default: typing.Union[datetime.date, datetime.datetime, datetime.timedelta,
+        str, int]
+      kind: POSITIONAL_OR_KEYWORD
+      name: start_date
+      type: typing.Union[datetime.date, datetime.datetime, datetime.timedelta, str,
+        int]
+    - default: typing.Union[datetime.date, datetime.datetime, datetime.timedelta,
+        str, int]
+      kind: POSITIONAL_OR_KEYWORD
+      name: end_date
+      type: typing.Union[datetime.date, datetime.datetime, datetime.timedelta, str,
+        int]
+    dispatch: native
+    return_type: DATE
+  date_between_dates:
+    arguments:
+    - default: typing.Union[datetime.date, datetime.datetime, datetime.timedelta,
+        str, int, NoneType]
+      kind: POSITIONAL_OR_KEYWORD
+      name: date_start
+      type: typing.Union[datetime.date, datetime.datetime, datetime.timedelta, str,
+        int, NoneType]
+    - default: typing.Union[datetime.date, datetime.datetime, datetime.timedelta,
+        str, int, NoneType]
+      kind: POSITIONAL_OR_KEYWORD
+      name: date_end
+      type: typing.Union[datetime.date, datetime.datetime, datetime.timedelta, str,
+        int, NoneType]
+    dispatch: native
+    return_type: DATE
+  date_object:
+    arguments:
+    - default: typing.Optional[datetime.datetime]
+      kind: POSITIONAL_OR_KEYWORD
+      name: end_datetime
+      type: typing.Optional[datetime.datetime]
+    dispatch: native
+    return_type: DATE
+  date_of_birth:
+    arguments:
+    - default: typing.Optional[datetime.tzinfo]
+      kind: POSITIONAL_OR_KEYWORD
+      name: tzinfo
+      type: typing.Optional[datetime.tzinfo]
+    - default: <class 'int'>
+      kind: POSITIONAL_OR_KEYWORD
+      name: minimum_age
+      type: INTEGER
+    - default: <class 'int'>
+      kind: POSITIONAL_OR_KEYWORD
+      name: maximum_age
+      type: INTEGER
+    dispatch: native
+    return_type: DATE
+  date_this_century:
+    arguments:
+    - default: <class 'bool'>
+      kind: POSITIONAL_OR_KEYWORD
+      name: before_today
+      type: <class 'bool'>
+    - default: <class 'bool'>
+      kind: POSITIONAL_OR_KEYWORD
+      name: after_today
+      type: <class 'bool'>
+    dispatch: native
+    return_type: DATE
+  date_this_decade:
+    arguments:
+    - default: <class 'bool'>
+      kind: POSITIONAL_OR_KEYWORD
+      name: before_today
+      type: <class 'bool'>
+    - default: <class 'bool'>
+      kind: POSITIONAL_OR_KEYWORD
+      name: after_today
+      type: <class 'bool'>
+    dispatch: native
+    return_type: DATE
+  date_this_month:
+    arguments:
+    - default: <class 'bool'>
+      kind: POSITIONAL_OR_KEYWORD
+      name: before_today
+      type: <class 'bool'>
+    - default: <class 'bool'>
+      kind: POSITIONAL_OR_KEYWORD
+      name: after_today
+      type: <class 'bool'>
+    dispatch: native
+    return_type: DATE
+  date_this_year:
+    arguments:
+    - default: <class 'bool'>
+      kind: POSITIONAL_OR_KEYWORD
+      name: before_today
+      type: <class 'bool'>
+    - default: <class 'bool'>
+      kind: POSITIONAL_OR_KEYWORD
+      name: after_today
+      type: <class 'bool'>
+    dispatch: native
+    return_type: DATE
+  date_time:
+    arguments:
+    - default: typing.Optional[datetime.tzinfo]
+      kind: POSITIONAL_OR_KEYWORD
+      name: tzinfo
+      type: typing.Optional[datetime.tzinfo]
+    - default: typing.Union[datetime.date, datetime.datetime, datetime.timedelta,
+        str, int, NoneType]
+      kind: POSITIONAL_OR_KEYWORD
+      name: end_datetime
+      type: typing.Union[datetime.date, datetime.datetime, datetime.timedelta, str,
+        int, NoneType]
+    dispatch: native
+    return_type: TIMESTAMP
+  date_time_ad:
+    arguments:
+    - default: typing.Optional[datetime.tzinfo]
+      kind: POSITIONAL_OR_KEYWORD
+      name: tzinfo
+      type: typing.Optional[datetime.tzinfo]
+    - default: typing.Union[datetime.date, datetime.datetime, datetime.timedelta,
+        str, int, NoneType]
+      kind: POSITIONAL_OR_KEYWORD
+      name: end_datetime
+      type: typing.Union[datetime.date, datetime.datetime, datetime.timedelta, str,
+        int, NoneType]
+    - default: typing.Union[datetime.date, datetime.datetime, datetime.timedelta,
+        str, int, NoneType]
+      kind: POSITIONAL_OR_KEYWORD
+      name: start_datetime
+      type: typing.Union[datetime.date, datetime.datetime, datetime.timedelta, str,
+        int, NoneType]
+    dispatch: native
+    return_type: TIMESTAMP
+  date_time_between:
+    arguments:
+    - default: typing.Union[datetime.date, datetime.datetime, datetime.timedelta,
+        str, int]
+      kind: POSITIONAL_OR_KEYWORD
+      name: start_date
+      type: typing.Union[datetime.date, datetime.datetime, datetime.timedelta, str,
+        int]
+    - default: typing.Union[datetime.date, datetime.datetime, datetime.timedelta,
+        str, int]
+      kind: POSITIONAL_OR_KEYWORD
+      name: end_date
+      type: typing.Union[datetime.date, datetime.datetime, datetime.timedelta, str,
+        int]
+    - default: typing.Optional[datetime.tzinfo]
+      kind: POSITIONAL_OR_KEYWORD
+      name: tzinfo
+      type: typing.Optional[datetime.tzinfo]
+    dispatch: native
+    return_type: TIMESTAMP
+  date_time_between_dates:
+    arguments:
+    - default: typing.Union[datetime.date, datetime.datetime, datetime.timedelta,
+        str, int, NoneType]
+      kind: POSITIONAL_OR_KEYWORD
+      name: datetime_start
+      type: typing.Union[datetime.date, datetime.datetime, datetime.timedelta, str,
+        int, NoneType]
+    - default: typing.Union[datetime.date, datetime.datetime, datetime.timedelta,
+        str, int, NoneType]
+      kind: POSITIONAL_OR_KEYWORD
+      name: datetime_end
+      type: typing.Union[datetime.date, datetime.datetime, datetime.timedelta, str,
+        int, NoneType]
+    - default: typing.Optional[datetime.tzinfo]
+      kind: POSITIONAL_OR_KEYWORD
+      name: tzinfo
+      type: typing.Optional[datetime.tzinfo]
+    dispatch: native
+    return_type: TIMESTAMP
+  date_time_this_century:
+    arguments:
+    - default: <class 'bool'>
+      kind: POSITIONAL_OR_KEYWORD
+      name: before_now
+      type: <class 'bool'>
+    - default: <class 'bool'>
+      kind: POSITIONAL_OR_KEYWORD
+      name: after_now
+      type: <class 'bool'>
+    - default: typing.Optional[datetime.tzinfo]
+      kind: POSITIONAL_OR_KEYWORD
+      name: tzinfo
+      type: typing.Optional[datetime.tzinfo]
+    dispatch: native
+    return_type: TIMESTAMP
+  date_time_this_decade:
+    arguments:
+    - default: <class 'bool'>
+      kind: POSITIONAL_OR_KEYWORD
+      name: before_now
+      type: <class 'bool'>
+    - default: <class 'bool'>
+      kind: POSITIONAL_OR_KEYWORD
+      name: after_now
+      type: <class 'bool'>
+    - default: typing.Optional[datetime.tzinfo]
+      kind: POSITIONAL_OR_KEYWORD
+      name: tzinfo
+      type: typing.Optional[datetime.tzinfo]
+    dispatch: native
+    return_type: TIMESTAMP
+  date_time_this_month:
+    arguments:
+    - default: <class 'bool'>
+      kind: POSITIONAL_OR_KEYWORD
+      name: before_now
+      type: <class 'bool'>
+    - default: <class 'bool'>
+      kind: POSITIONAL_OR_KEYWORD
+      name: after_now
+      type: <class 'bool'>
+    - default: typing.Optional[datetime.tzinfo]
+      kind: POSITIONAL_OR_KEYWORD
+      name: tzinfo
+      type: typing.Optional[datetime.tzinfo]
+    dispatch: native
+    return_type: TIMESTAMP
+  date_time_this_year:
+    arguments:
+    - default: <class 'bool'>
+      kind: POSITIONAL_OR_KEYWORD
+      name: before_now
+      type: <class 'bool'>
+    - default: <class 'bool'>
+      kind: POSITIONAL_OR_KEYWORD
+      name: after_now
+      type: <class 'bool'>
+    - default: typing.Optional[datetime.tzinfo]
+      kind: POSITIONAL_OR_KEYWORD
+      name: tzinfo
+      type: typing.Optional[datetime.tzinfo]
+    dispatch: native
+    return_type: TIMESTAMP
+  day_of_month:
+    arguments: []
+    dispatch: native
+    return_type: VARCHAR
+  day_of_week:
+    arguments: []
+    dispatch: native
+    return_type: VARCHAR
+  dga:
+    arguments:
+    - default: typing.Optional[int]
+      kind: POSITIONAL_OR_KEYWORD
+      name: year
+      type: typing.Optional[int]
+    - default: typing.Optional[int]
+      kind: POSITIONAL_OR_KEYWORD
+      name: month
+      type: typing.Optional[int]
+    - default: typing.Optional[int]
+      kind: POSITIONAL_OR_KEYWORD
+      name: day
+      type: typing.Optional[int]
+    - default: typing.Optional[str]
+      kind: POSITIONAL_OR_KEYWORD
+      name: tld
+      type: typing.Optional[str]
+    - default: typing.Optional[int]
+      kind: POSITIONAL_OR_KEYWORD
+      name: length
+      type: typing.Optional[int]
+    dispatch: native
+    return_type: VARCHAR
+  domain_name:
+    arguments:
+    - default: <class 'int'>
+      kind: POSITIONAL_OR_KEYWORD
+      name: levels
+      type: INTEGER
+    dispatch: native
+    return_type: VARCHAR
+  domain_word:
+    arguments: []
+    dispatch: native
+    return_type: VARCHAR
+  dsv:
+    arguments:
+    - default: <class 'str'>
+      kind: POSITIONAL_OR_KEYWORD
+      name: dialect
+      type: VARCHAR
+    - default: typing.Optional[typing.Sequence[str]]
+      kind: POSITIONAL_OR_KEYWORD
+      name: header
+      type: typing.Optional[typing.Sequence[str]]
+    - default: typing.Tuple[str, str]
+      kind: POSITIONAL_OR_KEYWORD
+      name: data_columns
+      type: typing.Tuple[str, str]
+    - default: <class 'int'>
+      kind: POSITIONAL_OR_KEYWORD
+      name: num_rows
+      type: INTEGER
+    - default: <class 'bool'>
+      kind: POSITIONAL_OR_KEYWORD
+      name: include_row_ids
+      type: <class 'bool'>
+    - default: null
+      kind: VAR_KEYWORD
+      name: fmtparams
+      type: typing.Any
+    dispatch: native
+    return_type: VARCHAR
+  ean:
+    arguments:
+    - default: <class 'int'>
+      kind: POSITIONAL_OR_KEYWORD
+      name: length
+      type: INTEGER
+    - default: typing.Tuple[typing.Union[int, str, typing.Tuple[typing.Union[int,
+        str], ...]], ...]
+      kind: POSITIONAL_OR_KEYWORD
+      name: prefixes
+      type: typing.Tuple[typing.Union[int, str, typing.Tuple[typing.Union[int, str],
+        ...]], ...]
+    dispatch: native
+    return_type: VARCHAR
+  ean13:
+    arguments:
+    - default: typing.Tuple[typing.Union[int, str, typing.Tuple[typing.Union[int,
+        str], ...]], ...]
+      kind: POSITIONAL_OR_KEYWORD
+      name: prefixes
+      type: typing.Tuple[typing.Union[int, str, typing.Tuple[typing.Union[int, str],
+        ...]], ...]
+    - default: typing.Optional[bool]
+      kind: POSITIONAL_OR_KEYWORD
+      name: leading_zero
+      type: typing.Optional[bool]
+    dispatch: native
+    return_type: VARCHAR
+  ean8:
+    arguments:
+    - default: typing.Tuple[()]
+      kind: POSITIONAL_OR_KEYWORD
+      name: prefixes
+      type: typing.Tuple[()]
+    dispatch: native
+    return_type: VARCHAR
+  email:
+    arguments:
+    - default: <class 'bool'>
+      kind: POSITIONAL_OR_KEYWORD
+      name: safe
+      type: <class 'bool'>
+    - default: typing.Optional[str]
+      kind: POSITIONAL_OR_KEYWORD
+      name: domain
+      type: typing.Optional[str]
+    dispatch: native
+    return_type: VARCHAR
+  emoji:
+    arguments: []
+    dispatch: native
+    return_type: VARCHAR
+  file_extension:
+    arguments:
+    - default: typing.Optional[str]
+      kind: POSITIONAL_OR_KEYWORD
+      name: category
+      type: typing.Optional[str]
+    dispatch: native
+    return_type: VARCHAR
+  file_name:
+    arguments:
+    - default: typing.Optional[str]
+      kind: POSITIONAL_OR_KEYWORD
+      name: category
+      type: typing.Optional[str]
+    - default: typing.Optional[str]
+      kind: POSITIONAL_OR_KEYWORD
+      name: extension
+      type: typing.Optional[str]
+    dispatch: native
+    return_type: VARCHAR
+  file_path:
+    arguments:
+    - default: <class 'int'>
+      kind: POSITIONAL_OR_KEYWORD
+      name: depth
+      type: INTEGER
+    - default: typing.Optional[str]
+      kind: POSITIONAL_OR_KEYWORD
+      name: category
+      type: typing.Optional[str]
+    - default: typing.Optional[str]
+      kind: POSITIONAL_OR_KEYWORD
+      name: extension
+      type: typing.Optional[str]
+    - default: typing.Optional[bool]
+      kind: POSITIONAL_OR_KEYWORD
+      name: absolute
+      type: typing.Optional[bool]
+    dispatch: native
+    return_type: VARCHAR
+  firefox:
+    arguments: []
+    dispatch: native
+    return_type: VARCHAR
+  first_name:
+    arguments: []
+    dispatch: native
+    return_type: VARCHAR
+  first_name_female:
+    arguments: []
+    dispatch: native
+    return_type: VARCHAR
+  first_name_male:
+    arguments: []
+    dispatch: native
+    return_type: VARCHAR
+  first_name_nonbinary:
+    arguments: []
+    dispatch: native
+    return_type: VARCHAR
+  fixed_width:
+    arguments:
+    - default: typing.Optional[list]
+      kind: POSITIONAL_OR_KEYWORD
+      name: data_columns
+      type: typing.Optional[list]
+    - default: <class 'int'>
+      kind: POSITIONAL_OR_KEYWORD
+      name: num_rows
+      type: INTEGER
+    - default: <class 'str'>
+      kind: POSITIONAL_OR_KEYWORD
+      name: align
+      type: VARCHAR
+    dispatch: native
+    return_type: VARCHAR
+  format:
+    arguments:
+    - default: null
+      kind: POSITIONAL_OR_KEYWORD
+      name: formatter
+      type: VARCHAR
+    - default: null
+      kind: VAR_POSITIONAL
+      name: args
+      type: typing.Any
+    - default: null
+      kind: VAR_KEYWORD
+      name: kwargs
+      type: typing.Any
+    dispatch: native
+    return_type: VARCHAR
+  free_email:
+    arguments: []
+    dispatch: native
+    return_type: VARCHAR
+  free_email_domain:
+    arguments: []
+    dispatch: native
+    return_type: VARCHAR
+  future_date:
+    arguments:
+    - default: typing.Union[datetime.date, datetime.datetime, datetime.timedelta,
+        str, int]
+      kind: POSITIONAL_OR_KEYWORD
+      name: end_date
+      type: typing.Union[datetime.date, datetime.datetime, datetime.timedelta, str,
+        int]
+    - default: typing.Optional[datetime.tzinfo]
+      kind: POSITIONAL_OR_KEYWORD
+      name: tzinfo
+      type: typing.Optional[datetime.tzinfo]
+    dispatch: native
+    return_type: DATE
+  future_datetime:
+    arguments:
+    - default: typing.Union[datetime.date, datetime.datetime, datetime.timedelta,
+        str, int]
+      kind: POSITIONAL_OR_KEYWORD
+      name: end_date
+      type: typing.Union[datetime.date, datetime.datetime, datetime.timedelta, str,
+        int]
+    - default: typing.Optional[datetime.tzinfo]
+      kind: POSITIONAL_OR_KEYWORD
+      name: tzinfo
+      type: typing.Optional[datetime.tzinfo]
+    dispatch: native
+    return_type: TIMESTAMP
+  hex_color:
+    arguments: []
+    dispatch: native
+    return_type: VARCHAR
+  hexify:
+    arguments:
+    - default: <class 'str'>
+      kind: POSITIONAL_OR_KEYWORD
+      name: text
+      type: VARCHAR
+    - default: <class 'bool'>
+      kind: POSITIONAL_OR_KEYWORD
+      name: upper
+      type: <class 'bool'>
+    dispatch: native
+    return_type: VARCHAR
+  hostname:
+    arguments:
+    - default: <class 'int'>
+      kind: POSITIONAL_OR_KEYWORD
+      name: levels
+      type: INTEGER
+    dispatch: native
+    return_type: VARCHAR
+  http_method:
+    arguments: []
+    dispatch: native
+    return_type: VARCHAR
+  iana_id:
+    arguments: []
+    dispatch: native
+    return_type: VARCHAR
+  iban:
+    arguments: []
+    dispatch: native
+    return_type: VARCHAR
+  image_url:
+    arguments:
+    - default: typing.Optional[int]
+      kind: POSITIONAL_OR_KEYWORD
+      name: width
+      type: typing.Optional[int]
+    - default: typing.Optional[int]
+      kind: POSITIONAL_OR_KEYWORD
+      name: height
+      type: typing.Optional[int]
+    - default: typing.Optional[str]
+      kind: POSITIONAL_OR_KEYWORD
+      name: placeholder_url
+      type: typing.Optional[str]
+    dispatch: native
+    return_type: VARCHAR
+  internet_explorer:
+    arguments: []
+    dispatch: native
+    return_type: VARCHAR
+  ios_platform_token:
+    arguments: []
+    dispatch: native
+    return_type: VARCHAR
+  ipv4:
+    arguments:
+    - default: <class 'bool'>
+      kind: POSITIONAL_OR_KEYWORD
+      name: network
+      type: <class 'bool'>
+    - default: typing.Optional[str]
+      kind: POSITIONAL_OR_KEYWORD
+      name: address_class
+      type: typing.Optional[str]
+    - default: typing.Optional[str]
+      kind: POSITIONAL_OR_KEYWORD
+      name: private
+      type: typing.Optional[str]
+    dispatch: native
+    return_type: VARCHAR
+  ipv4_network_class:
+    arguments: []
+    dispatch: native
+    return_type: VARCHAR
+  ipv4_private:
+    arguments:
+    - default: <class 'bool'>
+      kind: POSITIONAL_OR_KEYWORD
+      name: network
+      type: <class 'bool'>
+    - default: typing.Optional[str]
+      kind: POSITIONAL_OR_KEYWORD
+      name: address_class
+      type: typing.Optional[str]
+    dispatch: native
+    return_type: VARCHAR
+  ipv4_public:
+    arguments:
+    - default: <class 'bool'>
+      kind: POSITIONAL_OR_KEYWORD
+      name: network
+      type: <class 'bool'>
+    - default: typing.Optional[str]
+      kind: POSITIONAL_OR_KEYWORD
+      name: address_class
+      type: typing.Optional[str]
+    dispatch: native
+    return_type: VARCHAR
+  ipv6:
+    arguments:
+    - default: <class 'bool'>
+      kind: POSITIONAL_OR_KEYWORD
+      name: network
+      type: <class 'bool'>
+    dispatch: native
+    return_type: VARCHAR
+  isbn10:
+    arguments:
+    - default: <class 'str'>
+      kind: POSITIONAL_OR_KEYWORD
+      name: separator
+      type: VARCHAR
+    dispatch: native
+    return_type: VARCHAR
+  isbn13:
+    arguments:
+    - default: <class 'str'>
+      kind: POSITIONAL_OR_KEYWORD
+      name: separator
+      type: VARCHAR
+    dispatch: native
+    return_type: VARCHAR
+  iso8601:
+    arguments:
+    - default: typing.Optional[datetime.tzinfo]
+      kind: POSITIONAL_OR_KEYWORD
+      name: tzinfo
+      type: typing.Optional[datetime.tzinfo]
+    - default: typing.Union[datetime.date, datetime.datetime, datetime.timedelta,
+        str, int, NoneType]
+      kind: POSITIONAL_OR_KEYWORD
+      name: end_datetime
+      type: typing.Union[datetime.date, datetime.datetime, datetime.timedelta, str,
+        int, NoneType]
+    - default: <class 'str'>
+      kind: POSITIONAL_OR_KEYWORD
+      name: sep
+      type: VARCHAR
+    - default: <class 'str'>
+      kind: POSITIONAL_OR_KEYWORD
+      name: timespec
+      type: VARCHAR
+    dispatch: native
+    return_type: VARCHAR
+  job:
+    arguments: []
+    dispatch: native
+    return_type: VARCHAR
+  json:
+    arguments:
+    - default: typing.Optional[typing.List]
+      kind: POSITIONAL_OR_KEYWORD
+      name: data_columns
+      type: typing.Optional[typing.List]
+    - default: <class 'int'>
+      kind: POSITIONAL_OR_KEYWORD
+      name: num_rows
+      type: INTEGER
+    - default: typing.Optional[int]
+      kind: POSITIONAL_OR_KEYWORD
+      name: indent
+      type: typing.Optional[int]
+    - default: typing.Optional[typing.Type[json.encoder.JSONEncoder]]
+      kind: POSITIONAL_OR_KEYWORD
+      name: cls
+      type: typing.Optional[typing.Type[json.encoder.JSONEncoder]]
+    dispatch: native
+    return_type: VARCHAR
+  language_code:
+    arguments: []
+    dispatch: native
+    return_type: VARCHAR
+  language_name:
+    arguments: []
+    dispatch: native
+    return_type: VARCHAR
+  last_name:
+    arguments: []
+    dispatch: native
+    return_type: VARCHAR
+  last_name_female:
+    arguments: []
+    dispatch: native
+    return_type: VARCHAR
+  last_name_male:
+    arguments: []
+    dispatch: native
+    return_type: VARCHAR
+  last_name_nonbinary:
+    arguments: []
+    dispatch: native
+    return_type: VARCHAR
+  license_plate:
+    arguments: []
+    dispatch: native
+    return_type: VARCHAR
+  linux_platform_token:
+    arguments: []
+    dispatch: native
+    return_type: VARCHAR
+  linux_processor:
+    arguments: []
+    dispatch: native
+    return_type: VARCHAR
+  locale:
+    arguments: []
+    dispatch: native
+    return_type: VARCHAR
+  localized_ean:
+    arguments:
+    - default: <class 'int'>
+      kind: POSITIONAL_OR_KEYWORD
+      name: length
+      type: INTEGER
+    dispatch: native
+    return_type: VARCHAR
+  localized_ean13:
+    arguments: []
+    dispatch: native
+    return_type: VARCHAR
+  localized_ean8:
+    arguments: []
+    dispatch: native
+    return_type: VARCHAR
+  mac_address:
+    arguments: []
+    dispatch: native
+    return_type: VARCHAR
+  mac_platform_token:
+    arguments: []
+    dispatch: native
+    return_type: VARCHAR
+  mac_processor:
+    arguments: []
+    dispatch: native
+    return_type: VARCHAR
+  mime_type:
+    arguments:
+    - default: typing.Optional[str]
+      kind: POSITIONAL_OR_KEYWORD
+      name: category
+      type: typing.Optional[str]
+    dispatch: native
+    return_type: VARCHAR
+  month:
+    arguments: []
+    dispatch: native
+    return_type: VARCHAR
+  month_name:
+    arguments: []
+    dispatch: native
+    return_type: VARCHAR
+  msisdn:
+    arguments: []
+    dispatch: native
+    return_type: VARCHAR
+  name:
+    arguments: []
+    dispatch: native
+    return_type: VARCHAR
+  name_female:
+    arguments: []
+    dispatch: native
+    return_type: VARCHAR
+  name_male:
+    arguments: []
+    dispatch: native
+    return_type: VARCHAR
+  name_nonbinary:
+    arguments: []
+    dispatch: native
+    return_type: VARCHAR
+  nic_handle:
+    arguments:
+    - default: <class 'str'>
+      kind: POSITIONAL_OR_KEYWORD
+      name: suffix
+      type: VARCHAR
+    dispatch: native
+    return_type: VARCHAR
+  numerify:
+    arguments:
+    - default: <class 'str'>
+      kind: POSITIONAL_OR_KEYWORD
+      name: text
+      type: VARCHAR
+    dispatch: native
+    return_type: VARCHAR
+  opera:
+    arguments: []
+    dispatch: native
+    return_type: VARCHAR
+  paragraph:
+    arguments:
+    - default: <class 'int'>
+      kind: POSITIONAL_OR_KEYWORD
+      name: nb_sentences
+      type: INTEGER
+    - default: <class 'bool'>
+      kind: POSITIONAL_OR_KEYWORD
+      name: variable_nb_sentences
+      type: <class 'bool'>
+    - default: typing.Optional[typing.Sequence[str]]
+      kind: POSITIONAL_OR_KEYWORD
+      name: ext_word_list
+      type: typing.Optional[typing.Sequence[str]]
+    dispatch: native
+    return_type: VARCHAR
+  passport_dob:
+    arguments: []
+    dispatch: native
+    return_type: DATE
+  passport_full:
+    arguments: []
+    dispatch: native
+    return_type: VARCHAR
+  passport_gender:
+    arguments:
+    - default: <class 'int'>
+      kind: POSITIONAL_OR_KEYWORD
+      name: seed
+      type: INTEGER
+    dispatch: native
+    return_type: VARCHAR
+  passport_number:
+    arguments: []
+    dispatch: native
+    return_type: VARCHAR
+  password:
+    arguments:
+    - default: <class 'int'>
+      kind: POSITIONAL_OR_KEYWORD
+      name: length
+      type: INTEGER
+    - default: <class 'bool'>
+      kind: POSITIONAL_OR_KEYWORD
+      name: special_chars
+      type: <class 'bool'>
+    - default: <class 'bool'>
+      kind: POSITIONAL_OR_KEYWORD
+      name: digits
+      type: <class 'bool'>
+    - default: <class 'bool'>
+      kind: POSITIONAL_OR_KEYWORD
+      name: upper_case
+      type: <class 'bool'>
+    - default: <class 'bool'>
+      kind: POSITIONAL_OR_KEYWORD
+      name: lower_case
+      type: <class 'bool'>
+    dispatch: native
+    return_type: VARCHAR
+  past_date:
+    arguments:
+    - default: typing.Union[datetime.date, datetime.datetime, datetime.timedelta,
+        str, int]
+      kind: POSITIONAL_OR_KEYWORD
+      name: start_date
+      type: typing.Union[datetime.date, datetime.datetime, datetime.timedelta, str,
+        int]
+    - default: typing.Optional[datetime.tzinfo]
+      kind: POSITIONAL_OR_KEYWORD
+      name: tzinfo
+      type: typing.Optional[datetime.tzinfo]
+    dispatch: native
+    return_type: DATE
+  past_datetime:
+    arguments:
+    - default: typing.Union[datetime.date, datetime.datetime, datetime.timedelta,
+        str, int]
+      kind: POSITIONAL_OR_KEYWORD
+      name: start_date
+      type: typing.Union[datetime.date, datetime.datetime, datetime.timedelta, str,
+        int]
+    - default: typing.Optional[datetime.tzinfo]
+      kind: POSITIONAL_OR_KEYWORD
+      name: tzinfo
+      type: typing.Optional[datetime.tzinfo]
+    dispatch: native
+    return_type: TIMESTAMP
+  phone_number:
+    arguments: []
+    dispatch: native
+    return_type: VARCHAR
+  port_number:
+    arguments:
+    - default: <class 'bool'>
+      kind: POSITIONAL_OR_KEYWORD
+      name: is_system
+      type: <class 'bool'>
+    - default: <class 'bool'>
+      kind: POSITIONAL_OR_KEYWORD
+      name: is_user
+      type: <class 'bool'>
+    - default: <class 'bool'>
+      kind: POSITIONAL_OR_KEYWORD
+      name: is_dynamic
+      type: <class 'bool'>
+    dispatch: native
+    return_type: INTEGER
+  postcode:
+    arguments: []
+    dispatch: native
+    return_type: VARCHAR
+  prefix:
+    arguments: []
+    dispatch: native
+    return_type: VARCHAR
+  prefix_female:
+    arguments: []
+    dispatch: native
+    return_type: VARCHAR
+  prefix_male:
+    arguments: []
+    dispatch: native
+    return_type: VARCHAR
+  prefix_nonbinary:
+    arguments: []
+    dispatch: native
+    return_type: VARCHAR
+  pricetag:
+    arguments: []
+    dispatch: native
+    return_type: VARCHAR
+  psv:
+    arguments:
+    - default: typing.Optional[typing.Sequence[str]]
+      kind: POSITIONAL_OR_KEYWORD
+      name: header
+      type: typing.Optional[typing.Sequence[str]]
+    - default: typing.Tuple[str, str]
+      kind: POSITIONAL_OR_KEYWORD
+      name: data_columns
+      type: typing.Tuple[str, str]
+    - default: <class 'int'>
+      kind: POSITIONAL_OR_KEYWORD
+      name: num_rows
+      type: INTEGER
+    - default: <class 'bool'>
+      kind: POSITIONAL_OR_KEYWORD
+      name: include_row_ids
+      type: <class 'bool'>
+    dispatch: native
+    return_type: VARCHAR
+  pyint:
+    arguments:
+    - default: <class 'int'>
+      kind: POSITIONAL_OR_KEYWORD
+      name: min_value
+      type: INTEGER
+    - default: <class 'int'>
+      kind: POSITIONAL_OR_KEYWORD
+      name: max_value
+      type: INTEGER
+    - default: <class 'int'>
+      kind: POSITIONAL_OR_KEYWORD
+      name: step
+      type: INTEGER
+    dispatch: native
+    return_type: INTEGER
+  pystr:
+    arguments:
+    - default: typing.Optional[int]
+      kind: POSITIONAL_OR_KEYWORD
+      name: min_chars
+      type: typing.Optional[int]
+    - default: <class 'int'>
+      kind: POSITIONAL_OR_KEYWORD
+      name: max_chars
+      type: INTEGER
+    - default: <class 'str'>
+      kind: POSITIONAL_OR_KEYWORD
+      name: prefix
+      type: VARCHAR
+    - default: <class 'str'>
+      kind: POSITIONAL_OR_KEYWORD
+      name: suffix
+      type: VARCHAR
+    dispatch: native
+    return_type: VARCHAR
+  random_digit:
+    arguments: []
+    dispatch: native
+    return_type: INTEGER
+  random_digit_above_two:
+    arguments: []
+    dispatch: native
+    return_type: INTEGER
+  random_digit_not_null:
+    arguments: []
+    dispatch: native
+    return_type: INTEGER
+  random_int:
+    arguments:
+    - default: <class 'int'>
+      kind: POSITIONAL_OR_KEYWORD
+      name: min
+      type: INTEGER
+    - default: <class 'int'>
+      kind: POSITIONAL_OR_KEYWORD
+      name: max
+      type: INTEGER
+    - default: <class 'int'>
+      kind: POSITIONAL_OR_KEYWORD
+      name: step
+      type: INTEGER
+    dispatch: native
+    return_type: INTEGER
+  random_letter:
+    arguments: []
+    dispatch: native
+    return_type: VARCHAR
+  random_lowercase_letter:
+    arguments: []
+    dispatch: native
+    return_type: VARCHAR
+  random_number:
+    arguments:
+    - default: typing.Optional[int]
+      kind: POSITIONAL_OR_KEYWORD
+      name: digits
+      type: typing.Optional[int]
+    - default: <class 'bool'>
+      kind: POSITIONAL_OR_KEYWORD
+      name: fix_len
+      type: <class 'bool'>
+    dispatch: native
+    return_type: INTEGER
+  random_uppercase_letter:
+    arguments: []
+    dispatch: native
+    return_type: VARCHAR
+  randomize_nb_elements:
+    arguments:
+    - default: <class 'int'>
+      kind: POSITIONAL_OR_KEYWORD
+      name: number
+      type: INTEGER
+    - default: <class 'bool'>
+      kind: POSITIONAL_OR_KEYWORD
+      name: le
+      type: <class 'bool'>
+    - default: <class 'bool'>
+      kind: POSITIONAL_OR_KEYWORD
+      name: ge
+      type: <class 'bool'>
+    - default: typing.Optional[int]
+      kind: POSITIONAL_OR_KEYWORD
+      name: min
+      type: typing.Optional[int]
+    - default: typing.Optional[int]
+      kind: POSITIONAL_OR_KEYWORD
+      name: max
+      type: typing.Optional[int]
+    dispatch: native
+    return_type: INTEGER
+  rgb_color:
+    arguments: []
+    dispatch: native
+    return_type: VARCHAR
+  rgb_css_color:
+    arguments: []
+    dispatch: native
+    return_type: VARCHAR
+  ripe_id:
+    arguments: []
+    dispatch: native
+    return_type: VARCHAR
+  safari:
+    arguments: []
+    dispatch: native
+    return_type: VARCHAR
+  safe_color_name:
+    arguments: []
+    dispatch: native
+    return_type: VARCHAR
+  safe_domain_name:
+    arguments: []
+    dispatch: native
+    return_type: VARCHAR
+  safe_email:
+    arguments: []
+    dispatch: native
+    return_type: VARCHAR
+  safe_hex_color:
+    arguments: []
+    dispatch: native
+    return_type: VARCHAR
+  sbn9:
+    arguments:
+    - default: <class 'str'>
+      kind: POSITIONAL_OR_KEYWORD
+      name: separator
+      type: VARCHAR
+    dispatch: native
+    return_type: VARCHAR
+  secondary_address:
+    arguments: []
+    dispatch: native
+    return_type: VARCHAR
+  seed_instance:
+    arguments:
+    - default: typing.Union[int, float, str, bytes, bytearray, NoneType]
+      kind: POSITIONAL_OR_KEYWORD
+      name: seed
+      type: typing.Union[int, float, str, bytes, bytearray, NoneType]
+    dispatch: native
+    return_type: SQLNULL
+  seed_locale:
+    arguments:
+    - default: null
+      kind: POSITIONAL_OR_KEYWORD
+      name: locale
+      type: VARCHAR
+    - default: typing.Union[int, float, str, bytes, bytearray, NoneType]
+      kind: POSITIONAL_OR_KEYWORD
+      name: seed
+      type: typing.Union[int, float, str, bytes, bytearray, NoneType]
+    dispatch: native
+    return_type: SQLNULL
+  sentence:
+    arguments:
+    - default: <class 'int'>
+      kind: POSITIONAL_OR_KEYWORD
+      name: nb_words
+      type: INTEGER
+    - default: <class 'bool'>
+      kind: POSITIONAL_OR_KEYWORD
+      name: variable_nb_words
+      type: <class 'bool'>
+    - default: typing.Optional[typing.Sequence[str]]
+      kind: POSITIONAL_OR_KEYWORD
+      name: ext_word_list
+      type: typing.Optional[typing.Sequence[str]]
+    dispatch: native
+    return_type: VARCHAR
+  set_arguments:
+    arguments:
+    - default: null
+      kind: POSITIONAL_OR_KEYWORD
+      name: group
+      type: VARCHAR
+    - default: null
+      kind: POSITIONAL_OR_KEYWORD
+      name: argument
+      type: VARCHAR
+    - default: typing.Optional[typing.Any]
+      kind: POSITIONAL_OR_KEYWORD
+      name: value
+      type: typing.Optional[typing.Any]
+    dispatch: native
+    return_type: SQLNULL
+  set_formatter:
+    arguments:
+    - default: null
+      kind: POSITIONAL_OR_KEYWORD
+      name: name
+      type: VARCHAR
+    - default: null
+      kind: POSITIONAL_OR_KEYWORD
+      name: formatter
+      type: typing.Callable
+    dispatch: native
+    return_type: SQLNULL
+  slug:
+    arguments:
+    - default: typing.Optional[str]
+      kind: POSITIONAL_OR_KEYWORD
+      name: value
+      type: typing.Optional[str]
+    dispatch: native
+    return_type: VARCHAR
+  ssn:
+    arguments: []
+    dispatch: native
+    return_type: VARCHAR
+  street_address:
+    arguments: []
+    dispatch: native
+    return_type: VARCHAR
+  street_name:
+    arguments: []
+    dispatch: native
+    return_type: VARCHAR
+  street_suffix:
+    arguments: []
+    dispatch: native
+    return_type: VARCHAR
+  suffix:
+    arguments: []
+    dispatch: native
+    return_type: VARCHAR
+  suffix_female:
+    arguments: []
+    dispatch: native
+    return_type: VARCHAR
+  suffix_male:
+    arguments: []
+    dispatch: native
+    return_type: VARCHAR
+  suffix_nonbinary:
+    arguments: []
+    dispatch: native
+    return_type: VARCHAR
+  swift:
+    arguments:
+    - default: typing.Optional[int]
+      kind: POSITIONAL_OR_KEYWORD
+      name: length
+      type: typing.Optional[int]
+    - default: <class 'bool'>
+      kind: POSITIONAL_OR_KEYWORD
+      name: primary
+      type: <class 'bool'>
+    - default: <class 'bool'>
+      kind: POSITIONAL_OR_KEYWORD
+      name: use_dataset
+      type: <class 'bool'>
+    dispatch: native
+    return_type: VARCHAR
+  swift11:
+    arguments:
+    - default: <class 'bool'>
+      kind: POSITIONAL_OR_KEYWORD
+      name: primary
+      type: <class 'bool'>
+    - default: <class 'bool'>
+      kind: POSITIONAL_OR_KEYWORD
+      name: use_dataset
+      type: <class 'bool'>
+    dispatch: native
+    return_type: VARCHAR
+  swift8:
+    arguments:
+    - default: <class 'bool'>
+      kind: POSITIONAL_OR_KEYWORD
+      name: use_dataset
+      type: <class 'bool'>
+    dispatch: native
+    return_type: VARCHAR
+  text:
+    arguments:
+    - default: <class 'int'>
+      kind: POSITIONAL_OR_KEYWORD
+      name: max_nb_chars
+      type: INTEGER
+    - default: typing.Optional[typing.Sequence[str]]
+      kind: POSITIONAL_OR_KEYWORD
+      name: ext_word_list
+      type: typing.Optional[typing.Sequence[str]]
+    dispatch: native
+    return_type: VARCHAR
+  time:
+    arguments:
+    - default: <class 'str'>
+      kind: POSITIONAL_OR_KEYWORD
+      name: pattern
+      type: VARCHAR
+    - default: typing.Union[datetime.date, datetime.datetime, datetime.timedelta,
+        str, int, NoneType]
+      kind: POSITIONAL_OR_KEYWORD
+      name: end_datetime
+      type: typing.Union[datetime.date, datetime.datetime, datetime.timedelta, str,
+        int, NoneType]
+    dispatch: native
+    return_type: VARCHAR
+  time_object:
+    arguments:
+    - default: typing.Union[datetime.date, datetime.datetime, datetime.timedelta,
+        str, int, NoneType]
+      kind: POSITIONAL_OR_KEYWORD
+      name: end_datetime
+      type: typing.Union[datetime.date, datetime.datetime, datetime.timedelta, str,
+        int, NoneType]
+    dispatch: native
+    return_type: TIME
+  timezone:
+    arguments: []
+    dispatch: native
+    return_type: VARCHAR
+  tld:
+    arguments: []
+    dispatch: native
+    return_type: VARCHAR
+  tsv:
+    arguments:
+    - default: typing.Optional[typing.Sequence[str]]
+      kind: POSITIONAL_OR_KEYWORD
+      name: header
+      type: typing.Optional[typing.Sequence[str]]
+    - default: typing.Tuple[str, str]
+      kind: POSITIONAL_OR_KEYWORD
+      name: data_columns
+      type: typing.Tuple[str, str]
+    - default: <class 'int'>
+      kind: POSITIONAL_OR_KEYWORD
+      name: num_rows
+      type: INTEGER
+    - default: <class 'bool'>
+      kind: POSITIONAL_OR_KEYWORD
+      name: include_row_ids
+      type: <class 'bool'>
+    dispatch: native
+    return_type: VARCHAR
+  unique.clear:
+    arguments: []
+    dispatch: native
+    return_type: SQLNULL
+  unix_device:
+    arguments:
+    - default: typing.Optional[str]
+      kind: POSITIONAL_OR_KEYWORD
+      name: prefix
+      type: typing.Optional[str]
+    dispatch: native
+    return_type: VARCHAR
+  unix_partition:
+    arguments:
+    - default: typing.Optional[str]
+      kind: POSITIONAL_OR_KEYWORD
+      name: prefix
+      type: typing.Optional[str]
+    dispatch: native
+    return_type: VARCHAR
+  unix_time:
+    arguments:
+    - default: typing.Union[datetime.date, datetime.datetime, datetime.timedelta,
+        str, int, NoneType]
+      kind: POSITIONAL_OR_KEYWORD
+      name: end_datetime
+      type: typing.Union[datetime.date, datetime.datetime, datetime.timedelta, str,
+        int, NoneType]
+    - default: typing.Union[datetime.date, datetime.datetime, datetime.timedelta,
+        str, int, NoneType]
+      kind: POSITIONAL_OR_KEYWORD
+      name: start_datetime
+      type: typing.Union[datetime.date, datetime.datetime, datetime.timedelta, str,
+        int, NoneType]
+    dispatch: native
+    return_type: INTEGER
+  upc_a:
+    arguments:
+    - default: <class 'bool'>
+      kind: POSITIONAL_OR_KEYWORD
+      name: upc_ae_mode
+      type: <class 'bool'>
+    - default: typing.Optional[str]
+      kind: POSITIONAL_OR_KEYWORD
+      name: base
+      type: typing.Optional[str]
+    - default: typing.Optional[int]
+      kind: POSITIONAL_OR_KEYWORD
+      name: number_system_digit
+      type: typing.Optional[int]
+    dispatch: native
+    return_type: VARCHAR
+  upc_e:
+    arguments:
+    - default: typing.Optional[str]
+      kind: POSITIONAL_OR_KEYWORD
+      name: base
+      type: typing.Optional[str]
+    - default: typing.Optional[int]
+      kind: POSITIONAL_OR_KEYWORD
+      name: number_system_digit
+      type: typing.Optional[int]
+    - default: <class 'bool'>
+      kind: POSITIONAL_OR_KEYWORD
+      name: safe_mode
+      type: <class 'bool'>
+    dispatch: native
+    return_type: VARCHAR
+  uri:
+    arguments: []
+    dispatch: native
+    return_type: VARCHAR
+  uri_extension:
+    arguments: []
+    dispatch: native
+    return_type: VARCHAR
+  uri_page:
+    arguments: []
+    dispatch: native
+    return_type: VARCHAR
+  uri_path:
+    arguments:
+    - default: typing.Optional[int]
+      kind: POSITIONAL_OR_KEYWORD
+      name: deep
+      type: typing.Optional[int]
+    dispatch: native
+    return_type: VARCHAR
+  url:
+    arguments:
+    - default: typing.Optional[typing.List[str]]
+      kind: POSITIONAL_OR_KEYWORD
+      name: schemes
+      type: typing.Optional[typing.List[str]]
+    dispatch: native
+    return_type: VARCHAR
+  user_agent:
+    arguments: []
+    dispatch: native
+    return_type: VARCHAR
+  user_name:
+    arguments: []
+    dispatch: native
+    return_type: VARCHAR
+  vat_id:
+    arguments: []
+    dispatch: native
+    return_type: VARCHAR
+  windows_platform_token:
+    arguments: []
+    dispatch: native
+    return_type: VARCHAR
+  word:
+    arguments:
+    - default: typing.Optional[str]
+      kind: POSITIONAL_OR_KEYWORD
+      name: part_of_speech
+      type: typing.Optional[str]
+    - default: typing.Optional[typing.Sequence[str]]
+      kind: POSITIONAL_OR_KEYWORD
+      name: ext_word_list
+      type: typing.Optional[typing.Sequence[str]]
+    dispatch: native
+    return_type: VARCHAR
+  xml:
+    arguments:
+    - default: <class 'int'>
+      kind: POSITIONAL_OR_KEYWORD
+      name: nb_elements
+      type: INTEGER
+    - default: <class 'bool'>
+      kind: POSITIONAL_OR_KEYWORD
+      name: variable_nb_elements
+      type: <class 'bool'>
+    - default: typing.Union[typing.List[typing.Type], typing.Tuple[typing.Type, ...],
+        NoneType]
+      kind: POSITIONAL_OR_KEYWORD
+      name: value_types
+      type: typing.Union[typing.List[typing.Type], typing.Tuple[typing.Type, ...],
+        NoneType]
+    - default: typing.Union[typing.List[typing.Type], typing.Tuple[typing.Type, ...],
+        NoneType]
+      kind: POSITIONAL_OR_KEYWORD
+      name: allowed_types
+      type: typing.Union[typing.List[typing.Type], typing.Tuple[typing.Type, ...],
+        NoneType]
+    dispatch: native
+    return_type: VARCHAR
+  year:
+    arguments: []
+    dispatch: native
+    return_type: VARCHAR
+mimesis_en:
+  _meta:
+    arg_type: annotated
+  address.address:
+    arguments: []
+    dispatch: native
+    return_type: VARCHAR
+  address.calling_code:
+    arguments: []
+    dispatch: native
+    return_type: VARCHAR
+  address.city:
+    arguments: []
+    dispatch: native
+    return_type: VARCHAR
+  address.continent:
+    arguments:
+    - default: <class 'bool'>
+      kind: POSITIONAL_OR_KEYWORD
+      name: code
+      type: <class 'bool'>
+    dispatch: native
+    return_type: VARCHAR
+  address.country:
+    arguments: []
+    dispatch: native
+    return_type: VARCHAR
+  address.country_code:
+    arguments:
+    - default: typing.Optional[mimesis.enums.CountryCode]
+      kind: POSITIONAL_OR_KEYWORD
+      name: code
+      type: typing.Optional[mimesis.enums.CountryCode]
+    dispatch: native
+    return_type: VARCHAR
+  address.default_country:
+    arguments: []
+    dispatch: native
+    return_type: VARCHAR
+  address.federal_subject:
+    arguments:
+    - default: null
+      kind: VAR_POSITIONAL
+      name: args
+      type: typing.Any
+    - default: null
+      kind: VAR_KEYWORD
+      name: kwargs
+      type: typing.Any
+    dispatch: native
+    return_type: VARCHAR
+  address.get_current_locale:
+    arguments: []
+    dispatch: native
+    return_type: VARCHAR
+  address.postal_code:
+    arguments: []
+    dispatch: native
+    return_type: VARCHAR
+  address.prefecture:
+    arguments:
+    - default: null
+      kind: VAR_POSITIONAL
+      name: args
+      type: typing.Any
+    - default: null
+      kind: VAR_KEYWORD
+      name: kwargs
+      type: typing.Any
+    dispatch: native
+    return_type: VARCHAR
+  address.province:
+    arguments:
+    - default: null
+      kind: VAR_POSITIONAL
+      name: args
+      type: typing.Any
+    - default: null
+      kind: VAR_KEYWORD
+      name: kwargs
+      type: typing.Any
+    dispatch: native
+    return_type: VARCHAR
+  address.region:
+    arguments:
+    - default: null
+      kind: VAR_POSITIONAL
+      name: args
+      type: typing.Any
+    - default: null
+      kind: VAR_KEYWORD
+      name: kwargs
+      type: typing.Any
+    dispatch: native
+    return_type: VARCHAR
+  address.reseed:
+    arguments:
+    - default: typing.Union[NoneType, int, float, str, bytes, bytearray, mimesis.types._MissingSeed]
+      kind: POSITIONAL_OR_KEYWORD
+      name: seed
+      type: typing.Union[NoneType, int, float, str, bytes, bytearray, mimesis.types._MissingSeed]
+    dispatch: native
+    return_type: SQLNULL
+  address.state:
+    arguments:
+    - default: <class 'bool'>
+      kind: POSITIONAL_OR_KEYWORD
+      name: abbr
+      type: <class 'bool'>
+    dispatch: native
+    return_type: VARCHAR
+  address.street_name:
+    arguments: []
+    dispatch: native
+    return_type: VARCHAR
+  address.street_number:
+    arguments:
+    - default: <class 'int'>
+      kind: POSITIONAL_OR_KEYWORD
+      name: maximum
+      type: INTEGER
+    dispatch: native
+    return_type: VARCHAR
+  address.street_suffix:
+    arguments: []
+    dispatch: native
+    return_type: VARCHAR
+  address.zip_code:
+    arguments: []
+    dispatch: native
+    return_type: VARCHAR
+  binaryfile.reseed:
+    arguments:
+    - default: typing.Union[NoneType, int, float, str, bytes, bytearray, mimesis.types._MissingSeed]
+      kind: POSITIONAL_OR_KEYWORD
+      name: seed
+      type: typing.Union[NoneType, int, float, str, bytes, bytearray, mimesis.types._MissingSeed]
+    dispatch: native
+    return_type: SQLNULL
+  choice.reseed:
+    arguments:
+    - default: typing.Union[NoneType, int, float, str, bytes, bytearray, mimesis.types._MissingSeed]
+      kind: POSITIONAL_OR_KEYWORD
+      name: seed
+      type: typing.Union[NoneType, int, float, str, bytes, bytearray, mimesis.types._MissingSeed]
+    dispatch: native
+    return_type: SQLNULL
+  code.ean:
+    arguments:
+    - default: typing.Optional[mimesis.enums.EANFormat]
+      kind: POSITIONAL_OR_KEYWORD
+      name: fmt
+      type: typing.Optional[mimesis.enums.EANFormat]
+    dispatch: native
+    return_type: VARCHAR
+  code.imei:
+    arguments: []
+    dispatch: native
+    return_type: VARCHAR
+  code.isbn:
+    arguments:
+    - default: typing.Optional[mimesis.enums.ISBNFormat]
+      kind: POSITIONAL_OR_KEYWORD
+      name: fmt
+      type: typing.Optional[mimesis.enums.ISBNFormat]
+    - default: <enum 'Locale'>
+      kind: POSITIONAL_OR_KEYWORD
+      name: locale
+      type: <enum 'Locale'>
+    dispatch: native
+    return_type: VARCHAR
+  code.issn:
+    arguments:
+    - default: <class 'str'>
+      kind: POSITIONAL_OR_KEYWORD
+      name: mask
+      type: VARCHAR
+    dispatch: native
+    return_type: VARCHAR
+  code.locale_code:
+    arguments: []
+    dispatch: native
+    return_type: VARCHAR
+  code.pin:
+    arguments:
+    - default: <class 'str'>
+      kind: POSITIONAL_OR_KEYWORD
+      name: mask
+      type: VARCHAR
+    dispatch: native
+    return_type: VARCHAR
+  code.reseed:
+    arguments:
+    - default: typing.Union[NoneType, int, float, str, bytes, bytearray, mimesis.types._MissingSeed]
+      kind: POSITIONAL_OR_KEYWORD
+      name: seed
+      type: typing.Union[NoneType, int, float, str, bytes, bytearray, mimesis.types._MissingSeed]
+    dispatch: native
+    return_type: SQLNULL
+  cryptographic.hash:
+    arguments:
+    - default: typing.Optional[mimesis.enums.Algorithm]
+      kind: POSITIONAL_OR_KEYWORD
+      name: algorithm
+      type: typing.Optional[mimesis.enums.Algorithm]
+    dispatch: native
+    return_type: VARCHAR
+  cryptographic.mnemonic_phrase:
+    arguments: []
+    dispatch: native
+    return_type: VARCHAR
+  cryptographic.reseed:
+    arguments:
+    - default: typing.Union[NoneType, int, float, str, bytes, bytearray, mimesis.types._MissingSeed]
+      kind: POSITIONAL_OR_KEYWORD
+      name: seed
+      type: typing.Union[NoneType, int, float, str, bytes, bytearray, mimesis.types._MissingSeed]
+    dispatch: native
+    return_type: SQLNULL
+  cryptographic.token_hex:
+    arguments:
+    - default: <class 'int'>
+      kind: POSITIONAL_OR_KEYWORD
+      name: entropy
+      type: INTEGER
+    dispatch: native
+    return_type: VARCHAR
+  cryptographic.token_urlsafe:
+    arguments:
+    - default: <class 'int'>
+      kind: POSITIONAL_OR_KEYWORD
+      name: entropy
+      type: INTEGER
+    dispatch: native
+    return_type: VARCHAR
+  cryptographic.uuid:
+    arguments: []
+    dispatch: native
+    return_type: VARCHAR
+  datetime.century:
+    arguments: []
+    dispatch: native
+    return_type: VARCHAR
+  datetime.date:
+    arguments:
+    - default: <class 'int'>
+      kind: POSITIONAL_OR_KEYWORD
+      name: start
+      type: INTEGER
+    - default: <class 'int'>
+      kind: POSITIONAL_OR_KEYWORD
+      name: end
+      type: INTEGER
+    dispatch: native
+    return_type: DATE
+  datetime.datetime:
+    arguments:
+    - default: <class 'int'>
+      kind: POSITIONAL_OR_KEYWORD
+      name: start
+      type: INTEGER
+    - default: <class 'int'>
+      kind: POSITIONAL_OR_KEYWORD
+      name: end
+      type: INTEGER
+    - default: typing.Optional[str]
+      kind: POSITIONAL_OR_KEYWORD
+      name: timezone
+      type: typing.Optional[str]
+    dispatch: native
+    return_type: TIMESTAMP
+  datetime.day_of_month:
+    arguments: []
+    dispatch: native
+    return_type: INTEGER
+  datetime.day_of_week:
+    arguments:
+    - default: <class 'bool'>
+      kind: POSITIONAL_OR_KEYWORD
+      name: abbr
+      type: <class 'bool'>
+    dispatch: native
+    return_type: VARCHAR
+  datetime.formatted_date:
+    arguments:
+    - default: <class 'str'>
+      kind: POSITIONAL_OR_KEYWORD
+      name: fmt
+      type: VARCHAR
+    - default: null
+      kind: VAR_KEYWORD
+      name: kwargs
+      type: typing.Any
+    dispatch: native
+    return_type: VARCHAR
+  datetime.formatted_datetime:
+    arguments:
+    - default: <class 'str'>
+      kind: POSITIONAL_OR_KEYWORD
+      name: fmt
+      type: VARCHAR
+    - default: null
+      kind: VAR_KEYWORD
+      name: kwargs
+      type: typing.Any
+    dispatch: native
+    return_type: VARCHAR
+  datetime.formatted_time:
+    arguments:
+    - default: <class 'str'>
+      kind: POSITIONAL_OR_KEYWORD
+      name: fmt
+      type: VARCHAR
+    dispatch: native
+    return_type: VARCHAR
+  datetime.get_current_locale:
+    arguments: []
+    dispatch: native
+    return_type: VARCHAR
+  datetime.gmt_offset:
+    arguments: []
+    dispatch: native
+    return_type: VARCHAR
+  datetime.month:
+    arguments:
+    - default: <class 'bool'>
+      kind: POSITIONAL_OR_KEYWORD
+      name: abbr
+      type: <class 'bool'>
+    dispatch: native
+    return_type: VARCHAR
+  datetime.periodicity:
+    arguments: []
+    dispatch: native
+    return_type: VARCHAR
+  datetime.reseed:
+    arguments:
+    - default: typing.Union[NoneType, int, float, str, bytes, bytearray, mimesis.types._MissingSeed]
+      kind: POSITIONAL_OR_KEYWORD
+      name: seed
+      type: typing.Union[NoneType, int, float, str, bytes, bytearray, mimesis.types._MissingSeed]
+    dispatch: native
+    return_type: SQLNULL
+  datetime.time:
+    arguments: []
+    dispatch: native
+    return_type: TIME
+  datetime.timezone:
+    arguments:
+    - default: typing.Optional[mimesis.enums.TimezoneRegion]
+      kind: POSITIONAL_OR_KEYWORD
+      name: region
+      type: typing.Optional[mimesis.enums.TimezoneRegion]
+    dispatch: native
+    return_type: VARCHAR
+  datetime.week_date:
+    arguments:
+    - default: <class 'int'>
+      kind: POSITIONAL_OR_KEYWORD
+      name: start
+      type: INTEGER
+    - default: <class 'int'>
+      kind: POSITIONAL_OR_KEYWORD
+      name: end
+      type: INTEGER
+    dispatch: native
+    return_type: VARCHAR
+  datetime.year:
+    arguments:
+    - default: <class 'int'>
+      kind: POSITIONAL_OR_KEYWORD
+      name: minimum
+      type: INTEGER
+    - default: <class 'int'>
+      kind: POSITIONAL_OR_KEYWORD
+      name: maximum
+      type: INTEGER
+    dispatch: native
+    return_type: INTEGER
+  development.dsn:
+    arguments:
+    - default: typing.Optional[mimesis.enums.DSNType]
+      kind: POSITIONAL_OR_KEYWORD
+      name: dsn_type
+      type: typing.Optional[mimesis.enums.DSNType]
+    - default: null
+      kind: VAR_KEYWORD
+      name: kwargs
+      type: typing.Any
+    dispatch: native
+    return_type: VARCHAR
+  development.os:
+    arguments: []
+    dispatch: native
+    return_type: VARCHAR
+  development.programming_language:
+    arguments: []
+    dispatch: native
+    return_type: VARCHAR
+  development.reseed:
+    arguments:
+    - default: typing.Union[NoneType, int, float, str, bytes, bytearray, mimesis.types._MissingSeed]
+      kind: POSITIONAL_OR_KEYWORD
+      name: seed
+      type: typing.Union[NoneType, int, float, str, bytes, bytearray, mimesis.types._MissingSeed]
+    dispatch: native
+    return_type: SQLNULL
+  development.software_license:
+    arguments: []
+    dispatch: native
+    return_type: VARCHAR
+  development.version:
+    arguments:
+    - default: <class 'bool'>
+      kind: POSITIONAL_OR_KEYWORD
+      name: calver
+      type: <class 'bool'>
+    - default: <class 'bool'>
+      kind: POSITIONAL_OR_KEYWORD
+      name: pre_release
+      type: <class 'bool'>
+    dispatch: native
+    return_type: VARCHAR
+  file.extension:
+    arguments:
+    - default: typing.Optional[mimesis.enums.FileType]
+      kind: POSITIONAL_OR_KEYWORD
+      name: file_type
+      type: typing.Optional[mimesis.enums.FileType]
+    dispatch: native
+    return_type: VARCHAR
+  file.file_name:
+    arguments:
+    - default: typing.Optional[mimesis.enums.FileType]
+      kind: POSITIONAL_OR_KEYWORD
+      name: file_type
+      type: typing.Optional[mimesis.enums.FileType]
+    dispatch: native
+    return_type: VARCHAR
+  file.mime_type:
+    arguments:
+    - default: typing.Optional[mimesis.enums.MimeType]
+      kind: POSITIONAL_OR_KEYWORD
+      name: type_
+      type: typing.Optional[mimesis.enums.MimeType]
+    dispatch: native
+    return_type: VARCHAR
+  file.reseed:
+    arguments:
+    - default: typing.Union[NoneType, int, float, str, bytes, bytearray, mimesis.types._MissingSeed]
+      kind: POSITIONAL_OR_KEYWORD
+      name: seed
+      type: typing.Union[NoneType, int, float, str, bytes, bytearray, mimesis.types._MissingSeed]
+    dispatch: native
+    return_type: SQLNULL
+  file.size:
+    arguments:
+    - default: <class 'int'>
+      kind: POSITIONAL_OR_KEYWORD
+      name: minimum
+      type: INTEGER
+    - default: <class 'int'>
+      kind: POSITIONAL_OR_KEYWORD
+      name: maximum
+      type: INTEGER
+    dispatch: native
+    return_type: VARCHAR
+  finance.bank:
+    arguments: []
+    dispatch: native
+    return_type: VARCHAR
+  finance.company:
+    arguments: []
+    dispatch: native
+    return_type: VARCHAR
+  finance.company_type:
+    arguments:
+    - default: <class 'bool'>
+      kind: POSITIONAL_OR_KEYWORD
+      name: abbr
+      type: <class 'bool'>
+    dispatch: native
+    return_type: VARCHAR
+  finance.cryptocurrency_iso_code:
+    arguments: []
+    dispatch: native
+    return_type: VARCHAR
+  finance.cryptocurrency_symbol:
+    arguments: []
+    dispatch: native
+    return_type: VARCHAR
+  finance.currency_iso_code:
+    arguments:
+    - default: <class 'bool'>
+      kind: POSITIONAL_OR_KEYWORD
+      name: allow_random
+      type: <class 'bool'>
+    dispatch: native
+    return_type: VARCHAR
+  finance.currency_symbol:
+    arguments: []
+    dispatch: native
+    return_type: VARCHAR
+  finance.get_current_locale:
+    arguments: []
+    dispatch: native
+    return_type: VARCHAR
+  finance.price:
+    arguments:
+    - default: <class 'float'>
+      kind: POSITIONAL_OR_KEYWORD
+      name: minimum
+      type: FLOAT
+    - default: <class 'float'>
+      kind: POSITIONAL_OR_KEYWORD
+      name: maximum
+      type: FLOAT
+    dispatch: native
+    return_type: FLOAT
+  finance.price_in_btc:
+    arguments:
+    - default: <class 'float'>
+      kind: POSITIONAL_OR_KEYWORD
+      name: minimum
+      type: FLOAT
+    - default: <class 'float'>
+      kind: POSITIONAL_OR_KEYWORD
+      name: maximum
+      type: FLOAT
+    dispatch: native
+    return_type: FLOAT
+  finance.reseed:
+    arguments:
+    - default: typing.Union[NoneType, int, float, str, bytes, bytearray, mimesis.types._MissingSeed]
+      kind: POSITIONAL_OR_KEYWORD
+      name: seed
+      type: typing.Union[NoneType, int, float, str, bytes, bytearray, mimesis.types._MissingSeed]
+    dispatch: native
+    return_type: SQLNULL
+  finance.stock_exchange:
+    arguments: []
+    dispatch: native
+    return_type: VARCHAR
+  finance.stock_name:
+    arguments: []
+    dispatch: native
+    return_type: VARCHAR
+  finance.stock_ticker:
+    arguments: []
+    dispatch: native
+    return_type: VARCHAR
+  food.dish:
+    arguments: []
+    dispatch: native
+    return_type: VARCHAR
+  food.drink:
+    arguments: []
+    dispatch: native
+    return_type: VARCHAR
+  food.fruit:
+    arguments: []
+    dispatch: native
+    return_type: VARCHAR
+  food.get_current_locale:
+    arguments: []
+    dispatch: native
+    return_type: VARCHAR
+  food.reseed:
+    arguments:
+    - default: typing.Union[NoneType, int, float, str, bytes, bytearray, mimesis.types._MissingSeed]
+      kind: POSITIONAL_OR_KEYWORD
+      name: seed
+      type: typing.Union[NoneType, int, float, str, bytes, bytearray, mimesis.types._MissingSeed]
+    dispatch: native
+    return_type: SQLNULL
+  food.spices:
+    arguments: []
+    dispatch: native
+    return_type: VARCHAR
+  food.vegetable:
+    arguments: []
+    dispatch: native
+    return_type: VARCHAR
+  hardware.cpu:
+    arguments: []
+    dispatch: native
+    return_type: VARCHAR
+  hardware.cpu_codename:
+    arguments: []
+    dispatch: native
+    return_type: VARCHAR
+  hardware.cpu_frequency:
+    arguments: []
+    dispatch: native
+    return_type: VARCHAR
+  hardware.generation:
+    arguments: []
+    dispatch: native
+    return_type: VARCHAR
+  hardware.graphics:
+    arguments: []
+    dispatch: native
+    return_type: VARCHAR
+  hardware.manufacturer:
+    arguments: []
+    dispatch: native
+    return_type: VARCHAR
+  hardware.phone_model:
+    arguments: []
+    dispatch: native
+    return_type: VARCHAR
+  hardware.ram_size:
+    arguments: []
+    dispatch: native
+    return_type: VARCHAR
+  hardware.ram_type:
+    arguments: []
+    dispatch: native
+    return_type: VARCHAR
+  hardware.reseed:
+    arguments:
+    - default: typing.Union[NoneType, int, float, str, bytes, bytearray, mimesis.types._MissingSeed]
+      kind: POSITIONAL_OR_KEYWORD
+      name: seed
+      type: typing.Union[NoneType, int, float, str, bytes, bytearray, mimesis.types._MissingSeed]
+    dispatch: native
+    return_type: SQLNULL
+  hardware.resolution:
+    arguments: []
+    dispatch: native
+    return_type: VARCHAR
+  hardware.screen_size:
+    arguments: []
+    dispatch: native
+    return_type: VARCHAR
+  hardware.ssd_or_hdd:
+    arguments: []
+    dispatch: native
+    return_type: VARCHAR
+  internet.content_type:
+    arguments:
+    - default: typing.Optional[mimesis.enums.MimeType]
+      kind: POSITIONAL_OR_KEYWORD
+      name: mime_type
+      type: typing.Optional[mimesis.enums.MimeType]
+    dispatch: native
+    return_type: VARCHAR
+  internet.emoji:
+    arguments: []
+    dispatch: native
+    return_type: VARCHAR
+  internet.hostname:
+    arguments:
+    - default: typing.Optional[mimesis.enums.TLDType]
+      kind: POSITIONAL_OR_KEYWORD
+      name: tld_type
+      type: typing.Optional[mimesis.enums.TLDType]
+    - default: typing.Optional[typing.List[str]]
+      kind: POSITIONAL_OR_KEYWORD
+      name: subdomains
+      type: typing.Optional[typing.List[str]]
+    dispatch: native
+    return_type: VARCHAR
+  internet.http_method:
+    arguments: []
+    dispatch: native
+    return_type: VARCHAR
+  internet.http_status_code:
+    arguments: []
+    dispatch: native
+    return_type: INTEGER
+  internet.http_status_message:
+    arguments: []
+    dispatch: native
+    return_type: VARCHAR
+  internet.ip_v4:
+    arguments: []
+    dispatch: native
+    return_type: VARCHAR
+  internet.ip_v4_with_port:
+    arguments:
+    - default: <enum 'PortRange'>
+      kind: POSITIONAL_OR_KEYWORD
+      name: port_range
+      type: <enum 'PortRange'>
+    dispatch: native
+    return_type: VARCHAR
+  internet.ip_v6:
+    arguments: []
+    dispatch: native
+    return_type: VARCHAR
+  internet.mac_address:
+    arguments: []
+    dispatch: native
+    return_type: VARCHAR
+  internet.path:
+    arguments:
+    - default: null
+      kind: VAR_POSITIONAL
+      name: args
+      type: typing.Any
+    - default: null
+      kind: VAR_KEYWORD
+      name: kwargs
+      type: typing.Any
+    dispatch: native
+    return_type: VARCHAR
+  internet.port:
+    arguments:
+    - default: <enum 'PortRange'>
+      kind: POSITIONAL_OR_KEYWORD
+      name: port_range
+      type: <enum 'PortRange'>
+    dispatch: native
+    return_type: INTEGER
+  internet.public_dns:
+    arguments: []
+    dispatch: native
+    return_type: VARCHAR
+  internet.query_string:
+    arguments:
+    - default: typing.Optional[int]
+      kind: POSITIONAL_OR_KEYWORD
+      name: length
+      type: typing.Optional[int]
+    dispatch: native
+    return_type: VARCHAR
+  internet.reseed:
+    arguments:
+    - default: typing.Union[NoneType, int, float, str, bytes, bytearray, mimesis.types._MissingSeed]
+      kind: POSITIONAL_OR_KEYWORD
+      name: seed
+      type: typing.Union[NoneType, int, float, str, bytes, bytearray, mimesis.types._MissingSeed]
+    dispatch: native
+    return_type: SQLNULL
+  internet.slug:
+    arguments:
+    - default: typing.Optional[int]
+      kind: POSITIONAL_OR_KEYWORD
+      name: parts_count
+      type: typing.Optional[int]
+    dispatch: native
+    return_type: VARCHAR
+  internet.stock_image_url:
+    arguments:
+    - default: typing.Union[int, str]
+      kind: POSITIONAL_OR_KEYWORD
+      name: width
+      type: typing.Union[int, str]
+    - default: typing.Union[int, str]
+      kind: POSITIONAL_OR_KEYWORD
+      name: height
+      type: typing.Union[int, str]
+    - default: typing.Union[typing.List[str], typing.Set[str], typing.Tuple[str, ...],
+        NoneType]
+      kind: POSITIONAL_OR_KEYWORD
+      name: keywords
+      type: typing.Union[typing.List[str], typing.Set[str], typing.Tuple[str, ...],
+        NoneType]
+    dispatch: native
+    return_type: VARCHAR
+  internet.tld:
+    arguments:
+    - default: null
+      kind: VAR_POSITIONAL
+      name: args
+      type: typing.Any
+    - default: null
+      kind: VAR_KEYWORD
+      name: kwargs
+      type: typing.Any
+    dispatch: native
+    return_type: VARCHAR
+  internet.top_level_domain:
+    arguments:
+    - default: <enum 'TLDType'>
+      kind: POSITIONAL_OR_KEYWORD
+      name: tld_type
+      type: <enum 'TLDType'>
+    dispatch: native
+    return_type: VARCHAR
+  internet.uri:
+    arguments:
+    - default: typing.Optional[mimesis.enums.URLScheme]
+      kind: POSITIONAL_OR_KEYWORD
+      name: scheme
+      type: typing.Optional[mimesis.enums.URLScheme]
+    - default: typing.Optional[mimesis.enums.TLDType]
+      kind: POSITIONAL_OR_KEYWORD
+      name: tld_type
+      type: typing.Optional[mimesis.enums.TLDType]
+    - default: typing.Optional[typing.List[str]]
+      kind: POSITIONAL_OR_KEYWORD
+      name: subdomains
+      type: typing.Optional[typing.List[str]]
+    - default: typing.Optional[int]
+      kind: POSITIONAL_OR_KEYWORD
+      name: query_params_count
+      type: typing.Optional[int]
+    dispatch: native
+    return_type: VARCHAR
+  internet.url:
+    arguments:
+    - default: typing.Optional[mimesis.enums.URLScheme]
+      kind: POSITIONAL_OR_KEYWORD
+      name: scheme
+      type: typing.Optional[mimesis.enums.URLScheme]
+    - default: typing.Optional[mimesis.enums.PortRange]
+      kind: POSITIONAL_OR_KEYWORD
+      name: port_range
+      type: typing.Optional[mimesis.enums.PortRange]
+    - default: typing.Optional[mimesis.enums.TLDType]
+      kind: POSITIONAL_OR_KEYWORD
+      name: tld_type
+      type: typing.Optional[mimesis.enums.TLDType]
+    - default: typing.Optional[typing.List[str]]
+      kind: POSITIONAL_OR_KEYWORD
+      name: subdomains
+      type: typing.Optional[typing.List[str]]
+    dispatch: native
+    return_type: VARCHAR
+  internet.user_agent:
+    arguments: []
+    dispatch: native
+    return_type: VARCHAR
+  numeric.float_number:
+    arguments:
+    - default: <class 'float'>
+      kind: POSITIONAL_OR_KEYWORD
+      name: start
+      type: FLOAT
+    - default: <class 'float'>
+      kind: POSITIONAL_OR_KEYWORD
+      name: end
+      type: FLOAT
+    - default: <class 'int'>
+      kind: POSITIONAL_OR_KEYWORD
+      name: precision
+      type: INTEGER
+    dispatch: native
+    return_type: FLOAT
+  numeric.increment:
+    arguments:
+    - default: typing.Optional[str]
+      kind: POSITIONAL_OR_KEYWORD
+      name: accumulator
+      type: typing.Optional[str]
+    dispatch: native
+    return_type: INTEGER
+  numeric.integer_number:
+    arguments:
+    - default: <class 'int'>
+      kind: POSITIONAL_OR_KEYWORD
+      name: start
+      type: INTEGER
+    - default: <class 'int'>
+      kind: POSITIONAL_OR_KEYWORD
+      name: end
+      type: INTEGER
+    dispatch: native
+    return_type: INTEGER
+  numeric.reseed:
+    arguments:
+    - default: typing.Union[NoneType, int, float, str, bytes, bytearray, mimesis.types._MissingSeed]
+      kind: POSITIONAL_OR_KEYWORD
+      name: seed
+      type: typing.Union[NoneType, int, float, str, bytes, bytearray, mimesis.types._MissingSeed]
+    dispatch: native
+    return_type: SQLNULL
+  path.dev_dir:
+    arguments: []
+    dispatch: native
+    return_type: VARCHAR
+  path.home:
+    arguments: []
+    dispatch: native
+    return_type: VARCHAR
+  path.project_dir:
+    arguments: []
+    dispatch: native
+    return_type: VARCHAR
+  path.reseed:
+    arguments:
+    - default: typing.Union[NoneType, int, float, str, bytes, bytearray, mimesis.types._MissingSeed]
+      kind: POSITIONAL_OR_KEYWORD
+      name: seed
+      type: typing.Union[NoneType, int, float, str, bytes, bytearray, mimesis.types._MissingSeed]
+    dispatch: native
+    return_type: SQLNULL
+  path.root:
+    arguments: []
+    dispatch: native
+    return_type: VARCHAR
+  path.user:
+    arguments: []
+    dispatch: native
+    return_type: VARCHAR
+  path.users_folder:
+    arguments: []
+    dispatch: native
+    return_type: VARCHAR
+  payment.bitcoin_address:
+    arguments: []
+    dispatch: native
+    return_type: VARCHAR
+  payment.cid:
+    arguments: []
+    dispatch: native
+    return_type: VARCHAR
+  payment.credit_card_expiration_date:
+    arguments:
+    - default: <class 'int'>
+      kind: POSITIONAL_OR_KEYWORD
+      name: minimum
+      type: INTEGER
+    - default: <class 'int'>
+      kind: POSITIONAL_OR_KEYWORD
+      name: maximum
+      type: INTEGER
+    dispatch: native
+    return_type: VARCHAR
+  payment.credit_card_network:
+    arguments: []
+    dispatch: native
+    return_type: VARCHAR
+  payment.credit_card_number:
+    arguments:
+    - default: typing.Optional[mimesis.enums.CardType]
+      kind: POSITIONAL_OR_KEYWORD
+      name: card_type
+      type: typing.Optional[mimesis.enums.CardType]
+    dispatch: native
+    return_type: VARCHAR
+  payment.cvv:
+    arguments: []
+    dispatch: native
+    return_type: VARCHAR
+  payment.ethereum_address:
+    arguments: []
+    dispatch: native
+    return_type: VARCHAR
+  payment.paypal:
+    arguments: []
+    dispatch: native
+    return_type: VARCHAR
+  payment.reseed:
+    arguments:
+    - default: typing.Union[NoneType, int, float, str, bytes, bytearray, mimesis.types._MissingSeed]
+      kind: POSITIONAL_OR_KEYWORD
+      name: seed
+      type: typing.Union[NoneType, int, float, str, bytes, bytearray, mimesis.types._MissingSeed]
+    dispatch: native
+    return_type: SQLNULL
+  person.academic_degree:
+    arguments: []
+    dispatch: native
+    return_type: VARCHAR
+  person.age:
+    arguments:
+    - default: <class 'int'>
+      kind: POSITIONAL_OR_KEYWORD
+      name: minimum
+      type: INTEGER
+    - default: <class 'int'>
+      kind: POSITIONAL_OR_KEYWORD
+      name: maximum
+      type: INTEGER
+    dispatch: native
+    return_type: INTEGER
+  person.blood_type:
+    arguments: []
+    dispatch: native
+    return_type: VARCHAR
+  person.email:
+    arguments:
+    - default: typing.Optional[typing.Sequence[str]]
+      kind: POSITIONAL_OR_KEYWORD
+      name: domains
+      type: typing.Optional[typing.Sequence[str]]
+    - default: <class 'bool'>
+      kind: POSITIONAL_OR_KEYWORD
+      name: unique
+      type: <class 'bool'>
+    dispatch: native
+    return_type: VARCHAR
+  person.first_name:
+    arguments:
+    - default: typing.Optional[mimesis.enums.Gender]
+      kind: POSITIONAL_OR_KEYWORD
+      name: gender
+      type: typing.Optional[mimesis.enums.Gender]
+    dispatch: native
+    return_type: VARCHAR
+  person.full_name:
+    arguments:
+    - default: typing.Optional[mimesis.enums.Gender]
+      kind: POSITIONAL_OR_KEYWORD
+      name: gender
+      type: typing.Optional[mimesis.enums.Gender]
+    - default: <class 'bool'>
+      kind: POSITIONAL_OR_KEYWORD
+      name: reverse
+      type: <class 'bool'>
+    dispatch: native
+    return_type: VARCHAR
+  person.get_current_locale:
+    arguments: []
+    dispatch: native
+    return_type: VARCHAR
+  person.height:
+    arguments:
+    - default: <class 'float'>
+      kind: POSITIONAL_OR_KEYWORD
+      name: minimum
+      type: FLOAT
+    - default: <class 'float'>
+      kind: POSITIONAL_OR_KEYWORD
+      name: maximum
+      type: FLOAT
+    dispatch: native
+    return_type: VARCHAR
+  person.identifier:
+    arguments:
+    - default: <class 'str'>
+      kind: POSITIONAL_OR_KEYWORD
+      name: mask
+      type: VARCHAR
+    dispatch: native
+    return_type: VARCHAR
+  person.language:
+    arguments: []
+    dispatch: native
+    return_type: VARCHAR
+  person.last_name:
+    arguments:
+    - default: typing.Optional[mimesis.enums.Gender]
+      kind: POSITIONAL_OR_KEYWORD
+      name: gender
+      type: typing.Optional[mimesis.enums.Gender]
+    dispatch: native
+    return_type: VARCHAR
+  person.name:
+    arguments:
+    - default: typing.Optional[mimesis.enums.Gender]
+      kind: POSITIONAL_OR_KEYWORD
+      name: gender
+      type: typing.Optional[mimesis.enums.Gender]
+    dispatch: native
+    return_type: VARCHAR
+  person.nationality:
+    arguments:
+    - default: typing.Optional[mimesis.enums.Gender]
+      kind: POSITIONAL_OR_KEYWORD
+      name: gender
+      type: typing.Optional[mimesis.enums.Gender]
+    dispatch: native
+    return_type: VARCHAR
+  person.occupation:
+    arguments: []
+    dispatch: native
+    return_type: VARCHAR
+  person.password:
+    arguments:
+    - default: <class 'int'>
+      kind: POSITIONAL_OR_KEYWORD
+      name: length
+      type: INTEGER
+    - default: <class 'bool'>
+      kind: POSITIONAL_OR_KEYWORD
+      name: hashed
+      type: <class 'bool'>
+    dispatch: native
+    return_type: VARCHAR
+  person.phone_number:
+    arguments:
+    - default: <class 'str'>
+      kind: POSITIONAL_OR_KEYWORD
+      name: mask
+      type: VARCHAR
+    - default: <class 'str'>
+      kind: POSITIONAL_OR_KEYWORD
+      name: placeholder
+      type: VARCHAR
+    dispatch: native
+    return_type: VARCHAR
+  person.political_views:
+    arguments: []
+    dispatch: native
+    return_type: VARCHAR
+  person.reseed:
+    arguments:
+    - default: typing.Union[NoneType, int, float, str, bytes, bytearray, mimesis.types._MissingSeed]
+      kind: POSITIONAL_OR_KEYWORD
+      name: seed
+      type: typing.Union[NoneType, int, float, str, bytes, bytearray, mimesis.types._MissingSeed]
+    dispatch: native
+    return_type: SQLNULL
+  person.surname:
+    arguments:
+    - default: typing.Optional[mimesis.enums.Gender]
+      kind: POSITIONAL_OR_KEYWORD
+      name: gender
+      type: typing.Optional[mimesis.enums.Gender]
+    dispatch: native
+    return_type: VARCHAR
+  person.telephone:
+    arguments:
+    - default: null
+      kind: VAR_POSITIONAL
+      name: args
+      type: typing.Any
+    - default: null
+      kind: VAR_KEYWORD
+      name: kwargs
+      type: typing.Any
+    dispatch: native
+    return_type: VARCHAR
+  person.title:
+    arguments:
+    - default: typing.Optional[mimesis.enums.Gender]
+      kind: POSITIONAL_OR_KEYWORD
+      name: gender
+      type: typing.Optional[mimesis.enums.Gender]
+    - default: typing.Optional[mimesis.enums.TitleType]
+      kind: POSITIONAL_OR_KEYWORD
+      name: title_type
+      type: typing.Optional[mimesis.enums.TitleType]
+    dispatch: native
+    return_type: VARCHAR
+  person.university:
+    arguments: []
+    dispatch: native
+    return_type: VARCHAR
+  person.username:
+    arguments:
+    - default: typing.Optional[str]
+      kind: POSITIONAL_OR_KEYWORD
+      name: mask
+      type: typing.Optional[str]
+    - default: typing.Tuple[int, int]
+      kind: POSITIONAL_OR_KEYWORD
+      name: drange
+      type: typing.Tuple[int, int]
+    dispatch: native
+    return_type: VARCHAR
+  person.views_on:
+    arguments: []
+    dispatch: native
+    return_type: VARCHAR
+  person.weight:
+    arguments:
+    - default: <class 'int'>
+      kind: POSITIONAL_OR_KEYWORD
+      name: minimum
+      type: INTEGER
+    - default: <class 'int'>
+      kind: POSITIONAL_OR_KEYWORD
+      name: maximum
+      type: INTEGER
+    dispatch: native
+    return_type: INTEGER
+  person.work_experience:
+    arguments:
+    - default: <class 'int'>
+      kind: POSITIONAL_OR_KEYWORD
+      name: working_start_age
+      type: INTEGER
+    dispatch: native
+    return_type: INTEGER
+  person.worldview:
+    arguments: []
+    dispatch: native
+    return_type: VARCHAR
+  science.dna_sequence:
+    arguments:
+    - default: <class 'int'>
+      kind: POSITIONAL_OR_KEYWORD
+      name: length
+      type: INTEGER
+    dispatch: native
+    return_type: VARCHAR
+  science.measure_unit:
+    arguments:
+    - default: typing.Optional[mimesis.enums.MeasureUnit]
+      kind: POSITIONAL_OR_KEYWORD
+      name: name
+      type: typing.Optional[mimesis.enums.MeasureUnit]
+    - default: <class 'bool'>
+      kind: POSITIONAL_OR_KEYWORD
+      name: symbol
+      type: <class 'bool'>
+    dispatch: native
+    return_type: VARCHAR
+  science.metric_prefix:
+    arguments:
+    - default: typing.Optional[mimesis.enums.MetricPrefixSign]
+      kind: POSITIONAL_OR_KEYWORD
+      name: sign
+      type: typing.Optional[mimesis.enums.MetricPrefixSign]
+    - default: <class 'bool'>
+      kind: POSITIONAL_OR_KEYWORD
+      name: symbol
+      type: <class 'bool'>
+    dispatch: native
+    return_type: VARCHAR
+  science.reseed:
+    arguments:
+    - default: typing.Union[NoneType, int, float, str, bytes, bytearray, mimesis.types._MissingSeed]
+      kind: POSITIONAL_OR_KEYWORD
+      name: seed
+      type: typing.Union[NoneType, int, float, str, bytes, bytearray, mimesis.types._MissingSeed]
+    dispatch: native
+    return_type: SQLNULL
+  science.rna_sequence:
+    arguments:
+    - default: <class 'int'>
+      kind: POSITIONAL_OR_KEYWORD
+      name: length
+      type: INTEGER
+    dispatch: native
+    return_type: VARCHAR
+  text.answer:
+    arguments: []
+    dispatch: native
+    return_type: VARCHAR
+  text.color:
+    arguments: []
+    dispatch: native
+    return_type: VARCHAR
+  text.get_current_locale:
+    arguments: []
+    dispatch: native
+    return_type: VARCHAR
+  text.hex_color:
+    arguments:
+    - default: <class 'bool'>
+      kind: POSITIONAL_OR_KEYWORD
+      name: safe
+      type: <class 'bool'>
+    dispatch: native
+    return_type: VARCHAR
+  text.level:
+    arguments: []
+    dispatch: native
+    return_type: VARCHAR
+  text.quote:
+    arguments: []
+    dispatch: native
+    return_type: VARCHAR
+  text.reseed:
+    arguments:
+    - default: typing.Union[NoneType, int, float, str, bytes, bytearray, mimesis.types._MissingSeed]
+      kind: POSITIONAL_OR_KEYWORD
+      name: seed
+      type: typing.Union[NoneType, int, float, str, bytes, bytearray, mimesis.types._MissingSeed]
+    dispatch: native
+    return_type: SQLNULL
+  text.sentence:
+    arguments: []
+    dispatch: native
+    return_type: VARCHAR
+  text.text:
+    arguments:
+    - default: <class 'int'>
+      kind: POSITIONAL_OR_KEYWORD
+      name: quantity
+      type: INTEGER
+    dispatch: native
+    return_type: VARCHAR
+  text.title:
+    arguments: []
+    dispatch: native
+    return_type: VARCHAR
+  text.word:
+    arguments: []
+    dispatch: native
+    return_type: VARCHAR
+  transport.airplane:
+    arguments: []
+    dispatch: native
+    return_type: VARCHAR
+  transport.car:
+    arguments: []
+    dispatch: native
+    return_type: VARCHAR
+  transport.manufacturer:
+    arguments: []
+    dispatch: native
+    return_type: VARCHAR
+  transport.reseed:
+    arguments:
+    - default: typing.Union[NoneType, int, float, str, bytes, bytearray, mimesis.types._MissingSeed]
+      kind: POSITIONAL_OR_KEYWORD
+      name: seed
+      type: typing.Union[NoneType, int, float, str, bytes, bytearray, mimesis.types._MissingSeed]
+    dispatch: native
+    return_type: SQLNULL
+  transport.vehicle_registration_code:
+    arguments:
+    - default: typing.Optional[mimesis.enums.Locale]
+      kind: POSITIONAL_OR_KEYWORD
+      name: locale
+      type: typing.Optional[mimesis.enums.Locale]
+    dispatch: native
+    return_type: VARCHAR
+numpy:
+  _meta:
+    arg_type: basic
+  add_newdoc:
+    arguments:
+    - default: null
+      kind: POSITIONAL_OR_KEYWORD
+      name: place
+    - default: null
+      kind: POSITIONAL_OR_KEYWORD
+      name: obj
+    - default: null
+      kind: POSITIONAL_OR_KEYWORD
+      name: doc
+    - default: null
+      kind: POSITIONAL_OR_KEYWORD
+      name: warn_on_python
+    dispatch: native
+    return_type: VARCHAR
+  asarray_chkfinite:
+    arguments:
+    - default: null
+      kind: POSITIONAL_OR_KEYWORD
+      name: a
+    - default: null
+      kind: POSITIONAL_OR_KEYWORD
+      name: dtype
+    - default: null
+      kind: POSITIONAL_OR_KEYWORD
+      name: order
+    dispatch: native
+    return_type: VARCHAR
+  asmatrix:
+    arguments:
+    - default: null
+      kind: POSITIONAL_OR_KEYWORD
+      name: data
+    - default: null
+      kind: POSITIONAL_OR_KEYWORD
+      name: dtype
+    dispatch: native
+    return_type: VARCHAR
+  bartlett:
+    arguments:
+    - default: null
+      kind: POSITIONAL_OR_KEYWORD
+      name: M
+    dispatch: native
+    return_type: VARCHAR
+  base_repr:
+    arguments:
+    - default: null
+      kind: POSITIONAL_OR_KEYWORD
+      name: number
+    - default: null
+      kind: POSITIONAL_OR_KEYWORD
+      name: base
+    - default: null
+      kind: POSITIONAL_OR_KEYWORD
+      name: padding
+    dispatch: native
+    return_type: VARCHAR
+  binary_repr:
+    arguments:
+    - default: null
+      kind: POSITIONAL_OR_KEYWORD
+      name: num
+    - default: null
+      kind: POSITIONAL_OR_KEYWORD
+      name: width
+    dispatch: native
+    return_type: VARCHAR
+  blackman:
+    arguments:
+    - default: null
+      kind: POSITIONAL_OR_KEYWORD
+      name: M
+    dispatch: native
+    return_type: VARCHAR
+  bmat:
+    arguments:
+    - default: null
+      kind: POSITIONAL_OR_KEYWORD
+      name: obj
+    - default: null
+      kind: POSITIONAL_OR_KEYWORD
+      name: ldict
+    - default: null
+      kind: POSITIONAL_OR_KEYWORD
+      name: gdict
+    dispatch: native
+    return_type: VARCHAR
+  broadcast_shapes:
+    arguments:
+    - default: null
+      kind: VAR_POSITIONAL
+      name: args
+    dispatch: native
+    return_type: VARCHAR
+  byte_bounds:
+    arguments:
+    - default: null
+      kind: POSITIONAL_OR_KEYWORD
+      name: a
+    dispatch: native
+    return_type: VARCHAR
+  deprecate:
+    arguments:
+    - default: null
+      kind: VAR_POSITIONAL
+      name: args
+    - default: null
+      kind: VAR_KEYWORD
+      name: kwargs
+    dispatch: native
+    return_type: VARCHAR
+  deprecate_with_doc:
+    arguments:
+    - default: null
+      kind: POSITIONAL_OR_KEYWORD
+      name: msg
+    dispatch: native
+    return_type: VARCHAR
+  diag_indices:
+    arguments:
+    - default: null
+      kind: POSITIONAL_OR_KEYWORD
+      name: n
+    - default: null
+      kind: POSITIONAL_OR_KEYWORD
+      name: ndim
+    dispatch: native
+    return_type: VARCHAR
+  disp:
+    arguments:
+    - default: null
+      kind: POSITIONAL_OR_KEYWORD
+      name: mesg
+    - default: null
+      kind: POSITIONAL_OR_KEYWORD
+      name: device
+    - default: null
+      kind: POSITIONAL_OR_KEYWORD
+      name: linefeed
+    dispatch: native
+    return_type: VARCHAR
+  eye:
+    arguments:
+    - default: null
+      kind: POSITIONAL_OR_KEYWORD
+      name: N
+    - default: null
+      kind: POSITIONAL_OR_KEYWORD
+      name: M
+    - default: null
+      kind: POSITIONAL_OR_KEYWORD
+      name: k
+    - default: null
+      kind: POSITIONAL_OR_KEYWORD
+      name: dtype
+    - default: null
+      kind: POSITIONAL_OR_KEYWORD
+      name: order
+    - default: null
+      kind: KEYWORD_ONLY
+      name: like
+    dispatch: native
+    return_type: VARCHAR
+  find_common_type:
+    arguments:
+    - default: null
+      kind: POSITIONAL_OR_KEYWORD
+      name: array_types
+    - default: null
+      kind: POSITIONAL_OR_KEYWORD
+      name: scalar_types
+    dispatch: native
+    return_type: VARCHAR
+  format_float_positional:
+    arguments:
+    - default: null
+      kind: POSITIONAL_OR_KEYWORD
+      name: x
+    - default: null
+      kind: POSITIONAL_OR_KEYWORD
+      name: precision
+    - default: null
+      kind: POSITIONAL_OR_KEYWORD
+      name: unique
+    - default: null
+      kind: POSITIONAL_OR_KEYWORD
+      name: fractional
+    - default: null
+      kind: POSITIONAL_OR_KEYWORD
+      name: trim
+    - default: null
+      kind: POSITIONAL_OR_KEYWORD
+      name: sign
+    - default: null
+      kind: POSITIONAL_OR_KEYWORD
+      name: pad_left
+    - default: null
+      kind: POSITIONAL_OR_KEYWORD
+      name: pad_right
+    - default: null
+      kind: POSITIONAL_OR_KEYWORD
+      name: min_digits
+    dispatch: native
+    return_type: VARCHAR
+  format_float_scientific:
+    arguments:
+    - default: null
+      kind: POSITIONAL_OR_KEYWORD
+      name: x
+    - default: null
+      kind: POSITIONAL_OR_KEYWORD
+      name: precision
+    - default: null
+      kind: POSITIONAL_OR_KEYWORD
+      name: unique
+    - default: null
+      kind: POSITIONAL_OR_KEYWORD
+      name: trim
+    - default: null
+      kind: POSITIONAL_OR_KEYWORD
+      name: sign
+    - default: null
+      kind: POSITIONAL_OR_KEYWORD
+      name: pad_left
+    - default: null
+      kind: POSITIONAL_OR_KEYWORD
+      name: exp_digits
+    - default: null
+      kind: POSITIONAL_OR_KEYWORD
+      name: min_digits
+    dispatch: native
+    return_type: VARCHAR
+  fromfunction:
+    arguments:
+    - default: null
+      kind: POSITIONAL_OR_KEYWORD
+      name: function
+    - default: null
+      kind: POSITIONAL_OR_KEYWORD
+      name: shape
+    - default: null
+      kind: KEYWORD_ONLY
+      name: dtype
+    - default: null
+      kind: KEYWORD_ONLY
+      name: like
+    - default: null
+      kind: VAR_KEYWORD
+      name: kwargs
+    dispatch: native
+    return_type: VARCHAR
+  fromregex:
+    arguments:
+    - default: null
+      kind: POSITIONAL_OR_KEYWORD
+      name: file
+    - default: null
+      kind: POSITIONAL_OR_KEYWORD
+      name: regexp
+    - default: null
+      kind: POSITIONAL_OR_KEYWORD
+      name: dtype
+    - default: null
+      kind: POSITIONAL_OR_KEYWORD
+      name: encoding
+    dispatch: native
+    return_type: VARCHAR
+  full:
+    arguments:
+    - default: null
+      kind: POSITIONAL_OR_KEYWORD
+      name: shape
+    - default: null
+      kind: POSITIONAL_OR_KEYWORD
+      name: fill_value
+    - default: null
+      kind: POSITIONAL_OR_KEYWORD
+      name: dtype
+    - default: null
+      kind: POSITIONAL_OR_KEYWORD
+      name: order
+    - default: null
+      kind: KEYWORD_ONLY
+      name: like
+    dispatch: native
+    return_type: VARCHAR
+  genfromtxt:
+    arguments:
+    - default: null
+      kind: POSITIONAL_OR_KEYWORD
+      name: fname
+    - default: null
+      kind: POSITIONAL_OR_KEYWORD
+      name: dtype
+    - default: null
+      kind: POSITIONAL_OR_KEYWORD
+      name: comments
+    - default: null
+      kind: POSITIONAL_OR_KEYWORD
+      name: delimiter
+    - default: null
+      kind: POSITIONAL_OR_KEYWORD
+      name: skip_header
+    - default: null
+      kind: POSITIONAL_OR_KEYWORD
+      name: skip_footer
+    - default: null
+      kind: POSITIONAL_OR_KEYWORD
+      name: converters
+    - default: null
+      kind: POSITIONAL_OR_KEYWORD
+      name: missing_values
+    - default: null
+      kind: POSITIONAL_OR_KEYWORD
+      name: filling_values
+    - default: null
+      kind: POSITIONAL_OR_KEYWORD
+      name: usecols
+    - default: null
+      kind: POSITIONAL_OR_KEYWORD
+      name: names
+    - default: null
+      kind: POSITIONAL_OR_KEYWORD
+      name: excludelist
+    - default: null
+      kind: POSITIONAL_OR_KEYWORD
+      name: deletechars
+    - default: null
+      kind: POSITIONAL_OR_KEYWORD
+      name: replace_space
+    - default: null
+      kind: POSITIONAL_OR_KEYWORD
+      name: autostrip
+    - default: null
+      kind: POSITIONAL_OR_KEYWORD
+      name: case_sensitive
+    - default: null
+      kind: POSITIONAL_OR_KEYWORD
+      name: defaultfmt
+    - default: null
+      kind: POSITIONAL_OR_KEYWORD
+      name: unpack
+    - default: null
+      kind: POSITIONAL_OR_KEYWORD
+      name: usemask
+    - default: null
+      kind: POSITIONAL_OR_KEYWORD
+      name: loose
+    - default: null
+      kind: POSITIONAL_OR_KEYWORD
+      name: invalid_raise
+    - default: null
+      kind: POSITIONAL_OR_KEYWORD
+      name: max_rows
+    - default: null
+      kind: POSITIONAL_OR_KEYWORD
+      name: encoding
+    - default: null
+      kind: KEYWORD_ONLY
+      name: ndmin
+    - default: null
+      kind: KEYWORD_ONLY
+      name: like
+    dispatch: native
+    return_type: VARCHAR
+  get_array_wrap:
+    arguments:
+    - default: null
+      kind: VAR_POSITIONAL
+      name: args
+    dispatch: native
+    return_type: VARCHAR
+  hamming:
+    arguments:
+    - default: null
+      kind: POSITIONAL_OR_KEYWORD
+      name: M
+    dispatch: native
+    return_type: VARCHAR
+  hanning:
+    arguments:
+    - default: null
+      kind: POSITIONAL_OR_KEYWORD
+      name: M
+    dispatch: native
+    return_type: VARCHAR
+  identity:
+    arguments:
+    - default: null
+      kind: POSITIONAL_OR_KEYWORD
+      name: n
+    - default: null
+      kind: POSITIONAL_OR_KEYWORD
+      name: dtype
+    - default: null
+      kind: KEYWORD_ONLY
+      name: like
+    dispatch: native
+    return_type: VARCHAR
+  indices:
+    arguments:
+    - default: null
+      kind: POSITIONAL_OR_KEYWORD
+      name: dimensions
+    - default: null
+      kind: POSITIONAL_OR_KEYWORD
+      name: dtype
+    - default: null
+      kind: POSITIONAL_OR_KEYWORD
+      name: sparse
+    dispatch: native
+    return_type: VARCHAR
+  info:
+    arguments:
+    - default: null
+      kind: POSITIONAL_OR_KEYWORD
+      name: object
+    - default: null
+      kind: POSITIONAL_OR_KEYWORD
+      name: maxwidth
+    - default: null
+      kind: POSITIONAL_OR_KEYWORD
+      name: output
+    - default: null
+      kind: POSITIONAL_OR_KEYWORD
+      name: toplevel
+    dispatch: native
+    return_type: VARCHAR
+  isfortran:
+    arguments:
+    - default: null
+      kind: POSITIONAL_OR_KEYWORD
+      name: a
+    dispatch: native
+    return_type: VARCHAR
+  isscalar:
+    arguments:
+    - default: null
+      kind: POSITIONAL_OR_KEYWORD
+      name: element
+    dispatch: native
+    return_type: VARCHAR
+  issctype:
+    arguments:
+    - default: null
+      kind: POSITIONAL_OR_KEYWORD
+      name: rep
+    dispatch: native
+    return_type: VARCHAR
+  issubclass_:
+    arguments:
+    - default: null
+      kind: POSITIONAL_OR_KEYWORD
+      name: arg1
+    - default: null
+      kind: POSITIONAL_OR_KEYWORD
+      name: arg2
+    dispatch: native
+    return_type: VARCHAR
+  issubdtype:
+    arguments:
+    - default: null
+      kind: POSITIONAL_OR_KEYWORD
+      name: arg1
+    - default: null
+      kind: POSITIONAL_OR_KEYWORD
+      name: arg2
+    dispatch: native
+    return_type: VARCHAR
+  issubsctype:
+    arguments:
+    - default: null
+      kind: POSITIONAL_OR_KEYWORD
+      name: arg1
+    - default: null
+      kind: POSITIONAL_OR_KEYWORD
+      name: arg2
+    dispatch: native
+    return_type: VARCHAR
+  iterable:
+    arguments:
+    - default: null
+      kind: POSITIONAL_OR_KEYWORD
+      name: y
+    dispatch: native
+    return_type: VARCHAR
+  kaiser:
+    arguments:
+    - default: null
+      kind: POSITIONAL_OR_KEYWORD
+      name: M
+    - default: null
+      kind: POSITIONAL_OR_KEYWORD
+      name: beta
+    dispatch: native
+    return_type: VARCHAR
+  load:
+    arguments:
+    - default: null
+      kind: POSITIONAL_OR_KEYWORD
+      name: file
+    - default: null
+      kind: POSITIONAL_OR_KEYWORD
+      name: mmap_mode
+    - default: null
+      kind: POSITIONAL_OR_KEYWORD
+      name: allow_pickle
+    - default: null
+      kind: POSITIONAL_OR_KEYWORD
+      name: fix_imports
+    - default: null
+      kind: POSITIONAL_OR_KEYWORD
+      name: encoding
+    - default: null
+      kind: KEYWORD_ONLY
+      name: max_header_size
+    dispatch: native
+    return_type: VARCHAR
+  loadtxt:
+    arguments:
+    - default: null
+      kind: POSITIONAL_OR_KEYWORD
+      name: fname
+    - default: null
+      kind: POSITIONAL_OR_KEYWORD
+      name: dtype
+    - default: null
+      kind: POSITIONAL_OR_KEYWORD
+      name: comments
+    - default: null
+      kind: POSITIONAL_OR_KEYWORD
+      name: delimiter
+    - default: null
+      kind: POSITIONAL_OR_KEYWORD
+      name: converters
+    - default: null
+      kind: POSITIONAL_OR_KEYWORD
+      name: skiprows
+    - default: null
+      kind: POSITIONAL_OR_KEYWORD
+      name: usecols
+    - default: null
+      kind: POSITIONAL_OR_KEYWORD
+      name: unpack
+    - default: null
+      kind: POSITIONAL_OR_KEYWORD
+      name: ndmin
+    - default: null
+      kind: POSITIONAL_OR_KEYWORD
+      name: encoding
+    - default: null
+      kind: POSITIONAL_OR_KEYWORD
+      name: max_rows
+    - default: null
+      kind: KEYWORD_ONLY
+      name: quotechar
+    - default: null
+      kind: KEYWORD_ONLY
+      name: like
+    dispatch: native
+    return_type: VARCHAR
+  lookfor:
+    arguments:
+    - default: null
+      kind: POSITIONAL_OR_KEYWORD
+      name: what
+    - default: null
+      kind: POSITIONAL_OR_KEYWORD
+      name: module
+    - default: null
+      kind: POSITIONAL_OR_KEYWORD
+      name: import_modules
+    - default: null
+      kind: POSITIONAL_OR_KEYWORD
+      name: regenerate
+    - default: null
+      kind: POSITIONAL_OR_KEYWORD
+      name: output
+    dispatch: native
+    return_type: VARCHAR
+  mask_indices:
+    arguments:
+    - default: null
+      kind: POSITIONAL_OR_KEYWORD
+      name: n
+    - default: null
+      kind: POSITIONAL_OR_KEYWORD
+      name: mask_func
+    - default: null
+      kind: POSITIONAL_OR_KEYWORD
+      name: k
+    dispatch: native
+    return_type: VARCHAR
+  mat:
+    arguments:
+    - default: null
+      kind: POSITIONAL_OR_KEYWORD
+      name: data
+    - default: null
+      kind: POSITIONAL_OR_KEYWORD
+      name: dtype
+    dispatch: native
+    return_type: VARCHAR
+  maximum_sctype:
+    arguments:
+    - default: null
+      kind: POSITIONAL_OR_KEYWORD
+      name: t
+    dispatch: native
+    return_type: VARCHAR
+  mintypecode:
+    arguments:
+    - default: null
+      kind: POSITIONAL_OR_KEYWORD
+      name: typechars
+    - default: null
+      kind: POSITIONAL_OR_KEYWORD
+      name: typeset
+    - default: null
+      kind: POSITIONAL_OR_KEYWORD
+      name: default
+    dispatch: native
+    return_type: VARCHAR
+  obj2sctype:
+    arguments:
+    - default: null
+      kind: POSITIONAL_OR_KEYWORD
+      name: rep
+    - default: null
+      kind: POSITIONAL_OR_KEYWORD
+      name: default
+    dispatch: native
+    return_type: VARCHAR
+  ones:
+    arguments:
+    - default: null
+      kind: POSITIONAL_OR_KEYWORD
+      name: shape
+    - default: null
+      kind: POSITIONAL_OR_KEYWORD
+      name: dtype
+    - default: null
+      kind: POSITIONAL_OR_KEYWORD
+      name: order
+    - default: null
+      kind: KEYWORD_ONLY
+      name: like
+    dispatch: native
+    return_type: VARCHAR
+  printoptions:
+    arguments:
+    - default: null
+      kind: VAR_POSITIONAL
+      name: args
+    - default: null
+      kind: VAR_KEYWORD
+      name: kwargs
+    dispatch: native
+    return_type: VARCHAR
+  recfromcsv:
+    arguments:
+    - default: null
+      kind: POSITIONAL_OR_KEYWORD
+      name: fname
+    - default: null
+      kind: VAR_KEYWORD
+      name: kwargs
+    dispatch: native
+    return_type: VARCHAR
+  recfromtxt:
+    arguments:
+    - default: null
+      kind: POSITIONAL_OR_KEYWORD
+      name: fname
+    - default: null
+      kind: VAR_KEYWORD
+      name: kwargs
+    dispatch: native
+    return_type: VARCHAR
+  require:
+    arguments:
+    - default: null
+      kind: POSITIONAL_OR_KEYWORD
+      name: a
+    - default: null
+      kind: POSITIONAL_OR_KEYWORD
+      name: dtype
+    - default: null
+      kind: POSITIONAL_OR_KEYWORD
+      name: requirements
+    - default: null
+      kind: KEYWORD_ONLY
+      name: like
+    dispatch: native
+    return_type: VARCHAR
+  safe_eval:
+    arguments:
+    - default: null
+      kind: POSITIONAL_OR_KEYWORD
+      name: source
+    dispatch: native
+    return_type: VARCHAR
+  sctype2char:
+    arguments:
+    - default: null
+      kind: POSITIONAL_OR_KEYWORD
+      name: sctype
+    dispatch: native
+    return_type: VARCHAR
+  set_printoptions:
+    arguments:
+    - default: null
+      kind: POSITIONAL_OR_KEYWORD
+      name: precision
+    - default: null
+      kind: POSITIONAL_OR_KEYWORD
+      name: threshold
+    - default: null
+      kind: POSITIONAL_OR_KEYWORD
+      name: edgeitems
+    - default: null
+      kind: POSITIONAL_OR_KEYWORD
+      name: linewidth
+    - default: null
+      kind: POSITIONAL_OR_KEYWORD
+      name: suppress
+    - default: null
+      kind: POSITIONAL_OR_KEYWORD
+      name: nanstr
+    - default: null
+      kind: POSITIONAL_OR_KEYWORD
+      name: infstr
+    - default: null
+      kind: POSITIONAL_OR_KEYWORD
+      name: formatter
+    - default: null
+      kind: POSITIONAL_OR_KEYWORD
+      name: sign
+    - default: null
+      kind: POSITIONAL_OR_KEYWORD
+      name: floatmode
+    - default: null
+      kind: KEYWORD_ONLY
+      name: legacy
+    dispatch: native
+    return_type: VARCHAR
+  set_string_function:
+    arguments:
+    - default: null
+      kind: POSITIONAL_OR_KEYWORD
+      name: f
+    - default: null
+      kind: POSITIONAL_OR_KEYWORD
+      name: repr
+    dispatch: native
+    return_type: VARCHAR
+  setbufsize:
+    arguments:
+    - default: null
+      kind: POSITIONAL_OR_KEYWORD
+      name: size
+    dispatch: native
+    return_type: VARCHAR
+  seterr:
+    arguments:
+    - default: null
+      kind: POSITIONAL_OR_KEYWORD
+      name: all
+    - default: null
+      kind: POSITIONAL_OR_KEYWORD
+      name: divide
+    - default: null
+      kind: POSITIONAL_OR_KEYWORD
+      name: over
+    - default: null
+      kind: POSITIONAL_OR_KEYWORD
+      name: under
+    - default: null
+      kind: POSITIONAL_OR_KEYWORD
+      name: invalid
+    dispatch: native
+    return_type: VARCHAR
+  seterrcall:
+    arguments:
+    - default: null
+      kind: POSITIONAL_OR_KEYWORD
+      name: func
+    dispatch: native
+    return_type: VARCHAR
+  source:
+    arguments:
+    - default: null
+      kind: POSITIONAL_OR_KEYWORD
+      name: object
+    - default: null
+      kind: POSITIONAL_OR_KEYWORD
+      name: output
+    dispatch: native
+    return_type: VARCHAR
+  tri:
+    arguments:
+    - default: null
+      kind: POSITIONAL_OR_KEYWORD
+      name: N
+    - default: null
+      kind: POSITIONAL_OR_KEYWORD
+      name: M
+    - default: null
+      kind: POSITIONAL_OR_KEYWORD
+      name: k
+    - default: null
+      kind: POSITIONAL_OR_KEYWORD
+      name: dtype
+    - default: null
+      kind: KEYWORD_ONLY
+      name: like
+    dispatch: native
+    return_type: VARCHAR
+  tril_indices:
+    arguments:
+    - default: null
+      kind: POSITIONAL_OR_KEYWORD
+      name: n
+    - default: null
+      kind: POSITIONAL_OR_KEYWORD
+      name: k
+    - default: null
+      kind: POSITIONAL_OR_KEYWORD
+      name: m
+    dispatch: native
+    return_type: VARCHAR
+  triu_indices:
+    arguments:
+    - default: null
+      kind: POSITIONAL_OR_KEYWORD
+      name: n
+    - default: null
+      kind: POSITIONAL_OR_KEYWORD
+      name: k
+    - default: null
+      kind: POSITIONAL_OR_KEYWORD
+      name: m
+    dispatch: native
+    return_type: VARCHAR
+  typename:
+    arguments:
+    - default: null
+      kind: POSITIONAL_OR_KEYWORD
+      name: char
+    dispatch: native
+    return_type: VARCHAR
+  who:
+    arguments:
+    - default: null
+      kind: POSITIONAL_OR_KEYWORD
+      name: vardict
+    dispatch: native
+    return_type: VARCHAR
+random:
+  _meta:
+    arg_type: basic
+  betavariate:
+    arguments:
+    - default: null
+      kind: POSITIONAL_OR_KEYWORD
+      name: alpha
+    - default: null
+      kind: POSITIONAL_OR_KEYWORD
+      name: beta
+    dispatch: native
+    return_type: VARCHAR
+  choice:
+    arguments:
+    - default: null
+      kind: POSITIONAL_OR_KEYWORD
+      name: seq
+    dispatch: native
+    return_type: VARCHAR
+  choices:
+    arguments:
+    - default: null
+      kind: POSITIONAL_OR_KEYWORD
+      name: population
+    - default: null
+      kind: POSITIONAL_OR_KEYWORD
+      name: weights
+    - default: null
+      kind: KEYWORD_ONLY
+      name: cum_weights
+    - default: null
+      kind: KEYWORD_ONLY
+      name: k
+    dispatch: native
+    return_type: VARCHAR
+  expovariate:
+    arguments:
+    - default: null
+      kind: POSITIONAL_OR_KEYWORD
+      name: lambd
+    dispatch: native
+    return_type: VARCHAR
+  gammavariate:
+    arguments:
+    - default: null
+      kind: POSITIONAL_OR_KEYWORD
+      name: alpha
+    - default: null
+      kind: POSITIONAL_OR_KEYWORD
+      name: beta
+    dispatch: native
+    return_type: VARCHAR
+  gauss:
+    arguments:
+    - default: null
+      kind: POSITIONAL_OR_KEYWORD
+      name: mu
+    - default: null
+      kind: POSITIONAL_OR_KEYWORD
+      name: sigma
+    dispatch: native
+    return_type: VARCHAR
+  lognormvariate:
+    arguments:
+    - default: null
+      kind: POSITIONAL_OR_KEYWORD
+      name: mu
+    - default: null
+      kind: POSITIONAL_OR_KEYWORD
+      name: sigma
+    dispatch: native
+    return_type: VARCHAR
+  normalvariate:
+    arguments:
+    - default: null
+      kind: POSITIONAL_OR_KEYWORD
+      name: mu
+    - default: null
+      kind: POSITIONAL_OR_KEYWORD
+      name: sigma
+    dispatch: native
+    return_type: VARCHAR
+  paretovariate:
+    arguments:
+    - default: null
+      kind: POSITIONAL_OR_KEYWORD
+      name: alpha
+    dispatch: native
+    return_type: VARCHAR
+  randbytes:
+    arguments:
+    - default: null
+      kind: POSITIONAL_OR_KEYWORD
+      name: n
+    dispatch: native
+    return_type: VARCHAR
+  randint:
+    arguments:
+    - default: null
+      kind: POSITIONAL_OR_KEYWORD
+      name: a
+    - default: null
+      kind: POSITIONAL_OR_KEYWORD
+      name: b
+    dispatch: native
+    return_type: VARCHAR
+  randrange:
+    arguments:
+    - default: null
+      kind: POSITIONAL_OR_KEYWORD
+      name: start
+    - default: null
+      kind: POSITIONAL_OR_KEYWORD
+      name: stop
+    - default: null
+      kind: POSITIONAL_OR_KEYWORD
+      name: step
+    dispatch: native
+    return_type: VARCHAR
+  sample:
+    arguments:
+    - default: null
+      kind: POSITIONAL_OR_KEYWORD
+      name: population
+    - default: null
+      kind: POSITIONAL_OR_KEYWORD
+      name: k
+    - default: null
+      kind: KEYWORD_ONLY
+      name: counts
+    dispatch: native
+    return_type: VARCHAR
+  shuffle:
+    arguments:
+    - default: null
+      kind: POSITIONAL_OR_KEYWORD
+      name: x
+    dispatch: native
+    return_type: VARCHAR
+  triangular:
+    arguments:
+    - default: null
+      kind: POSITIONAL_OR_KEYWORD
+      name: low
+    - default: null
+      kind: POSITIONAL_OR_KEYWORD
+      name: high
+    - default: null
+      kind: POSITIONAL_OR_KEYWORD
+      name: mode
+    dispatch: native
+    return_type: VARCHAR
+  uniform:
+    arguments:
+    - default: null
+      kind: POSITIONAL_OR_KEYWORD
+      name: a
+    - default: null
+      kind: POSITIONAL_OR_KEYWORD
+      name: b
+    dispatch: native
+    return_type: VARCHAR
+  vonmisesvariate:
+    arguments:
+    - default: null
+      kind: POSITIONAL_OR_KEYWORD
+      name: mu
+    - default: null
+      kind: POSITIONAL_OR_KEYWORD
+      name: kappa
+    dispatch: native
+    return_type: VARCHAR
+  weibullvariate:
+    arguments:
+    - default: null
+      kind: POSITIONAL_OR_KEYWORD
+      name: alpha
+    - default: null
+      kind: POSITIONAL_OR_KEYWORD
+      name: beta
+    dispatch: native
+    return_type: VARCHAR
