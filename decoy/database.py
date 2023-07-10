@@ -14,9 +14,9 @@ from decoy.udf_scalar import (
     custom_choice_generator,
     np_rand,
     pyrandom,
-    oversample
+    oversample,
 )
-from decoy.udf_arrow import random_shuffle, intratable_sample
+from decoy.udf_arrow import random_shuffle, intratable_sample, messy_data_nullifier, messy_data_junkadder
 from decoy.xeger import xeger_cached
 
 
@@ -126,6 +126,24 @@ def register_udfs(con: duckdb.DuckDBPyConnection) -> None:
     con.create_function(
         name="intratable_sample",
         function=intratable_sample,
+        return_type=[ducktypes.VARCHAR],
+        parameters=ducktypes.VARCHAR,
+        side_effects=True,
+        type=duckdb.functional.PythonUDFType.ARROW,
+    )
+
+    con.create_function(
+        name="messy_data_nullifier",
+        function=messy_data_nullifier,
+        return_type=[ducktypes.VARCHAR],
+        parameters=ducktypes.VARCHAR,
+        side_effects=True,
+        type=duckdb.functional.PythonUDFType.ARROW,
+    )
+
+    con.create_function(
+        name="messy_data_junkadder",
+        function=messy_data_junkadder,
         return_type=[ducktypes.VARCHAR],
         parameters=ducktypes.VARCHAR,
         side_effects=True,
