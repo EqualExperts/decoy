@@ -1,8 +1,8 @@
 default_generators = {
-    'BIGINT': "faker_en('random_int')",
+    'BIGINT': "faker_random_int()",
     'VARCHAR': "xeger('[a-zA-Z0-9]{6,}')",
     'UNKNOWN': "xeger('[a-zA-Z0-9]{6,}')",
-}
+}  # TODO: add more defaults!
 
 
 def get_tablename(sql_query):
