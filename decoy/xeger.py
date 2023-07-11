@@ -33,7 +33,6 @@ class Xeger:
         s = ""
         for x in self.re:
             s += self.generate_from_regexp(x)
-            print(s)
         return s
 
     def generate_from_regexp(self, reg) -> str:
