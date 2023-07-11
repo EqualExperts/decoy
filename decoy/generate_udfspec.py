@@ -1,9 +1,10 @@
-from datetime import time, date, datetime
-import faker
 import inspect
+import random
+from datetime import date, datetime, time
+
+import faker
 import mimesis
 import numpy
-import random
 import yaml
 
 allowed_return_types = [str, int, time, date, datetime, float, None]

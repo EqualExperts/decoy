@@ -1,16 +1,17 @@
 #!/usr/bin/env python3
+import os
+import sys
+from io import TextIOWrapper
+
 import click
 import duckdb
-from io import TextIOWrapper
 import jupyter_client
-import os
-from prompt_toolkit import print_formatted_text, HTML
-import sys
+from prompt_toolkit import HTML, print_formatted_text
 
 from decoy.cli_io import print_rows, repl
 from decoy.database import get_connection
-from decoy.settings import settings
 from decoy.schema_parse import parse_full_sql_schema
+from decoy.settings import settings
 
 
 @click.group()
@@ -76,88 +77,8 @@ def repl_commmand(database):
 @click.argument("outputfilename", type=str)
 @click.argument("nrows", type=int)
 def parse_sql_schema(inputfilename, outputfilename, nrows):
-
     con = get_connection()
     parse_full_sql_schema(inputfilename, outputfilename, nrows)
-
-
-@rootcmd.command()
-def generate():
-    con = get_connection()
-    count = 10
-    con.execute("DROP TABLE IF EXISTS name_table;")
-    con.execute(
-        f"""
-CREATE TABLE name_table AS SELECT
-range as id,
-decoy_en('name') as name
-FROM range({count})"""
-    )
-    con.execute("""SELECT * FROM name_table;""")
-    table = con.fetchall()
-    for row in table:
-        print(row)
-
-
-@rootcmd.command()
-def shuffle():
-    con = get_connection()
-    count = 10
-    con.execute(
-        f"""
-SELECT name,
-shuffle(name) as arrow,
-intratable_sample(name) as sampled
-FROM test;"""
-    )
-    res = con.fetchall()
-    for row in res:
-        print(row)
-
-
-@rootcmd.command()
-def oversample():
-    con = get_connection()
-    value_count = 10
-    sample_count = 20
-    con.execute("DROP TABLE IF EXISTS name_table;")
-    con.execute("DROP TABLE IF EXISTS oversample;")
-    con.execute(
-        f"""
-CREATE TABLE name_table AS SELECT
-range as id,
-decoy_en('name') as name
-FROM range({value_count})"""
-    )
-    con.execute(
-        f"""
-WITH oversampling_table AS
-(SELECT
-cast(floor(random() * {value_count}) as int) as sample_index
-FROM range({sample_count}))
-
-SELECT * FROM name_table
-RIGHT OUTER JOIN oversampling_table ON name_table.id = oversampling_table.sample_index
-        """
-    )
-    table = con.fetchall()
-    for row in table:
-        print(row)
-
-
-@rootcmd.command()
-def oversample_python():
-    con = get_connection()
-    con.execute(
-        f"""
-DROP TABLE IF EXISTS name_table;
-CREATE TABLE name_table AS SELECT range as id, decoy_en('name') as name FROM range(1000);
-
-SELECT oversample('name_table', 'name') from range(10000);
-        """
-    )
-    table = con.fetch_df()
-    print_rows(table)
 
 
 if __name__ == "__main__":

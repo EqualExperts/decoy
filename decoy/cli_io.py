@@ -1,6 +1,6 @@
 import duckdb
 import pandas as pd
-from prompt_toolkit import PromptSession, print_formatted_text, HTML
+from prompt_toolkit import HTML, PromptSession, print_formatted_text
 from prompt_toolkit.history import FileHistory
 from prompt_toolkit.lexers import PygmentsLexer
 from pygments.lexers.sql import PlPgsqlLexer

@@ -1,8 +1,9 @@
+import random
+from typing import Any, Callable
+
 from duckdb import typing as ducktypes
 from faker import Faker
 from mimesis import Generic, Locale
-import random
-from typing import Callable, Any
 from numpy import random as npr
 
 column_cache = {}

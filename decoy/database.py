@@ -1,22 +1,21 @@
+import random
+from pathlib import Path
+from typing import Any, List
+
 import duckdb
+import yaml
 from duckdb import typing as ducktypes
 from faker import Faker
 from mimesis import Generic, Locale
-from pathlib import Path
-import random
-from typing import Any, List
-import yaml
 
 from decoy.settings import settings
-from decoy.udf_scalar import (
-    get_faker_locale,
-    get_mimesis_locale,
-    custom_choice_generator,
-    np_rand,
-    pyrandom,
-    oversample,
+from decoy.udf_arrow import (
+    intratable_sample,
+    messy_data_junkadder,
+    messy_data_nullifier,
+    random_shuffle,
 )
-from decoy.udf_arrow import random_shuffle, intratable_sample, messy_data_nullifier, messy_data_junkadder
+from decoy.udf_scalar import custom_choice_generator, oversample
 from decoy.xeger import xeger_cached
 
 
@@ -49,8 +48,7 @@ def get_connection(register_funcs=True) -> duckdb.DuckDBPyConnection:
 def register_udf_library(
     con: duckdb.DuckDBPyConnection, library, library_config, library_name: str
 ):
-    library_functions = {k: v for k,
-                         v in library_config.items() if k != "_meta"}
+    library_functions = {k: v for k, v in library_config.items() if k != "_meta"}
 
     for fname, fconfig in library_functions.items():
         rtype = getattr(ducktypes, fconfig["return_type"])
