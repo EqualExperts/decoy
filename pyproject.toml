@@ -18,6 +18,7 @@ dependencies = [
   "duckdb",
   "click",
   "faker",
+  "mimesis",
   "pandas",
   "pyarrow",
   "pygments",
