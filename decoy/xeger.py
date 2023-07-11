@@ -47,7 +47,6 @@ class Xeger:
                         rpt = random.randint(1, limit)
                     else:
                         rpt = random.randint(reg[1][0], reg[1][1])
-                    print("RE RPT ", rpt)
                 return self.generate_from_subexp(rpt_sub, rpt)
             case sre_parse.IN:
                 s = ""
