@@ -1,15 +1,16 @@
-import pytest
 import pyarrow as pa
+import pytest
 
 from decoy.database import (
-    get_connection,
     custom_choice_generator,
+    get_connection,
+    intratable_sample,
     random_shuffle,
-    intratable_sample)
+)
 
-from decoy.udf_scalar import column_cache, cache_column, oversample
 # from decoy.udf_arrow import
 from decoy.settings import settings
+from decoy.udf_scalar import cache_column, column_cache, oversample
 
 settings.database_file = "test.duckdb"
 
@@ -36,8 +37,8 @@ def test_cache_column(connection):
     CREATE TABLE IF NOT EXISTS test_cached_column AS SELECT range from range(10)
     """
     )
-    cache_column("test_cache_column", "range")
-    assert len(column_cache["test_cache_column.range"]) == 10
+    cache_column("test_cached_column", "range")
+    assert len(column_cache["test_cached_column.range"]) == 10
 
 
 def test_custom_choice_generator(connection):
