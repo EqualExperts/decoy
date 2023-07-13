@@ -60,6 +60,7 @@ def cache_column(table_name: str, column_name: str) -> None:
 def oversample(table_name: str, column_name: str) -> str:
     """
     #TODO: explain why we need to cache the column again!
+    #TODO: this should be invalidated if the table changes
     """
     cache_column(table_name, column_name)
 
