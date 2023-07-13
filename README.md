@@ -15,6 +15,10 @@ pip install -U pip
 pip install -r requirements.txt
 ```
 
+OR
+
+```pip install --editable .```
+
 ## Unit tests
 
 ```bash
