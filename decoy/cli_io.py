@@ -5,6 +5,8 @@ from prompt_toolkit.history import FileHistory
 from prompt_toolkit.lexers import PygmentsLexer
 from pygments.lexers.sql import PlPgsqlLexer
 
+from decoy.udf_scalar import clear_column_cache
+
 exception_list = (
     duckdb.ParserException,
     duckdb.CatalogException,
@@ -31,7 +33,7 @@ def repl(con: duckdb.DuckDBPyConnection) -> None:
     )
     while True:
         text = s.prompt()
-
+        clear_column_cache()
         try:
             con.execute(text)
         except exception_list as e:

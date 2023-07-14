@@ -3,6 +3,7 @@ from ipykernel.kernelbase import Kernel
 
 from decoy.cli_io import exception_list
 from decoy.database import get_connection
+from decoy.udf_scalar import clear_column_cache
 
 
 class DecoyKernel(Kernel):
@@ -40,6 +41,7 @@ class DecoyKernel(Kernel):
         self, code, silent, store_history=True, user_expressions=None, allow_stdin=False
     ):
         con = get_connection()
+        clear_column_cache()
         try:
             con.execute(code)
         except exception_list as e:
