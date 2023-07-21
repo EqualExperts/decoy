@@ -159,7 +159,7 @@ CREATE OR REPLACE view Invoices AS
 SELECT Orders.ShipName, Orders.ShipAddress, Orders.ShipCity, Orders.ShipRegion, Orders.ShipPostalCode,
 	Orders.ShipCountry, Orders.CustomerID, Customers.CompanyName AS CustomerName, Customers.Address, Customers.City,
 	Customers.Region, Customers.PostalCode, Customers.Country,
-	-- concat((FirstName, ' ', LastName) AS Salesperson, --TODO: Turn this back on with DuckDB concat functions
+	-- concat(FirstName, ' ', LastName) AS Salesperson, --TODO: Turn this back on with DuckDB concat functions
     FirstName as Salesperson,
 	Orders.OrderID, Orders.OrderDate, Orders.RequiredDate, Orders.ShippedDate, Shippers.CompanyName As ShipperName,
 	"Order Details".ProductID, Products.ProductName, "Order Details".UnitPrice, "Order Details".Quantity,
@@ -243,8 +243,8 @@ WHERE Orders.ShippedDate IS NOT NULL;
 -- 	ON Employees.EmployeeID = Orders.EmployeeID
 -- WHERE Orders.ShippedDate Between @Beginning_Date And @Ending_Date;
 
-create procedure "Sales by Year"
-	@Beginning_Date DateTime, @Ending_Date DateTime AS
-SELECT Orders.ShippedDate, Orders.OrderID, "Order Subtotals".Subtotal, DATENAME(yy,ShippedDate) AS Year
-FROM Orders INNER JOIN "Order Subtotals" ON Orders.OrderID = "Order Subtotals".OrderID
-WHERE Orders.ShippedDate Between @Beginning_Date And @Ending_Date;
+-- create procedure "Sales by Year"
+-- 	@Beginning_Date DateTime, @Ending_Date DateTime AS
+-- SELECT Orders.ShippedDate, Orders.OrderID, "Order Subtotals".Subtotal, DATENAME(yy,ShippedDate) AS Year
+-- FROM Orders INNER JOIN "Order Subtotals" ON Orders.OrderID = "Order Subtotals".OrderID
+-- WHERE Orders.ShippedDate Between @Beginning_Date And @Ending_Date;
