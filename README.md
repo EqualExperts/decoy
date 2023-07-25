@@ -1,52 +1,71 @@
-# decoy
+# Decoy - A Synthetic Data Generator
 
 Synthetic data generation with DuckDB
 
-## Requirements
+Decoy is a Synthetic Data Generator using DuckDB at it's core. The main aim of the project is to reduce the overhead in creating synthetic data and provide all the tools to easily test your synthetic data queries.
 
-- Python 3.10+
+It has integrated well known Python based synthetic data generators such as [Faker](https://faker.readthedocs.io/en/master/), [Mimesis](https://mimesis.name/en/master/) and [Random](https://python.readthedocs.io/en/stable/library/random.html).
 
-## Python setup
+The power of this application comes from the ability to write scripts to repeatably generate data, to use interactive tools to test your queries and the ability to create tables which interact, allowing for the creation of full relational databases.
+
+## Requirements & Setup
 
 ```bash
+#Requires Python 3.10+
+pip install --editable .
+```
+OR
+```bash
+#Requires Python 3.10+
 python3 -m venv .venv
 source .venv/bin/activate
 pip install -U pip
 pip install -r requirements.txt
 ```
 
-OR
+## Data Generation Tools
 
-```pip install --editable .```
+Decoy exposes multiple command line tools to generate data and test generating data 
 
-## Unit tests
+### Generate Data From a .sql File
+
+The main core of decoy is the ability to repeatibly generate synthetic data from a .sql file. 
 
 ```bash
-PYTHONPATH=. pytest
+decoy exec examples/basic.sql
 ```
+There are multiple examples in the `./examples` folder.
 
-## Command line tools
+### Interactive Testing Playgrounds
 
-Run a sql file
+In addtion to a CLI to run .sql files. Decoy also provides an interactive environment to easily build your queries and quickly test that they are working correctly.
 
-```bash
-./cli exec examples/basic.sql
-```
+#### Jupyter Lab Kernel
 
-Use the SQL REPL
-
-```bash
-./cli repl
-```
-
-Register as a jupyter kernel
+[Jupyter Lab](https://jupyter.org/) is a web-based interactive repl for which we have created a decoy kernel allowing you to run decoy SQL queries and quickly observe their output
 
 ```bash
-./cli kernel-install
+#install the kernel for first-time use
+decoy kernel-install
+
+#Running the Jupyter lab web server
 jupyter lab
 ```
+Then select `decoy` as the kernel when starting a new notebook instance.
 
-Parse A SQL Schema Definition
+Some of the files in `./examples` are in the `*.ipynb`, these are to be read using the Jupyter kernel. Jupyter also integrates markdown too - so if required for documentation, you can also explain though processes.
+
+#### Use the SQL REPL
+
+Decoy also includes a command-line REPL too which provides the same interactive testing environment but on the command line.
+
+```bash
+decoy repl
+```
+Please not that the query must end with a `;` and to execute the query select `<Alt/Opt><Enter>` as multiline queires are supported.
+
+
+### Parse A SQL Schema Definition
 
 ```bash
 ./cli sqlparse './examples/test_schema.sql' './examples/schema_parse_output.sql' 5
@@ -86,4 +105,11 @@ CREATE TABLE name_table AS SELECT range as id, faker_name() as name FROM range(1
 SELECT oversample('name_table', 'name') from range(10000);
 
 SELECT name, shuffle(name) as name_shuffled, intratable_sample(name) as name_sampled FROM name_table;
+```
+
+
+## Unit tests
+
+```bash
+PYTHONPATH=. pytest
 ```
