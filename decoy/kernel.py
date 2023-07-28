@@ -27,7 +27,8 @@ class DecoyKernel(Kernel):
             "metadata": {},
             "transient": {},
         }
-        self.send_response(self.iopub_socket, "display_data", content=stream_content)
+        self.send_response(self.iopub_socket, "display_data",
+                           content=stream_content)
 
     def get_display_error(self, ex):
         return {
