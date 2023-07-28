@@ -118,6 +118,15 @@ CREATE OR REPLACE TABLE names_full AS (
 UPDATE names_full SET full_name = messy_data_nullifier(full_name);
 ``` 
 
+### Exporting Data
+
+DuckDB handles multiple [export functions](https://duckdb.org/docs/guides/import/parquet_export). Including CSV and Parquet
+```sql
+COPY (SELECT faker_name() FROM range(5)) TO 'export_test.csv' WITH (HEADER 1, DELIMITER ',');
+
+COPY (SELECT faker_name() FROM range(5)) TO 'export_parquet.parquet';
+```
+
 
 ## Unit tests
 
