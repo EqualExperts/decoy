@@ -107,6 +107,17 @@ SELECT oversample('name_table', 'name') from range(10000);
 SELECT name, shuffle(name) as name_shuffled, intratable_sample(name) as name_sampled FROM name_table;
 ```
 
+You can also generate imperfect data by using some of the data messer functions which will either add `NULL` or junk data. These are currently hardcoded and the functions are in `./decoy/udf_arrow.py`
+```sql
+CREATE OR REPLACE TABLE names_full AS (
+    SELECT
+        faker_name() as full_name,
+    FROM range(30)
+);
+
+UPDATE names_full SET full_name = messy_data_nullifier(full_name);
+``` 
+
 
 ## Unit tests
 
