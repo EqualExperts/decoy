@@ -8,6 +8,14 @@ It has integrated well known Python based synthetic data generators such as [Fak
 
 The power of this application comes from the ability to write scripts to repeatably generate data, to use interactive tools to test your queries and the ability to create tables which interact, allowing for the creation of full relational databases.
 
+## Governance and Data Security
+
+This tool generates data randomly, it does not require access to the production data and it does not learn the distributions of the data.
+
+The only prior information it requires to make analoguous synthetic data is the names of the tables in the database, the column names and any relationships between the tables.
+
+If you require synthetic data which mimics production data distributions to the point where you can do analytics or machine learning, this is not the tool you want!
+
 ## Requirements & Setup
 
 ```bash
