@@ -114,13 +114,14 @@ if __name__ == "__main__":
     mimesis_spec_args = get_lib_spec_annotated(
         mimesis.Generic(mimesis.Locale.EN), None, True
     )
-    faker_spec_noargs = get_lib_spec_annotated(faker.Faker("en-GB"), None, False)
+    faker_spec_noargs = get_lib_spec_annotated(
+        faker.Faker("en-GB"), None, False)
     mimesis_spec_noargs = get_lib_spec_annotated(
         mimesis.Generic(mimesis.Locale.EN), None, False
     )
     random_spec = get_lib_spec(random)
     numpy_spec = get_lib_spec(
-        numpy
+        numpy.random
     )  # numpy can't be introspected due to it being all compiled as builtin
 
     libs_args = {

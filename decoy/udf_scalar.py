@@ -9,44 +9,6 @@ from numpy import random as npr
 column_cache = {}
 
 
-def get_faker_locale(locale: str) -> Callable[[str], Any]:
-    fkr = Faker(locale)
-
-    def dispatch(fname: str):
-        return getattr(fkr, fname)()
-
-    return dispatch
-
-
-def get_mimesis_locale(locale: str) -> Callable[[str], Any]:
-    loc = getattr(Locale, locale)
-    mim = Generic(loc)
-
-    def dispatch(fname: str):
-        fnames = fname.split(".")
-        generator = mim
-        for att in fnames:
-            generator = getattr(generator, att)
-
-        return generator()
-
-    return dispatch
-
-
-def np_rand():
-    def dispatch(fname: str):
-        return getattr(npr, fname)()
-
-    return dispatch
-
-
-def pyrandom():
-    def dispatch(fname: str):
-        return getattr(random, fname)()
-
-    return dispatch
-
-
 def get_column_from_cache(table_name: str, column_name: str) -> None:
     cache_key = f"{table_name}.{column_name}"
     if cache_key not in column_cache:

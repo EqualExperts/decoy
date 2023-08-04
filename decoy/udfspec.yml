@@ -1594,7 +1594,15 @@ mimesis_en:
     return_type: VARCHAR
 numpy:
   _meta:
-    arg_type: basic
+    arg_type: anotated
+  # randint:
+  #   arguments: 
+  #     - default: ""
+  #       kind: POSITIONAL_OR_KEYWORD
+  #       name: low
+  #       type: INTEGER
+  #   dispatch: native
+  #   return_type: VARCHAR
 random:
   _meta:
     arg_type: basic
