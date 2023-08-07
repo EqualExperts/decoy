@@ -15,7 +15,7 @@ from decoy.udf_arrow import (
     messy_data_nullifier,
     random_shuffle,
 )
-from decoy.udf_scalar import custom_choice_generator, oversample, test_numpy_random
+from decoy.udf_scalar import custom_choice_generator, oversample
 from decoy.xeger import xeger_cached
 from decoy.udf_numpy import register_numpy_random_functions
 
