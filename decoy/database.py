@@ -17,6 +17,7 @@ from decoy.udf_arrow import (
 )
 from decoy.udf_scalar import custom_choice_generator, oversample
 from decoy.xeger import xeger_cached
+from decoy.udf_numpy import register_numpy_random_functions
 
 
 def getattr_submodule(mod: Any, fpath: str):
@@ -42,13 +43,15 @@ def get_connection(register_funcs=True) -> duckdb.DuckDBPyConnection:
     if register_funcs:
         register_udfs(con)
         register_udfs_from_config(con)
+        register_numpy_random_functions(con)
     return con
 
 
 def register_udf_library(
     con: duckdb.DuckDBPyConnection, library, library_config, library_name: str
 ):
-    library_functions = {k: v for k, v in library_config.items() if k != "_meta"}
+    library_functions = {k: v for k,
+                         v in library_config.items() if k != "_meta"}
 
     for fname, fconfig in library_functions.items():
         rtype = getattr(ducktypes, fconfig["return_type"])
@@ -96,6 +99,7 @@ def register_udfs_from_config(con: duckdb.DuckDBPyConnection) -> None:
 
 
 def register_udfs(con: duckdb.DuckDBPyConnection) -> None:
+
     con.create_function(
         name="xeger",
         function=xeger_cached,
