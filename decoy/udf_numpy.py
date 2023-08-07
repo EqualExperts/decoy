@@ -57,10 +57,15 @@ def numpy_dirichlet(alpha):
         alpha (Str): string containing an array of alpha values (see above description)
 
     Returns:
-        sample (Str): string containing the array of return values.
+        output (Str): string containing the array of return values.
     """
-    sample = str(npr.dirichlet(alpha=alpha))
-    return sample
+    alpha = [float(x) for x in alpha.split(",")]
+    samples = npr.dirichlet(alpha=alpha)
+    output = ''
+    for sample in samples:
+        output = output + ',' + str(sample)
+
+    return output[1:]
 
 
 def numpy_exponential(scale):
