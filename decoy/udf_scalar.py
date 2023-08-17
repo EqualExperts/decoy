@@ -1,10 +1,5 @@
 import random
-from typing import Any, Callable
-
-from duckdb import typing as ducktypes
-from faker import Faker
-from mimesis import Generic, Locale
-from numpy import random as npr
+from typing import Any
 
 column_cache = {}
 
@@ -43,7 +38,3 @@ def oversample(table_name: str, column_name: str) -> str:
 
     col_ref = f"{table_name}.{column_name}"
     return random.choice(column_cache[col_ref])
-
-
-def custom_choice_generator() -> ducktypes.VARCHAR:
-    return random.choice(["Fake 1", "Fake 2", "Fake 3"])

@@ -1,6 +1,7 @@
 import random
 from pathlib import Path
 from typing import Any, List
+from inspect import getmembers, isfunction
 
 import duckdb
 import yaml
@@ -15,9 +16,11 @@ from decoy.udf_arrow import (
     messy_data_nullifier,
     random_shuffle,
 )
-from decoy.udf_scalar import custom_choice_generator, oversample
+from decoy.udf_scalar import oversample
 from decoy.xeger import xeger_cached
 from decoy.udf_numpy import register_numpy_random_functions
+
+import decoy.udf_custom_functions as c_funcs
 
 
 def getattr_submodule(mod: Any, fpath: str):
@@ -44,6 +47,7 @@ def get_connection(register_funcs=True) -> duckdb.DuckDBPyConnection:
         register_udfs(con)
         register_udfs_from_config(con)
         register_numpy_random_functions(con)
+        register_custom_udfs(con)
     return con
 
 
@@ -98,20 +102,48 @@ def register_udfs_from_config(con: duckdb.DuckDBPyConnection) -> None:
         register_udf_library(con, random, config["random"], "random")
 
 
+def register_custom_udfs(con: duckdb.DuckDBPyConnection) -> None:
+    for func in getmembers(c_funcs, isfunction):
+
+        fname = str(func[0])
+        print(f'FNAME: {fname}')
+
+        fargs = []
+        if c_funcs.custom_config[fname]['parameters'] is not None:
+            for farg in c_funcs.custom_config[fname]['parameters'].split(','):
+                fargs.append(
+                    getattr(ducktypes, farg.strip()))
+
+        print(f'FARGS: {fargs}')
+
+        rtype = getattr(ducktypes, c_funcs.custom_config[fname]["return_type"])
+
+        print(f'RTYPE: {rtype}')
+
+        match c_funcs.custom_config[fname]["function_type"]:
+            case 'scalar':
+                ftype = duckdb.functional.PythonUDFType.NATIVE
+            case 'arrow':
+                ftype = duckdb.functional.PythonUDFType.ARROW
+
+        print(f'FTYPE: {ftype}')
+
+        con.create_function(
+            name=fname,
+            function=func[1],
+            return_type=fargs,
+            parameters=rtype,
+            side_effects=True,
+            type=ftype,
+        )
+
+
 def register_udfs(con: duckdb.DuckDBPyConnection) -> None:
 
     con.create_function(
         name="xeger",
         function=xeger_cached,
         return_type=[ducktypes.VARCHAR],
-        parameters=ducktypes.VARCHAR,
-        side_effects=True,
-    )
-
-    con.create_function(
-        name="custom_choice",
-        function=custom_choice_generator,
-        return_type=[],
         parameters=ducktypes.VARCHAR,
         side_effects=True,
     )

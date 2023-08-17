@@ -167,3 +167,4 @@ decoy.duckdb.wal
 *.csv
 decoy/kernel.json
 .DS_Store
+Untitled*.ipynb
