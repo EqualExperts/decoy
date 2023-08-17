@@ -5,7 +5,7 @@ from prompt_toolkit.history import FileHistory
 from prompt_toolkit.lexers import PygmentsLexer
 from pygments.lexers.sql import PlPgsqlLexer
 
-from decoy.udf_scalar import clear_column_cache
+from decoy.UDFs.udf_scalar import clear_column_cache
 
 exception_list = (
     duckdb.ParserException,

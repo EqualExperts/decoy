@@ -10,17 +10,17 @@ from faker import Faker
 from mimesis import Generic, Locale
 
 from decoy.settings import settings
-from decoy.udf_arrow import (
+from decoy.UDFs.udf_arrow import (
     intratable_sample,
     messy_data_junkadder,
     messy_data_nullifier,
     random_shuffle,
 )
-from decoy.udf_scalar import oversample
+from decoy.UDFs.udf_scalar import oversample
 from decoy.xeger import xeger_cached
-from decoy.udf_numpy import register_numpy_random_functions
+from decoy.UDFs.udf_numpy import register_numpy_random_functions
 
-import decoy.udf_custom_functions as c_funcs
+import decoy.UDFs.udf_custom_functions as c_funcs
 
 
 def getattr_submodule(mod: Any, fpath: str):
@@ -106,27 +106,20 @@ def register_custom_udfs(con: duckdb.DuckDBPyConnection) -> None:
     for func in getmembers(c_funcs, isfunction):
 
         fname = str(func[0])
-        print(f'FNAME: {fname}')
+        config = c_funcs.custom_config[fname]
+        rtype = getattr(ducktypes, config["return_type"])
 
         fargs = []
-        if c_funcs.custom_config[fname]['parameters'] is not None:
-            for farg in c_funcs.custom_config[fname]['parameters'].split(','):
+        if config['parameters'] is not None:
+            for farg in config['parameters'].split(','):
                 fargs.append(
                     getattr(ducktypes, farg.strip()))
 
-        print(f'FARGS: {fargs}')
-
-        rtype = getattr(ducktypes, c_funcs.custom_config[fname]["return_type"])
-
-        print(f'RTYPE: {rtype}')
-
-        match c_funcs.custom_config[fname]["function_type"]:
+        match config["function_type"]:
             case 'scalar':
                 ftype = duckdb.functional.PythonUDFType.NATIVE
             case 'arrow':
                 ftype = duckdb.functional.PythonUDFType.ARROW
-
-        print(f'FTYPE: {ftype}')
 
         con.create_function(
             name=fname,

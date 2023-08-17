@@ -3,7 +3,7 @@ from ipykernel.kernelbase import Kernel
 
 from decoy.cli_io import exception_list
 from decoy.database import get_connection
-from decoy.udf_scalar import clear_column_cache
+from decoy.UDFs.udf_scalar import clear_column_cache
 
 
 class DecoyKernel(Kernel):
