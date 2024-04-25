@@ -22,7 +22,7 @@ dependencies = [
   "pandas",
   "pyarrow",
   "pygments",
-  "pydantic==1.10.10",
+  "pydantic==1.10.13",
   "ipykernel",
   "jupyterlab",
 ]
