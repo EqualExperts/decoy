@@ -1052,10 +1052,10 @@ mimesis_en:
     arguments: []
     dispatch: no_arg
     return_type: INTEGER
-  development.dsn:
-    arguments: []
-    dispatch: no_arg
-    return_type: VARCHAR
+  # development.dsn:
+  #   arguments: []
+  #   dispatch: no_arg
+  #   return_type: VARCHAR
   development.os:
     arguments: []
     dispatch: no_arg

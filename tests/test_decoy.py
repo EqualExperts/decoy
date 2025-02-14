@@ -2,7 +2,6 @@ import pyarrow as pa
 import pytest
 
 from decoy.database import (
-    custom_choice_generator,
     get_connection,
     intratable_sample,
     random_shuffle,
@@ -10,7 +9,7 @@ from decoy.database import (
 
 # from decoy.udf_arrow import
 from decoy.settings import settings
-from decoy.udf_scalar import (
+from decoy.UDF.udf_scalar import (
     clear_column_cache,
     column_cache,
     get_column_from_cache,
@@ -44,11 +43,6 @@ def test_cache_column(connection):
     )
     get_column_from_cache("test_cached_column", "range")
     assert len(column_cache["test_cached_column.range"]) == 10
-
-
-def test_custom_choice_generator(connection):
-    test_choice = custom_choice_generator()
-    assert test_choice in ["Fake 1", "Fake 2", "Fake 3"]
 
 
 def test_random_shuffle(connection):

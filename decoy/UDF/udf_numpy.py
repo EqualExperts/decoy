@@ -21,10 +21,10 @@ def numpy_sample():
 
 def numpy_choice(a, p):
     """
-    In order to utilise the numpy.random.choice() function, the inputs and outputs need to be formatted in a specific way. 
+    In order to utilise the numpy.random.choice() function, the inputs and outputs need to be formatted in a specific way.
     Parameters:
         a (Str): a string of the choices in the format "choice1, choice2, choice3" as string will be split on commas(,)
-        p (Str): a string of all the choice probabilities, the same length and format as choices. 
+        p (Str): a string of all the choice probabilities, the same length and format as choices.
     Returns:
         choice (Str): A STRING of the choice from the choices list (a) based on the probability list (p)
     """
@@ -48,7 +48,7 @@ def numpy_chisquare(df):
 
 def numpy_dirichlet(alpha):
     """
-    In order to use the dirichlet function properly 2+ fields for alpha are needed. 
+    In order to use the dirichlet function properly 2+ fields for alpha are needed.
     alpha in this function needs to be a comma separated string.
     eg. '0.2, 0.4, 0.8' as pvals.
     It also needs to return a string due to SQL not liking variable length arrays
@@ -111,7 +111,7 @@ def numpy_logseries(p):
 def numpy_multinomial(n, pvals):
     """
     pvals in this function needs to be a comma separated string.
-    eg. '0.2, 0.4, 0.8' as pvals 
+    eg. '0.2, 0.4, 0.8' as pvals
     """
     pvals = [float(x) for x in pvals.split(",")]
     return npr.multinomial(n=n, pvals=pvals)
@@ -198,120 +198,120 @@ def register_numpy_random_functions(con: duckdb.DuckDBPyConnection) -> None:
     con.create_function(
         name='numpy_rand',
         function=numpy_rand,
-        return_type=None,
-        parameters=ducktypes.FLOAT,
+        return_type=ducktypes.FLOAT,
+        parameters=None,
         side_effects=True,
     )
 
     con.create_function(
         name='numpy_randn',
         function=numpy_rand,
-        return_type=None,
-        parameters=ducktypes.FLOAT,
+        return_type=ducktypes.FLOAT,
+        parameters=None,
         side_effects=True,
     )
 
     con.create_function(
         name='numpy_randint',
         function=numpy_randint,
-        return_type=[ducktypes.INTEGER, ducktypes.INTEGER],
-        parameters=ducktypes.INTEGER,
+        return_type=ducktypes.INTEGER,
+        parameters=[ducktypes.INTEGER, ducktypes.INTEGER],
         side_effects=True,
     )
 
     con.create_function(
         name='numpy_sample',
         function=numpy_sample,
-        return_type=None,
-        parameters=ducktypes.FLOAT,
+        return_type=ducktypes.FLOAT,
+        parameters=None,
         side_effects=True,
     )
 
     con.create_function(
         name='numpy_choice',
         function=numpy_choice,
-        return_type=[ducktypes.VARCHAR, ducktypes.VARCHAR],
-        parameters=ducktypes.VARCHAR,
+        return_type=ducktypes.VARCHAR,
+        parameters=[ducktypes.VARCHAR, ducktypes.VARCHAR],
         side_effects=True,
     )
 
     con.create_function(
         name='numpy_beta',
         function=numpy_beta,
-        return_type=[ducktypes.FLOAT, ducktypes.FLOAT],
-        parameters=ducktypes.FLOAT,
+        return_type=ducktypes.FLOAT,
+        parameters=[ducktypes.FLOAT, ducktypes.FLOAT],
         side_effects=True,
     )
 
     con.create_function(
         name='numpy_binomial',
         function=numpy_binomial,
-        return_type=[ducktypes.INTEGER, ducktypes.FLOAT],
-        parameters=ducktypes.FLOAT,
+        return_type=ducktypes.FLOAT,
+        parameters=[ducktypes.INTEGER, ducktypes.FLOAT],
         side_effects=True,
     )
 
     con.create_function(
         name='numpy_chisquare',
         function=numpy_chisquare,
-        return_type=[ducktypes.INTEGER],
-        parameters=ducktypes.FLOAT,
+        return_type=ducktypes.FLOAT,
+        parameters=[ducktypes.INTEGER],
         side_effects=True,
     )
 
     con.create_function(
         name='numpy_dirichlet',
         function=numpy_dirichlet,
-        return_type=[ducktypes.VARCHAR],
-        parameters=ducktypes.VARCHAR,
+        return_type=ducktypes.VARCHAR,
+        parameters=[ducktypes.VARCHAR],
         side_effects=True,
     )
 
     con.create_function(
         name='numpy_exponential',
         function=numpy_exponential,
-        return_type=[ducktypes.FLOAT],
-        parameters=ducktypes.FLOAT,
+        return_type=ducktypes.FLOAT,
+        parameters=[ducktypes.FLOAT],
         side_effects=True,
     )
 
     con.create_function(
         name='numpy_f',
         function=numpy_f,
-        return_type=[ducktypes.FLOAT, ducktypes.FLOAT],
-        parameters=ducktypes.FLOAT,
+        return_type=ducktypes.FLOAT,
+        parameters=[ducktypes.FLOAT, ducktypes.FLOAT],
         side_effects=True,
     )
 
     con.create_function(
         name='numpy_gamma',
         function=numpy_gamma,
-        return_type=[ducktypes.FLOAT, ducktypes.FLOAT],
-        parameters=ducktypes.FLOAT,
+        return_type=ducktypes.FLOAT,
+        parameters=[ducktypes.FLOAT, ducktypes.FLOAT],
         side_effects=True,
     )
 
     con.create_function(
         name='numpy_geometric',
         function=numpy_geometric,
-        return_type=[ducktypes.FLOAT],
-        parameters=ducktypes.FLOAT,
+        return_type=ducktypes.FLOAT,
+        parameters=[ducktypes.FLOAT],
         side_effects=True,
     )
 
     con.create_function(
         name='numpy_gumbel',
         function=numpy_gumbel,
-        return_type=[ducktypes.FLOAT, ducktypes.FLOAT],
-        parameters=ducktypes.FLOAT,
+        return_type=ducktypes.FLOAT,
+        parameters=[ducktypes.FLOAT, ducktypes.FLOAT],
         side_effects=True,
     )
 
     con.create_function(
         name='numpy_hypergeometric',
         function=numpy_hypergeometric,
-        return_type=[ducktypes.INTEGER, ducktypes.INTEGER, ducktypes.INTEGER],
-        parameters=ducktypes.INTEGER,
+        return_type=ducktypes.INTEGER,
+        parameters=[ducktypes.INTEGER, ducktypes.INTEGER, ducktypes.INTEGER],
         side_effects=True,
     )
 
@@ -320,191 +320,191 @@ def register_numpy_random_functions(con: duckdb.DuckDBPyConnection) -> None:
     con.create_function(
         name='numpy_laplace',
         function=numpy_laplace,
-        return_type=[ducktypes.FLOAT, ducktypes.FLOAT],
-        parameters=ducktypes.FLOAT,
+        return_type=ducktypes.FLOAT,
+        parameters=[ducktypes.FLOAT, ducktypes.FLOAT],
         side_effects=True,
     )
 
     con.create_function(
         name='numpy_logistic',
         function=numpy_logistic,
-        return_type=[ducktypes.FLOAT, ducktypes.FLOAT],
-        parameters=ducktypes.FLOAT,
+        return_type=ducktypes.FLOAT,
+        parameters=[ducktypes.FLOAT, ducktypes.FLOAT],
         side_effects=True,
     )
 
     con.create_function(
         name='numpy_lognormal',
         function=numpy_lognormal,
-        return_type=[ducktypes.FLOAT, ducktypes.FLOAT],
-        parameters=ducktypes.FLOAT,
+        return_type=ducktypes.FLOAT,
+        parameters=[ducktypes.FLOAT, ducktypes.FLOAT],
         side_effects=True,
     )
 
     con.create_function(
         name='numpy_logseries',
         function=numpy_logseries,
-        return_type=[ducktypes.FLOAT],
-        parameters=ducktypes.FLOAT,
+        return_type=ducktypes.FLOAT,
+        parameters=[ducktypes.FLOAT],
         side_effects=True,
     )
 
     con.create_function(
         name='numpy_multinomial',
         function=numpy_multinomial,
-        return_type=[ducktypes.FLOAT, ducktypes.VARCHAR],
-        parameters=ducktypes.FLOAT,
+        return_type=ducktypes.FLOAT,
+        parameters=[ducktypes.FLOAT, ducktypes.VARCHAR],
         side_effects=True,
     )
 
     con.create_function(
         name='numpy_negative_binomial',
         function=numpy_negative_binomial,
-        return_type=[ducktypes.FLOAT, ducktypes.FLOAT],
-        parameters=ducktypes.FLOAT,
+        return_type=ducktypes.FLOAT,
+        parameters=[ducktypes.FLOAT, ducktypes.FLOAT],
         side_effects=True,
     )
 
     con.create_function(
         name='numpy_noncentral_chisquare',
         function=numpy_noncentral_chisquare,
-        return_type=[ducktypes.FLOAT, ducktypes.FLOAT],
-        parameters=ducktypes.FLOAT,
+        return_type=ducktypes.FLOAT,
+        parameters=[ducktypes.FLOAT, ducktypes.FLOAT],
         side_effects=True,
     )
 
     con.create_function(
         name='numpy_noncentral_f',
         function=numpy_noncentral_f,
-        return_type=[ducktypes.FLOAT, ducktypes.FLOAT, ducktypes.FLOAT],
-        parameters=ducktypes.FLOAT,
+        return_type=ducktypes.FLOAT,
+        parameters=[ducktypes.FLOAT, ducktypes.FLOAT, ducktypes.FLOAT],
         side_effects=True,
     )
 
     con.create_function(
         name='numpy_normal',
         function=numpy_normal,
-        return_type=[ducktypes.FLOAT, ducktypes.FLOAT],
-        parameters=ducktypes.FLOAT,
+        return_type=ducktypes.FLOAT,
+        parameters=[ducktypes.FLOAT, ducktypes.FLOAT],
         side_effects=True,
     )
 
     con.create_function(
         name='numpy_pareto',
         function=numpy_pareto,
-        return_type=[ducktypes.FLOAT],
-        parameters=ducktypes.FLOAT,
+        return_type=ducktypes.FLOAT,
+        parameters=[ducktypes.FLOAT],
         side_effects=True,
     )
 
     con.create_function(
         name='numpy_poisson',
         function=numpy_poisson,
-        return_type=[ducktypes.FLOAT],
-        parameters=ducktypes.FLOAT,
+        return_type=ducktypes.FLOAT,
+        parameters=[ducktypes.FLOAT],
         side_effects=True,
     )
 
     con.create_function(
         name='numpy_power',
         function=numpy_power,
-        return_type=[ducktypes.FLOAT],
-        parameters=ducktypes.FLOAT,
+        return_type=ducktypes.FLOAT,
+        parameters=[ducktypes.FLOAT],
         side_effects=True,
     )
 
     con.create_function(
         name='numpy_rayleigh',
         function=numpy_rayleigh,
-        return_type=[ducktypes.FLOAT],
-        parameters=ducktypes.FLOAT,
+        return_type=ducktypes.FLOAT,
+        parameters=[ducktypes.FLOAT],
         side_effects=True,
     )
 
     con.create_function(
         name='numpy_standard_cauchy',
         function=numpy_standard_cauchy,
-        return_type=[],
-        parameters=ducktypes.FLOAT,
+        return_type=ducktypes.FLOAT,
+        parameters=[],
         side_effects=True,
     )
 
     con.create_function(
         name='numpy_standard_exponential',
         function=numpy_standard_exponential,
-        return_type=[],
-        parameters=ducktypes.FLOAT,
+        return_type=ducktypes.FLOAT,
+        parameters=[],
         side_effects=True,
     )
 
     con.create_function(
         name='numpy_standard_gamma',
         function=numpy_standard_gamma,
-        return_type=[ducktypes.FLOAT],
-        parameters=ducktypes.FLOAT,
+        return_type=ducktypes.FLOAT,
+        parameters=[ducktypes.FLOAT],
         side_effects=True,
     )
 
     con.create_function(
         name='numpy_standard_normal',
         function=numpy_standard_normal,
-        return_type=[],
-        parameters=ducktypes.FLOAT,
+        return_type=ducktypes.FLOAT,
+        parameters=[],
         side_effects=True,
     )
 
     con.create_function(
         name='numpy_standard_t',
         function=numpy_standard_t,
-        return_type=[ducktypes.FLOAT],
-        parameters=ducktypes.FLOAT,
+        return_type=ducktypes.FLOAT,
+        parameters=[ducktypes.FLOAT],
         side_effects=True,
     )
 
     con.create_function(
         name='numpy_triangular',
         function=numpy_triangular,
-        return_type=[ducktypes.FLOAT, ducktypes.FLOAT, ducktypes.FLOAT],
-        parameters=ducktypes.FLOAT,
+        return_type=ducktypes.FLOAT,
+        parameters=[ducktypes.FLOAT, ducktypes.FLOAT, ducktypes.FLOAT],
         side_effects=True,
     )
 
     con.create_function(
         name='numpy_uniform',
         function=numpy_uniform,
-        return_type=[ducktypes.FLOAT, ducktypes.FLOAT],
-        parameters=ducktypes.FLOAT,
+        return_type=ducktypes.FLOAT,
+        parameters=[ducktypes.FLOAT, ducktypes.FLOAT],
         side_effects=True,
     )
 
     con.create_function(
         name='numpy_vonmises',
         function=numpy_vonmises,
-        return_type=[ducktypes.FLOAT, ducktypes.FLOAT],
-        parameters=ducktypes.FLOAT,
+        return_type=ducktypes.FLOAT,
+        parameters=[ducktypes.FLOAT, ducktypes.FLOAT],
         side_effects=True,
     )
 
     con.create_function(
         name='numpy_wald',
         function=numpy_wald,
-        return_type=[ducktypes.FLOAT, ducktypes.FLOAT],
-        parameters=ducktypes.FLOAT,
+        return_type=ducktypes.FLOAT,
+        parameters=[ducktypes.FLOAT, ducktypes.FLOAT],
         side_effects=True,
     )
 
     con.create_function(
         name='numpy_weibull',
         function=numpy_weibull,
-        return_type=[ducktypes.FLOAT],
-        parameters=ducktypes.FLOAT,
+        return_type=ducktypes.FLOAT,
+        parameters=[ducktypes.FLOAT],
         side_effects=True,
     )
 
     con.create_function(
         name='numpy_zipf',
         function=numpy_zipf,
-        return_type=[ducktypes.FLOAT],
-        parameters=ducktypes.FLOAT,
+        return_type=ducktypes.FLOAT,
+        parameters=[ducktypes.FLOAT],
         side_effects=True,
     )
