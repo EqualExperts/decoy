@@ -1052,10 +1052,10 @@ mimesis_en:
     arguments: []
     dispatch: no_arg
     return_type: INTEGER
-  development.dsn:
-    arguments: []
-    dispatch: no_arg
-    return_type: VARCHAR
+  # development.dsn:
+  #   arguments: []
+  #   dispatch: no_arg
+  #   return_type: VARCHAR
   development.os:
     arguments: []
     dispatch: no_arg
@@ -1236,10 +1236,10 @@ mimesis_en:
     arguments: []
     dispatch: no_arg
     return_type: VARCHAR
-  internet.emoji:
-    arguments: []
-    dispatch: no_arg
-    return_type: VARCHAR
+  # internet.emoji:
+  #   arguments: []
+  #   dispatch: no_arg
+  #   return_type: VARCHAR
   internet.hostname:
     arguments: []
     dispatch: no_arg
@@ -1404,10 +1404,10 @@ mimesis_en:
     arguments: []
     dispatch: no_arg
     return_type: VARCHAR
-  person.age:
-    arguments: []
-    dispatch: no_arg
-    return_type: INTEGER
+  # person.age:
+  #   arguments: []
+  #   dispatch: no_arg
+  #   return_type: INTEGER
   person.blood_type:
     arguments: []
     dispatch: no_arg
@@ -1500,10 +1500,10 @@ mimesis_en:
     arguments: []
     dispatch: no_arg
     return_type: INTEGER
-  person.work_experience:
-    arguments: []
-    dispatch: no_arg
-    return_type: INTEGER
+  # person.work_experience:
+  #   arguments: []
+  #   dispatch: no_arg
+  #   return_type: INTEGER
   person.worldview:
     arguments: []
     dispatch: no_arg
@@ -1596,7 +1596,7 @@ numpy:
   _meta:
     arg_type: anotated
   # randint:
-  #   arguments: 
+  #   arguments:
   #     - default: ""
   #       kind: POSITIONAL_OR_KEYWORD
   #       name: low
@@ -1608,11 +1608,11 @@ random:
     arg_type: basic
   betavariate:
     arguments:
-      - default: ""
+      - default: ''
         kind: POSITIONAL_OR_KEYWORD
         name: alpha
         type: FLOAT
-      - default: ""
+      - default: ''
         kind: POSITIONAL_OR_KEYWORD
         name: beta
         type: FLOAT
@@ -1620,7 +1620,7 @@ random:
     return_type: FLOAT
   choice:
     arguments:
-      - default: ""
+      - default: ''
         kind: POSITIONAL_OR_KEYWORD
         name: seq
         type: BLOB
@@ -1644,7 +1644,7 @@ random:
   #   return_type: VARCHAR
   expovariate:
     arguments:
-      - default: ""
+      - default: ''
         kind: POSITIONAL_OR_KEYWORD
         name: lambd
         type: FLOAT
@@ -1652,11 +1652,11 @@ random:
     return_type: FLOAT
   gammavariate:
     arguments:
-      - default: ""
+      - default: ''
         kind: POSITIONAL_OR_KEYWORD
         name: alpha
         type: FLOAT
-      - default: ""
+      - default: ''
         kind: POSITIONAL_OR_KEYWORD
         name: beta
         type: FLOAT
@@ -1664,11 +1664,11 @@ random:
     return_type: FLOAT
   gauss:
     arguments:
-      - default: ""
+      - default: ''
         kind: POSITIONAL_OR_KEYWORD
         name: mu
         type: FLOAT
-      - default: ""
+      - default: ''
         kind: POSITIONAL_OR_KEYWORD
         name: sigma
         type: FLOAT
@@ -1676,11 +1676,11 @@ random:
     return_type: FLOAT
   lognormvariate:
     arguments:
-      - default: ""
+      - default: ''
         kind: POSITIONAL_OR_KEYWORD
         name: mu
         type: FLOAT
-      - default: ""
+      - default: ''
         kind: POSITIONAL_OR_KEYWORD
         name: sigma
         type: FLOAT
@@ -1688,11 +1688,11 @@ random:
     return_type: FLOAT
   normalvariate:
     arguments:
-      - default: ""
+      - default: ''
         kind: POSITIONAL_OR_KEYWORD
         name: mu
         type: FLOAT
-      - default: ""
+      - default: ''
         kind: POSITIONAL_OR_KEYWORD
         name: sigma
         type: FLOAT
@@ -1700,7 +1700,7 @@ random:
     return_type: FLOAT
   paretovariate:
     arguments:
-      - default: ""
+      - default: ''
         kind: POSITIONAL_OR_KEYWORD
         name: alpha
         type: FLOAT
@@ -1708,7 +1708,7 @@ random:
     return_type: FLOAT
   randbytes:
     arguments:
-      - default: ""
+      - default: ''
         kind: POSITIONAL_OR_KEYWORD
         name: n
         type: INTEGER
@@ -1716,11 +1716,11 @@ random:
     return_type: BLOB
   randint:
     arguments:
-      - default: ""
+      - default: ''
         kind: POSITIONAL_OR_KEYWORD
         name: a
         type: INTEGER
-      - default: ""
+      - default: ''
         kind: POSITIONAL_OR_KEYWORD
         name: b
         type: INTEGER
@@ -1728,15 +1728,15 @@ random:
     return_type: INTEGER
   randrange:
     arguments:
-      - default: ""
+      - default: ''
         kind: POSITIONAL_OR_KEYWORD
         name: start
         type: INTEGER
-      - default: ""
+      - default: ''
         kind: POSITIONAL_OR_KEYWORD
         name: stop
         type: INTEGER
-      - default: ""
+      - default: ''
         kind: POSITIONAL_OR_KEYWORD
         name: step
         type: INTEGER
@@ -1764,15 +1764,15 @@ random:
   #   return_type: VARCHAR
   triangular:
     arguments:
-      - default: ""
+      - default: ''
         kind: POSITIONAL_OR_KEYWORD
         name: low
         type: FLOAT
-      - default: ""
+      - default: ''
         kind: POSITIONAL_OR_KEYWORD
         name: high
         type: FLOAT
-      - default: ""
+      - default: ''
         kind: POSITIONAL_OR_KEYWORD
         name: mode
         type: FLOAT
@@ -1780,11 +1780,11 @@ random:
     return_type: FLOAT
   uniform:
     arguments:
-      - default: ""
+      - default: ''
         kind: POSITIONAL_OR_KEYWORD
         name: a
         type: FLOAT
-      - default: ""
+      - default: ''
         kind: POSITIONAL_OR_KEYWORD
         name: b
         type: FLOAT
@@ -1792,11 +1792,11 @@ random:
     return_type: FLOAT
   vonmisesvariate:
     arguments:
-      - default: ""
+      - default: ''
         kind: POSITIONAL_OR_KEYWORD
         name: mu
         type: FLOAT
-      - default: ""
+      - default: ''
         kind: POSITIONAL_OR_KEYWORD
         name: kappa
         type: FLOAT
@@ -1804,11 +1804,11 @@ random:
     return_type: FLOAT
   weibullvariate:
     arguments:
-      - default: ""
+      - default: ''
         kind: POSITIONAL_OR_KEYWORD
         name: alpha
         type: FLOAT
-      - default: ""
+      - default: ''
         kind: POSITIONAL_OR_KEYWORD
         name: beta
         type: FLOAT

@@ -10,17 +10,17 @@ from faker import Faker
 from mimesis import Generic, Locale
 
 from decoy.settings import settings
-from decoy.UDFs.udf_arrow import (
+from decoy.UDF.udf_arrow import (
     intratable_sample,
     messy_data_junkadder,
     messy_data_nullifier,
     random_shuffle,
 )
-from decoy.UDFs.udf_scalar import oversample
+from decoy.UDF.udf_scalar import oversample
 from decoy.xeger import xeger_cached
-from decoy.UDFs.udf_numpy import register_numpy_random_functions
+from decoy.UDF.udf_numpy import register_numpy_random_functions
 
-import decoy.UDFs.udf_custom_functions as c_funcs
+import decoy.UDF.udf_custom_functions as c_funcs
 
 
 def getattr_submodule(mod: Any, fpath: str):
@@ -51,11 +51,8 @@ def get_connection(register_funcs=True) -> duckdb.DuckDBPyConnection:
     return con
 
 
-def register_udf_library(
-    con: duckdb.DuckDBPyConnection, library, library_config, library_name: str
-):
-    library_functions = {k: v for k,
-                         v in library_config.items() if k != "_meta"}
+def register_udf_library(con: duckdb.DuckDBPyConnection, library, library_config, library_name: str):
+    library_functions = {k: v for k, v in library_config.items() if k != "_meta"}
 
     for fname, fconfig in library_functions.items():
         rtype = getattr(ducktypes, fconfig["return_type"])
@@ -74,16 +71,16 @@ def register_udf_library(
                 con.create_function(
                     name=function_name,
                     function=getattr_submodule(library, fname),
-                    return_type=fargs,
-                    parameters=rtype,
+                    return_type=rtype,
+                    parameters=fargs,
                     side_effects=True,
                 )
             case "no_arg":
                 con.create_function(
                     name=function_name,
                     function=getattr_submodule_noargs(library, fname),
-                    return_type=[],
-                    parameters=rtype,
+                    return_type=rtype,
+                    parameters=[],
                     side_effects=True,
                 )
             case default:
@@ -112,8 +109,7 @@ def register_custom_udfs(con: duckdb.DuckDBPyConnection) -> None:
         fargs = []
         if config['parameters'] is not None:
             for farg in config['parameters'].split(','):
-                fargs.append(
-                    getattr(ducktypes, farg.strip()))
+                fargs.append(getattr(ducktypes, farg.strip()))
 
         match config["function_type"]:
             case 'scalar':
@@ -124,28 +120,27 @@ def register_custom_udfs(con: duckdb.DuckDBPyConnection) -> None:
         con.create_function(
             name=fname,
             function=func[1],
-            return_type=fargs,
-            parameters=rtype,
+            return_type=rtype,
+            parameters=fargs,
             side_effects=True,
             type=ftype,
         )
 
 
 def register_udfs(con: duckdb.DuckDBPyConnection) -> None:
-
     con.create_function(
         name="xeger",
         function=xeger_cached,
-        return_type=[ducktypes.VARCHAR],
-        parameters=ducktypes.VARCHAR,
+        parameters=[ducktypes.VARCHAR],
+        return_type=ducktypes.VARCHAR,
         side_effects=True,
     )
 
     con.create_function(
         name="shuffle",
         function=random_shuffle,
-        return_type=[ducktypes.VARCHAR],
-        parameters=ducktypes.VARCHAR,
+        return_type=ducktypes.VARCHAR,
+        parameters=[ducktypes.VARCHAR],
         side_effects=True,
         type=duckdb.functional.PythonUDFType.ARROW,
     )
@@ -153,8 +148,8 @@ def register_udfs(con: duckdb.DuckDBPyConnection) -> None:
     con.create_function(
         name="intratable_sample",
         function=intratable_sample,
-        return_type=[ducktypes.VARCHAR],
-        parameters=ducktypes.VARCHAR,
+        return_type=ducktypes.VARCHAR,
+        parameters=[ducktypes.VARCHAR],
         side_effects=True,
         type=duckdb.functional.PythonUDFType.ARROW,
     )
@@ -162,8 +157,8 @@ def register_udfs(con: duckdb.DuckDBPyConnection) -> None:
     con.create_function(
         name="messy_data_nullifier",
         function=messy_data_nullifier,
-        return_type=[ducktypes.VARCHAR],
-        parameters=ducktypes.VARCHAR,
+        return_type=ducktypes.VARCHAR,
+        parameters=[ducktypes.VARCHAR],
         side_effects=True,
         type=duckdb.functional.PythonUDFType.ARROW,
     )
@@ -171,8 +166,8 @@ def register_udfs(con: duckdb.DuckDBPyConnection) -> None:
     con.create_function(
         name="messy_data_junkadder",
         function=messy_data_junkadder,
-        return_type=[ducktypes.VARCHAR],
-        parameters=ducktypes.VARCHAR,
+        return_type=ducktypes.VARCHAR,
+        parameters=[ducktypes.VARCHAR],
         side_effects=True,
         type=duckdb.functional.PythonUDFType.ARROW,
     )
@@ -180,7 +175,7 @@ def register_udfs(con: duckdb.DuckDBPyConnection) -> None:
     con.create_function(
         name="oversample",
         function=oversample,
-        return_type=[ducktypes.VARCHAR, ducktypes.VARCHAR],
-        parameters=ducktypes.VARCHAR,
+        return_type=ducktypes.VARCHAR,
+        parameters=[ducktypes.VARCHAR, ducktypes.VARCHAR],
         side_effects=True,
     )
