@@ -3,7 +3,6 @@ from pathlib import Path
 from typing import Any, List
 from inspect import getmembers, isfunction
 
-import _duckdb
 import duckdb
 import yaml
 from duckdb import typing as ducktypes
@@ -114,9 +113,11 @@ def register_custom_udfs(con: duckdb.DuckDBPyConnection) -> None:
 
         match config["function_type"]:
             case 'scalar':
-                ftype = _duckdb._func.PythonUDFType.NATIVE
+                ftype = "native"
             case 'arrow':
-                ftype = _duckdb._func.PythonUDFType.ARROW
+                ftype = "arrow"
+            case _:
+                ftype = "native"
 
         con.create_function(
             name=fname,
@@ -143,7 +144,7 @@ def register_udfs(con: duckdb.DuckDBPyConnection) -> None:
         return_type=ducktypes.VARCHAR,
         parameters=[ducktypes.VARCHAR],
         side_effects=True,
-        type=_duckdb._func.PythonUDFType.ARROW,
+        type="arrow",
     )
 
     con.create_function(
@@ -152,7 +153,7 @@ def register_udfs(con: duckdb.DuckDBPyConnection) -> None:
         return_type=ducktypes.VARCHAR,
         parameters=[ducktypes.VARCHAR],
         side_effects=True,
-        type=_duckdb._func.PythonUDFType.ARROW,
+        type="arrow",
     )
 
     con.create_function(
@@ -161,7 +162,7 @@ def register_udfs(con: duckdb.DuckDBPyConnection) -> None:
         return_type=ducktypes.VARCHAR,
         parameters=[ducktypes.VARCHAR],
         side_effects=True,
-        type=_duckdb._func.PythonUDFType.ARROW,
+        type="arrow",
     )
 
     con.create_function(
@@ -170,7 +171,7 @@ def register_udfs(con: duckdb.DuckDBPyConnection) -> None:
         return_type=ducktypes.VARCHAR,
         parameters=[ducktypes.VARCHAR],
         side_effects=True,
-        type=_duckdb._func.PythonUDFType.ARROW,
+        type="arrow",
     )
 
     con.create_function(
