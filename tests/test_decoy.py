@@ -1,3 +1,6 @@
+import duckdb
+import tempfile
+
 import pyarrow as pa
 import pytest
 
@@ -108,3 +111,14 @@ def test_sql_oversample_cached_table_change(connection):
     res_oversampled_cached = [r[0] for r in connection.fetchall()]
     for row in res_oversampled_cached:
         assert row not in original_res
+
+
+def test_local_filesystem_blocked(connection):
+    """File read operations should be blocked by enable_external_access setting."""
+    with tempfile.NamedTemporaryFile(mode='w', suffix='.csv', delete=True) as f:
+        f.write("col1,col2\n1,2\n3,4")
+        f.flush()
+
+        with pytest.raises(duckdb.PermissionException) as exc_info:
+            connection.execute(f"SELECT * FROM read_csv_auto('{f.name}')")
+        assert "file system operations are disabled" in str(exc_info.value)

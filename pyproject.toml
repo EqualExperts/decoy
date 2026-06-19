@@ -36,5 +36,5 @@ dev = ["black", "pytest"]
 [project.scripts]
 decoy = "decoy.cli:rootcmd"
 
-[tool.setuptools]
-packages = ["decoy"]
+[tool.setuptools.packages.find]
+where = ["src"]
