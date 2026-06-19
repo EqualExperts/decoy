@@ -11,7 +11,7 @@ import pyarrow as pa
 import pandas as pd
 
 from duckdb import typing as ducktypes
-from typing import Any, Callable
+from typing import Any
 
 
 custom_config = {

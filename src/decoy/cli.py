@@ -21,8 +21,6 @@ def rootcmd():
 
 @rootcmd.command()
 def kernel_install():
-    from ipykernel.kernelspec import install
-    from jupyter_client.kernelspec import install_kernel_spec
 
     spec = jupyter_client.kernelspec.KernelSpec(
         argv=[sys.executable, "-m", "decoy.kernel", "-f", "{connection_file}"],

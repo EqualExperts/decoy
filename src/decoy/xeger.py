@@ -1,5 +1,4 @@
 import random
-import re
 import sre_parse
 import sre_constants
 
