@@ -1,6 +1,6 @@
 import random
 from pathlib import Path
-from typing import Any, List
+from typing import Any
 from inspect import getmembers, isfunction
 
 import duckdb
@@ -43,6 +43,7 @@ def getattr_submodule_noargs(mod: Any, fpath: str):
 
 def get_connection(register_funcs=True) -> duckdb.DuckDBPyConnection:
     con = duckdb.connect(settings.database_file)
+    con.execute("SET enable_external_access = false")
     if register_funcs:
         register_udfs(con)
         register_udfs_from_config(con)
