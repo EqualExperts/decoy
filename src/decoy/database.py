@@ -5,7 +5,7 @@ from inspect import getmembers, isfunction
 
 import duckdb
 import yaml
-from duckdb import typing as ducktypes
+from duckdb import sqltypes as ducktypes
 from faker import Faker
 from mimesis import Generic, Locale
 

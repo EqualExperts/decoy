@@ -10,7 +10,7 @@ import random
 import pyarrow as pa
 import pandas as pd
 
-from duckdb import typing as ducktypes
+from duckdb import sqltypes as ducktypes
 from typing import Any
 
 
