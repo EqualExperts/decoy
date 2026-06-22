@@ -5,13 +5,9 @@ import pyarrow as pa
 import pytest
 
 from decoy.database import (
-    get_connection,
     intratable_sample,
     random_shuffle,
 )
-
-# from decoy.udf_arrow import
-from decoy.settings import settings
 from decoy.UDF.udf_scalar import (
     clear_column_cache,
     column_cache,
@@ -19,23 +15,9 @@ from decoy.UDF.udf_scalar import (
     oversample,
 )
 
-settings.database_file = "test.duckdb"
-
 
 def test_func(connection):
     assert True
-
-
-@pytest.fixture()
-def connection(request):
-    print("setup")
-
-    def teardown():
-        print("teardown")
-
-    request.addfinalizer(teardown)
-
-    return get_connection()
 
 
 def test_cache_column(connection):
