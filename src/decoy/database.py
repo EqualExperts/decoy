@@ -1,11 +1,11 @@
 import random
 from pathlib import Path
-from typing import Any, List
+from typing import Any
 from inspect import getmembers, isfunction
 
 import duckdb
 import yaml
-from duckdb import typing as ducktypes
+from duckdb import sqltypes as ducktypes
 from faker import Faker
 from mimesis import Generic, Locale
 
@@ -43,6 +43,7 @@ def getattr_submodule_noargs(mod: Any, fpath: str):
 
 def get_connection(register_funcs=True) -> duckdb.DuckDBPyConnection:
     con = duckdb.connect(settings.database_file)
+    con.execute("SET enable_external_access = false")
     if register_funcs:
         register_udfs(con)
         register_udfs_from_config(con)
@@ -113,9 +114,11 @@ def register_custom_udfs(con: duckdb.DuckDBPyConnection) -> None:
 
         match config["function_type"]:
             case 'scalar':
-                ftype = duckdb.functional.PythonUDFType.NATIVE
+                ftype = "native"
             case 'arrow':
-                ftype = duckdb.functional.PythonUDFType.ARROW
+                ftype = "arrow"
+            case _:
+                ftype = "native"
 
         con.create_function(
             name=fname,
@@ -142,7 +145,7 @@ def register_udfs(con: duckdb.DuckDBPyConnection) -> None:
         return_type=ducktypes.VARCHAR,
         parameters=[ducktypes.VARCHAR],
         side_effects=True,
-        type=duckdb.functional.PythonUDFType.ARROW,
+        type="arrow",
     )
 
     con.create_function(
@@ -151,7 +154,7 @@ def register_udfs(con: duckdb.DuckDBPyConnection) -> None:
         return_type=ducktypes.VARCHAR,
         parameters=[ducktypes.VARCHAR],
         side_effects=True,
-        type=duckdb.functional.PythonUDFType.ARROW,
+        type="arrow",
     )
 
     con.create_function(
@@ -160,7 +163,7 @@ def register_udfs(con: duckdb.DuckDBPyConnection) -> None:
         return_type=ducktypes.VARCHAR,
         parameters=[ducktypes.VARCHAR],
         side_effects=True,
-        type=duckdb.functional.PythonUDFType.ARROW,
+        type="arrow",
     )
 
     con.create_function(
@@ -169,7 +172,7 @@ def register_udfs(con: duckdb.DuckDBPyConnection) -> None:
         return_type=ducktypes.VARCHAR,
         parameters=[ducktypes.VARCHAR],
         side_effects=True,
-        type=duckdb.functional.PythonUDFType.ARROW,
+        type="arrow",
     )
 
     con.create_function(

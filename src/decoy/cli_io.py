@@ -47,7 +47,7 @@ def repl(con: duckdb.DuckDBPyConnection) -> None:
 
         try:
             res = con.fetch_df()
-        except duckdb.InvalidInputException as e:
+        except duckdb.InvalidInputException:
             print("No results")
             continue
         print_rows(res)

@@ -1,16 +1,27 @@
 import random
-from typing import Any
+import re
 
 column_cache = {}
 
+IDENTIFIER_PATTERN = re.compile(r'^[a-zA-Z_][a-zA-Z0-9_.]*$')
+
+
+def _validate_identifier(name: str) -> str:
+    if not IDENTIFIER_PATTERN.match(name):
+        raise ValueError(f"Invalid identifier: {name}")
+    return name
+
 
 def get_column_from_cache(table_name: str, column_name: str) -> None:
-    cache_key = f"{table_name}.{column_name}"
+    validated_table = _validate_identifier(table_name)
+    validated_column = _validate_identifier(column_name)
+
+    cache_key = f"{validated_table}.{validated_column}"
     if cache_key not in column_cache:
         from decoy.database import get_connection
 
         con = get_connection(False)
-        con.execute(f"SELECT {column_name} FROM {table_name}")
+        con.execute(f"SELECT {validated_column} FROM {validated_table}")
         column_cache[cache_key] = [val[0] for val in con.fetchall()]
 
     return column_cache[cache_key]

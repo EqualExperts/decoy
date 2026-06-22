@@ -1,6 +1,6 @@
 from numpy import random as npr
 import duckdb
-from duckdb import typing as ducktypes
+from duckdb import sqltypes as ducktypes
 
 
 def numpy_rand():

@@ -1,12 +1,14 @@
 [build-system]
-requires = ["setuptools", "setuptools-scm"]
-build-backend = "setuptools.build_meta"
+requires = ["uv_build>=0.8.17,<0.9.0"]
+build-backend = "uv_build"
 
 [project]
-name = "duckdb-decoy"
+name = "decoy"
+version = "0.2.0"
 authors = [
   { name = "Ian George", email = "ian@quiet.sh" },
   { name = "Adam Fletcher", email = "adam.fletcher@equalexperts.com" },
+  { name = "Joe Ainsworth", email = "xenofect@protonmail.com" },
 ]
 description = "Synthetic data functions and tooling for duckdb"
 readme = "README.md"
@@ -22,11 +24,11 @@ dependencies = [
   "pandas",
   "pyarrow",
   "pygments",
-  "pydantic==1.10.10",
+  "pydantic>=2",
+  "pydantic-settings>=2",
   "ipykernel",
   "jupyterlab",
 ]
-dynamic = ["version"]
 
 [project.optional-dependencies]
 dev = ["black", "pytest"]
@@ -34,5 +36,5 @@ dev = ["black", "pytest"]
 [project.scripts]
 decoy = "decoy.cli:rootcmd"
 
-[tool.setuptools]
-packages = ["decoy"]
+[tool.setuptools.packages.find]
+where = ["src"]
